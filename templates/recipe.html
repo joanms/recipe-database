@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+       <link rel="shortcut icon" type="image/x-icon" href="../static/images/chef_hat.ico">
+       
+       <title>The Recipe Database</title> 
+    </head>
+    
+    <body>
+        {% for recipe in recipes %}
+            <h2>{{recipe.recipe_name}}</h2>
+            
+            <p><strong>Author:</strong> {{recipe.author}}</p>
+            <p><strong>Country of Origin:</strong> {{recipe.origin}}</p>
+            <p><strong>Serves:</strong> {{recipe.servings}}</p>
+            <p><strong>Preparation Time:</strong> {{recipe.prep_time.prep_number}} 
+            {{recipe.prep_time.prep_unit}}</p>
+            <p><strong>Marinate Time:</strong> {{recipe.marinate_time.marinate_number}} 
+            {{recipe.marinate_time.marinate_unit}}</p>
+            <p><strong>Cook Time:</strong> {{recipe.cook_time.cook_number}} 
+            {{recipe.cook_time.cook_unit}}</p>
+
+            <h3>Allergens</h3>
+            <p></p>
+            
+        {% endfor %}
+    </body>
+    
+</html>

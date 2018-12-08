@@ -14,3 +14,9 @@ mongo = PyMongo(app)
 def show_recipe():
     return render_template("recipe.html", 
     recipes=mongo.db.recipes.find())
+    
+    
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+        port=int(os.environ.get('PORT')),
+        debug=True)
