@@ -40,9 +40,26 @@
             {% endif %}
             
             <h3>Ingredients</h3>
-            <p>{{recipe.ingredients}}</p>
+            {% for ingredient in recipe.ingredients %}
+                <p>{{ingredient.quantity}} {{ingredient.unit}} 
+                {{ingredient.ingredient}}</p>
+                
+                {% if ingredient.marinade %}
+                    <h4>For the Marinade</h4>
+                    {% for ingredient in ingredient.marinade %}
+                        <p>{{ingredient.quantity}} {{ingredient.unit}} 
+                        {{ingredient.ingredient}}</p>
+                    {% endfor %} <!--End of loop through marinade ingredients-->   
+                {% endif %} <!--End of marinade text-->
+                
+            {% endfor %}  <!--End of loop through ingredients-->
+            
+            <h3>Method</h3>
+            {% for paragraph in recipe.method %}
+                <p>{{paragraph.paragraph_text}}</p>
+            {% endfor %}    
 
-        {% endfor %}
+        {% endfor %} <!--End of loop through recipes-->
     </body>
     
 </html>
