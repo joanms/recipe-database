@@ -1,4 +1,4 @@
-# Your Project's Name
+# Recipe Database
 
 One or two paragraphs providing an overview of your project.
 
@@ -6,6 +6,8 @@ Essentially, this part is your sales pitch.
  
 ## UX
  
+Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database schema.
+
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
@@ -74,7 +76,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+- The favicon is a free stock image from [Pixabay](https://pixabay.com/).
 
 ### Acknowledgements
 
