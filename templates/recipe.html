@@ -26,12 +26,12 @@
             <p><strong>Cook Time:</strong> {{recipe.cook_time.cook_number}} 
             {{recipe.cook_time.cook_unit}}</p>
 
-            {% if recipe.vegetarian %}
+            {% if recipe.vegetarian and not recipe.vegan %}
                 <p>Suitable for vegetarians</p>
             {% endif %}
             
             {% if recipe.vegan %}
-                <p>Suitable for vegans</p>
+                <p>Suitable for vegans and vegetarians</p>
             {% endif %}    
             
             {% if recipe.allergens %}
