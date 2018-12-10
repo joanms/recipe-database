@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-       <link rel="shortcut icon" type="image/x-icon" href="../static/images/chef_hat.ico">
-       
-       <title>The Recipe Database</title> 
-    </head>
-    
-    <body>
+{% extends 'base.html'%} {% block content %}
+
         {% for recipe in recipes %}
             <h2>{{recipe.recipe_name}}</h2>
             
@@ -60,6 +52,5 @@
             {% endfor %}    
 
         {% endfor %} <!--End of loop through recipes-->
-    </body>
-    
-</html>
+
+{% endblock %}
