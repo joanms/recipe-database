@@ -1,10 +1,13 @@
 {% extends 'base.html'%} {% block content %}
 
+        <!--Loop through recipes to display-->
         {% for recipe in recipes %}
             <h2>{{recipe.recipe_name}}</h2>
             
             <div  class= "body-text">
-                <div class="information">
+                
+                <!--Information about the recipe-->
+                <div id="information">
                     <p><strong>Author:</strong> {{recipe.author}}</p>
                     <p><strong>Country of Origin:</strong> {{recipe.origin}}</p>
                     <p><strong>Serves:</strong> {{recipe.servings}}</p>
@@ -34,7 +37,8 @@
                     {% endif %}
                 </div> <!--End of information-->
     
-                <div class="ingredients">
+                <!--Ingredients-->
+                <div id="ingredients">
                 <h3>Ingredients</h3>
                 {% for ingredient in recipe.ingredients %}
                     <p>{{ingredient.quantity}} {{ingredient.unit}} 
@@ -51,12 +55,13 @@
                 {% endfor %}  <!--End of loop through ingredients-->
                 </div> <!--End of ingredients-->
                 
-                <div class="method">
+                <!--Preparation instructions-->
+                <div id="method">
                     <h3>Method</h3>
                     {% for paragraph in recipe.method %}
                         <p>{{paragraph.paragraph_text}}</p>
                     {% endfor %}
-                </div> <!--End of method-->
+                </div> <!--End of preparation instructions-->
                 
             </div> <!--End of recipe-->
             
