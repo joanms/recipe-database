@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700');
 
+.nav-wrapper {
+    height: 100px;
+    background-color: green;
+}
+
 .brand-logo {
     font-family: "Fondamento", cursive;
 }
