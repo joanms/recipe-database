@@ -4,10 +4,15 @@
         {% for recipe in recipes %}
             <h2>{{recipe.recipe_name}}</h2>
             
-            <div  class= "body-text">
+            <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div id="information">
+                <div class="col l2 body-text" id="information">
+                    <!--Optional text to display if the recipe contains common allergens-->
+                    {% if recipe.allergens %}
+                        <p>Contains {{recipe.allergens}}</p>
+                    {% endif %}
+
                     <em>Author:</em> {{recipe.author}}<br>
                     <em>Country of Origin:</em> {{recipe.origin}}<br>
                     <em>Serves:</em> {{recipe.servings}}<br>
@@ -32,15 +37,10 @@
                         <p>Suitable for vegans and vegetarians</p>
                     {% endif %}    
                     
-                    <!--Optional text to display if the recipe contains common allergens-->
-                    {% if recipe.allergens %}
-                        <h3>Allergens</h3>
-                        <p>Contains {{recipe.allergens}}</p>
-                    {% endif %}
                 </div> <!--End of information-->
     
                 <!--Ingredients-->
-                <div id="ingredients">
+                <div class="col l5 body-text" id="ingredients">
                 <h3>Ingredients</h3>
                 {% for ingredient in recipe.ingredients %}
                     {{ingredient.quantity}} {{ingredient.unit}} 
@@ -59,7 +59,7 @@
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
-                <div id="method">
+                <div class="col l5 body-text" id="method">
                     <h3>Method</h3>
                     {% for paragraph in recipe.method %}
                         <p>{{paragraph.paragraph_text}}</p>
