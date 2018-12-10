@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700');
 
 h1 {
     font-family: "Fondamento", cursive;
@@ -9,4 +9,22 @@ h1 {
 h2 {
     font-family: "Fondamento", cursive;
     font-size: 40px;
+}
+
+h3 {
+    font-family: "Merriweather", serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h4 {
+    font-family: "Merriweather", serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.body-text {
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+    font-weight: 400;
 }
