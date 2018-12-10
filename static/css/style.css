@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700');
 
-h1 {
+.brand-logo {
     font-family: "Fondamento", cursive;
-    font-size: 70px;
-    text-align: center;
 }
 
 h2 {
     font-family: "Fondamento", cursive;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 h3 {
