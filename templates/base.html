@@ -13,35 +13,44 @@
         
         <header>
         
-            <!--Navbar-->
             <nav>
-                <div class="nav-wrapper red darken-4">
-                    <a href="#" class="brand-logo center"><img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42"> The Recipe Database</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Add a Recipe</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Add a Recipe</a></li>
-                    </ul>
-                </div>
-            </nav> <!--End of navbar-->
-            
-            <!--Search Field-->
-            <nav>
-                <div class="nav-wrapper red darken-4">
-                    <form>
+                
+                <!--Navbar-->
+                <div class="navbar-fixed"> <!--This ensures that the header remains visible when the user scrolls down the page-->
+                
+                    <!--Navigation menu and page title-->
+                    <div class="nav-wrapper red darken-4">
+                        
+                        <a href="#" class="brand-logo center"><img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42"> The Recipe Database</a>
+                        
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Add a Recipe</a></li>
+                        </ul>
+                        
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Add a Recipe</a></li>
+                        </ul>
+                        
+                    </div> <!--End of navigation menu and page title-->
+                    
+                    <!--Search Field-->
+                    <div class="nav-wrapper red darken-4">
+                      <form>
                         <div class="input-field">
-                          <input id="search" type="search" placeholder="Search Recipes" required>
+                          <input id="search" type="search" required>
                           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                           <i class="material-icons">close</i>
                         </div>
-                    </form>
-                </div>
-            </nav> <!--End of search field-->
-        
+                      </form>
+                    </div> <!--End of search field-->
+                    
+               </div> <!--End of navbar-->
+               
+            </nav> 
+            
         </header>
         
         <div class="container">
