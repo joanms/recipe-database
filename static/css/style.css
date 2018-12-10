@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700');
 
+body {
+    background-color: #ffecb3;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 10;
+}
+
+.container {
+    margin-top: 150px;
+}
+
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 50px !important;
@@ -19,6 +36,7 @@ h3 {
 h4 {
     font-size: 16px;
     font-weight: 700;
+    margin-top: 30px;
 }
 
 .body-text {
@@ -33,6 +51,7 @@ h4 {
     margin-top: 0px;
     line-height: inherit;
 }
+
 
 /*Media Queries*/
 @media only screen and (max-width: 992px) {

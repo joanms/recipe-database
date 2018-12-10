@@ -8,19 +8,18 @@
                 
                 <!--Information about the recipe-->
                 <div id="information">
-                    <p><strong>Author:</strong> {{recipe.author}}</p>
-                    <p><strong>Country of Origin:</strong> {{recipe.origin}}</p>
-                    <p><strong>Serves:</strong> {{recipe.servings}}</p>
-                    <p><strong>Preparation Time:</strong> {{recipe.prep_time.prep_number}} 
-                    {{recipe.prep_time.prep_unit}}</p>
+                    <em>Author:</em> {{recipe.author}}<br>
+                    <em>Country of Origin:</em> {{recipe.origin}}<br>
+                    <em>Serves:</em> {{recipe.servings}}<br>
+                    <em>Preparation Time:</em> {{recipe.prep_time.prep_number}} 
+                    {{recipe.prep_time.prep_unit}}<br>
         
                     {% if recipe.marinate_time %}
-                        <p><strong>Marinate Time:</strong> 
-                        {{recipe.marinate_time.marinate_number}} 
-                        {{recipe.marinate_time.marinate_unit}}</p>
+                        <em>Marinate Time:</em> {{recipe.marinate_time.marinate_number}} 
+                        {{recipe.marinate_time.marinate_unit}}<br>
                     {% endif %}
                     
-                    <p><strong>Cook Time:</strong> {{recipe.cook_time.cook_number}} 
+                    <em>Cook Time:</em> {{recipe.cook_time.cook_number}} 
                     {{recipe.cook_time.cook_unit}}</p>
         
                     {% if recipe.vegetarian and not recipe.vegan %}
