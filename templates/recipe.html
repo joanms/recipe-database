@@ -14,6 +14,7 @@
                     <em>Preparation Time:</em> {{recipe.prep_time.prep_number}} 
                     {{recipe.prep_time.prep_unit}}<br>
         
+                    <!--Optional text for marinade-->
                     {% if recipe.marinate_time %}
                         <em>Marinate Time:</em> {{recipe.marinate_time.marinate_number}} 
                         {{recipe.marinate_time.marinate_unit}}<br>
@@ -22,6 +23,7 @@
                     <em>Cook Time:</em> {{recipe.cook_time.cook_number}} 
                     {{recipe.cook_time.cook_unit}}</p>
         
+                    <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
                     {% if recipe.vegetarian and not recipe.vegan %}
                         <p>Suitable for vegetarians</p>
                     {% endif %}
@@ -30,6 +32,7 @@
                         <p>Suitable for vegans and vegetarians</p>
                     {% endif %}    
                     
+                    <!--Optional text to display if the recipe contains common allergens-->
                     {% if recipe.allergens %}
                         <h3>Allergens</h3>
                         <p>Contains {{recipe.allergens}}</p>
@@ -43,6 +46,7 @@
                     {{ingredient.quantity}} {{ingredient.unit}} 
                     {{ingredient.ingredient}}<br>
                     
+                    <!--Optional text for marinade-->
                     {% if ingredient.marinade %}
                         <h4>For the Marinade</h4>
                         {% for ingredient in ingredient.marinade %}
