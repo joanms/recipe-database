@@ -40,14 +40,14 @@
                 <div id="ingredients">
                 <h3>Ingredients</h3>
                 {% for ingredient in recipe.ingredients %}
-                    <p>{{ingredient.quantity}} {{ingredient.unit}} 
-                    {{ingredient.ingredient}}</p>
+                    {{ingredient.quantity}} {{ingredient.unit}} 
+                    {{ingredient.ingredient}}<br>
                     
                     {% if ingredient.marinade %}
                         <h4>For the Marinade</h4>
                         {% for ingredient in ingredient.marinade %}
-                            <p>{{ingredient.quantity}} {{ingredient.unit}} 
-                            {{ingredient.ingredient}}</p>
+                            {{ingredient.quantity}} {{ingredient.unit}} 
+                            {{ingredient.ingredient}}<br>
                         {% endfor %} <!--End of loop through marinade ingredients-->   
                     {% endif %} <!--End of marinade text-->
                     
