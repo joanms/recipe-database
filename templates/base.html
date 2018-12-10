@@ -11,40 +11,46 @@
     
     <body>
         
-    <header>
+        <header>
         
-        <nav>
-            <div class="nav-wrapper red darken-3">
-                <a href="#" class="brand-logo center"><img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42"> The Recipe Database</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Add a Recipe</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Add a Recipe</a></li>
-                </ul>
-            </div>
-        </nav> <!--End of nav links-->
+            <!--Navbar-->
+            <nav>
+                <div class="nav-wrapper red darken-3">
+                    <a href="#" class="brand-logo center"><img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42"> The Recipe Database</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Add a Recipe</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Add a Recipe</a></li>
+                    </ul>
+                </div>
+            </nav> <!--End of navbar-->
+            
+            <!--Search Field-->
+            <nav>
+                <div class="nav-wrapper red darken-3">
+                    <form>
+                        <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav> <!--End of search field-->
         
-        <nav>
-            <div class="nav-wrapper red darken-3">
-                <form>
-                    <div class="input-field">
-                      <input id="search" type="search" required>
-                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                      <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
-        </nav> <!--End of Search field-->
-        
-    </header>
+        </header>
         
         <div class="container">
+            
             {% block content %} {% endblock %}
+            
         </div>
+        
+        <!--Scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script type="text/javascript">

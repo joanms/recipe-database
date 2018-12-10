@@ -4,34 +4,37 @@
             <h2>{{recipe.recipe_name}}</h2>
             
             <div  class= "body-text">
-                <p><strong>Author:</strong> {{recipe.author}}</p>
-                <p><strong>Country of Origin:</strong> {{recipe.origin}}</p>
-                <p><strong>Serves:</strong> {{recipe.servings}}</p>
-                <p><strong>Preparation Time:</strong> {{recipe.prep_time.prep_number}} 
-                {{recipe.prep_time.prep_unit}}</p>
+                <div class="information">
+                    <p><strong>Author:</strong> {{recipe.author}}</p>
+                    <p><strong>Country of Origin:</strong> {{recipe.origin}}</p>
+                    <p><strong>Serves:</strong> {{recipe.servings}}</p>
+                    <p><strong>Preparation Time:</strong> {{recipe.prep_time.prep_number}} 
+                    {{recipe.prep_time.prep_unit}}</p>
+        
+                    {% if recipe.marinate_time %}
+                        <p><strong>Marinate Time:</strong> 
+                        {{recipe.marinate_time.marinate_number}} 
+                        {{recipe.marinate_time.marinate_unit}}</p>
+                    {% endif %}
+                    
+                    <p><strong>Cook Time:</strong> {{recipe.cook_time.cook_number}} 
+                    {{recipe.cook_time.cook_unit}}</p>
+        
+                    {% if recipe.vegetarian and not recipe.vegan %}
+                        <p>Suitable for vegetarians</p>
+                    {% endif %}
+                    
+                    {% if recipe.vegan %}
+                        <p>Suitable for vegans and vegetarians</p>
+                    {% endif %}    
+                    
+                    {% if recipe.allergens %}
+                        <h3>Allergens</h3>
+                        <p>Contains {{recipe.allergens}}</p>
+                    {% endif %}
+                </div> <!--End of information-->
     
-                {% if recipe.marinate_time %}
-                    <p><strong>Marinate Time:</strong> 
-                    {{recipe.marinate_time.marinate_number}} 
-                    {{recipe.marinate_time.marinate_unit}}</p>
-                {% endif %}
-                
-                <p><strong>Cook Time:</strong> {{recipe.cook_time.cook_number}} 
-                {{recipe.cook_time.cook_unit}}</p>
-    
-                {% if recipe.vegetarian and not recipe.vegan %}
-                    <p>Suitable for vegetarians</p>
-                {% endif %}
-                
-                {% if recipe.vegan %}
-                    <p>Suitable for vegans and vegetarians</p>
-                {% endif %}    
-                
-                {% if recipe.allergens %}
-                    <h3>Allergens</h3>
-                    <p>Contains {{recipe.allergens}}</p>
-                {% endif %}
-    
+                <div class="ingredients">
                 <h3>Ingredients</h3>
                 {% for ingredient in recipe.ingredients %}
                     <p>{{ingredient.quantity}} {{ingredient.unit}} 
@@ -46,12 +49,17 @@
                     {% endif %} <!--End of marinade text-->
                     
                 {% endfor %}  <!--End of loop through ingredients-->
+                </div> <!--End of ingredients-->
                 
-                <h3>Method</h3>
-                {% for paragraph in recipe.method %}
-                    <p>{{paragraph.paragraph_text}}</p>
-                {% endfor %}    
-            </div>
+                <div class="method">
+                    <h3>Method</h3>
+                    {% for paragraph in recipe.method %}
+                        <p>{{paragraph.paragraph_text}}</p>
+                    {% endfor %}
+                </div> <!--End of method-->
+                
+            </div> <!--End of recipe-->
+            
         {% endfor %} <!--End of loop through recipes-->
 
 {% endblock %}
