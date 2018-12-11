@@ -7,7 +7,7 @@
             <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div class="col l4 body-text" id="information">
+                <div class="col l3 body-text" id="information">
                     <h3>Information</h3>
                     <!--Optional text to display if the recipe contains common allergens-->
                     {% if recipe.allergens %}
@@ -61,7 +61,7 @@
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
-                <div class="col l4 body-text" id="method">
+                <div class="col l5 body-text" id="method">
                     <h3>Method</h3>
                     {% for paragraph in recipe.method %}
                         <p>{{paragraph.paragraph_text}}</p>
