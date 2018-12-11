@@ -1,3 +1,75 @@
 {% extends 'base.html'%} {% block content %}
+
     <h2>Add Your Own Recipe</h2>
+    
+        <h3>Recipe Information</h3>
+        
+            <div class="row">
+                <form class="col s12">
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Recipe Title:</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Author:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Author's Nationality:</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Number of Servings:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Preparation Time:</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Marinate Time (please leave this blank if it doesn't apply):</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Cook Time:</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select multiple>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">dairy</option>
+                                <option value="2">eggs</option>
+                                <option value="3">fish</option>
+                                <option value="1">peanuts</option>
+                                <option value="3">shellfish</option>
+                                <option value="2">soy</option>
+                                <option value="3">tree nuts</option>
+                                <option value="3">wheat</option>
+                            </select>
+                            <label>Allergens</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Author's Nationality:</label>
+                        </div>
+                    </div>
+
+                </form>
+              </div>
+        <h3>Ingredients</h3>
+        <h3>Method</h3>
 {% endblock %}
