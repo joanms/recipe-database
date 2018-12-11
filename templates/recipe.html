@@ -13,6 +13,15 @@
                     {% if recipe.allergens %}
                         <p>Contains {{recipe.allergens}}</p>
                     {% endif %}
+                    
+                    <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
+                    {% if recipe.vegetarian and not recipe.vegan %}
+                        <p>Suitable for vegetarians</p>
+                    {% endif %}
+                    
+                    {% if recipe.vegan %}
+                        <p>Suitable for vegans and vegetarians</p>
+                    {% endif %}    
 
                     <em>Author:</em> {{recipe.author}}<br>
                     <em>Nationality:</em> {{recipe.origin}}<br>
@@ -29,14 +38,6 @@
                     <em>Cook Time:</em> {{recipe.cook_time.cook_number}} 
                     {{recipe.cook_time.cook_unit}}</p>
         
-                    <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
-                    {% if recipe.vegetarian and not recipe.vegan %}
-                        <p>Suitable for vegetarians</p>
-                    {% endif %}
-                    
-                    {% if recipe.vegan %}
-                        <p>Suitable for vegans and vegetarians</p>
-                    {% endif %}    
                     
                 </div> <!--End of information-->
     
