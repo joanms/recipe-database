@@ -7,7 +7,7 @@
             <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div class="col l2 body-text" id="information">
+                <div class="col l4 body-text" id="information">
                     <h3>Information</h3>
                     <!--Optional text to display if the recipe contains common allergens-->
                     {% if recipe.allergens %}
@@ -15,7 +15,7 @@
                     {% endif %}
 
                     <em>Author:</em> {{recipe.author}}<br>
-                    <em>Country of Origin:</em> {{recipe.origin}}<br>
+                    <em>Nationality:</em> {{recipe.origin}}<br>
                     <em>Serves:</em> {{recipe.servings}}<br>
                     <em>Preparation Time:</em> {{recipe.prep_time.prep_number}} 
                     {{recipe.prep_time.prep_unit}}<br>
@@ -41,7 +41,7 @@
                 </div> <!--End of information-->
     
                 <!--Ingredients-->
-                <div class="col l5 body-text" id="ingredients">
+                <div class="col l4 body-text" id="ingredients">
                 <h3>Ingredients</h3>
                 {% for ingredient in recipe.ingredients %}
                     {{ingredient.quantity}} {{ingredient.unit}} 
@@ -60,7 +60,7 @@
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
-                <div class="col l5 body-text" id="method">
+                <div class="col l4 body-text" id="method">
                     <h3>Method</h3>
                     {% for paragraph in recipe.method %}
                         <p>{{paragraph.paragraph_text}}</p>
