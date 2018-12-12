@@ -26,17 +26,14 @@
                     <em>Author:</em> {{recipe.author}}<br>
                     <em>Nationality:</em> {{recipe.origin}}<br>
                     <em>Serves:</em> {{recipe.servings}}<br>
-                    <em>Preparation Time:</em> {{recipe.prep_time.prep_number}} 
-                    {{recipe.prep_time.prep_unit}}<br>
+                    <em>Preparation Time:</em> {{recipe.prep_time}}<br>
         
                     <!--Optional text for marinade-->
                     {% if recipe.marinate_time %}
-                        <em>Marinate Time:</em> {{recipe.marinate_time.marinate_number}} 
-                        {{recipe.marinate_time.marinate_unit}}<br>
+                        <em>Marinate Time:</em> {{recipe.marinate_time}}<br>
                     {% endif %}
                     
-                    <em>Cook Time:</em> {{recipe.cook_time.cook_number}} 
-                    {{recipe.cook_time.cook_unit}}</p>
+                    <em>Cook Time:</em> {{recipe.cook_time}} </p>
         
                     
                 </div> <!--End of information-->

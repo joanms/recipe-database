@@ -17,12 +17,18 @@ def index():
 def add_recipe():
     return render_template('add_recipe.html')
 
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes =  mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('show_recipe'))
 
 @app.route('/show_recipe')
 def show_recipe():
     return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())
     
+
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
