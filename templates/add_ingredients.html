@@ -1,13 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 
     <h2>Now Add the Ingredients</h2>
-            <h3>Main Ingredients</h3>
                 <div class="row">
                     <div class="input-field col s4">
-                        <input id="first_name" type="text" class="validate">
+                        <input id="quantity" name="quantity" type="text" class="validate">
                         <label for="first_name">Quantity:</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s4" id="unit" name="unit">
                         <select>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">g</option>
@@ -23,95 +22,8 @@
                         <label>Unit:</label>
                       </div>
                     <div class="input-field col s4">
-                        <input id="quantity" type="text" class="validate">
-                        <label for="quantity">Name of Ingredient:</label>
-                    </div>
-                </div>
-            
-            <a class="waves-effect waves-light red darken-4 btn">Submit Ingredient</a>
-            
-            <h3>Icing</h3>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Quantity:</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">g</option>
-                            <option value="2">kg</option>
-                            <option value="3">ml</option>
-                            <option value="3">l</option>
-                            <option value="3">fluid oz</option>
-                            <option value="3">oz</option>
-                            <option value="3">lb</option>
-                            <option value="3">tbsp</option>
-                            <option value="3">tsp</option>
-                        </select>
-                        <label>Unit:</label>
-                      </div>
-                    <div class="input-field col s4">
-                        <input id="quantity" type="text" class="validate">
-                        <label for="quantity">Name of Ingredient:</label>
-                    </div>
-                </div>
-            
-            <a class="waves-effect waves-light red darken-4 btn">Submit Ingredient</a>
-            
-            <h3>Marinade</h3>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Quantity:</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">g</option>
-                            <option value="2">kg</option>
-                            <option value="3">ml</option>
-                            <option value="3">l</option>
-                            <option value="3">fluid oz</option>
-                            <option value="3">oz</option>
-                            <option value="3">lb</option>
-                            <option value="3">tbsp</option>
-                            <option value="3">tsp</option>
-                        </select>
-                        <label>Unit:</label>
-                      </div>
-                    <div class="input-field col s4">
-                        <input id="quantity" type="text" class="validate">
-                        <label for="quantity">Name of Ingredient:</label>
-                    </div>
-                </div>
-            
-            <a class="waves-effect waves-light red darken-4 btn">Submit Ingredient</a>
-            
-            <h3>Sauce</h3>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Quantity:</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">g</option>
-                            <option value="2">kg</option>
-                            <option value="3">ml</option>
-                            <option value="3">l</option>
-                            <option value="3">fluid oz</option>
-                            <option value="3">oz</option>
-                            <option value="3">lb</option>
-                            <option value="3">tbsp</option>
-                            <option value="3">tsp</option>
-                        </select>
-                        <label>Unit:</label>
-                      </div>
-                    <div class="input-field col s4">
-                        <input id="quantity" type="text" class="validate">
-                        <label for="quantity">Name of Ingredient:</label>
+                        <input id="ingredient" name="ingredient" type="text" class="validate">
+                        <label for="ingredient">Name of Ingredient:</label>
                     </div>
                 </div>
             
