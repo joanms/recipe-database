@@ -45,15 +45,6 @@
                     {{ingredient.quantity}} {{ingredient.unit}} 
                     {{ingredient.ingredient}}<br>
                     
-                    <!--Optional text for marinade-->
-                    {% if ingredient.marinade %}
-                        <h4>For the Marinade</h4>
-                        {% for ingredient in ingredient.marinade %}
-                            {{ingredient.quantity}} {{ingredient.unit}} 
-                            {{ingredient.ingredient}}<br>
-                        {% endfor %} <!--End of loop through marinade ingredients-->   
-                    {% endif %} <!--End of marinade text-->
-                    
                 {% endfor %}  <!--End of loop through ingredients-->
                 </div> <!--End of ingredients-->
                 
