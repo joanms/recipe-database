@@ -5,61 +5,61 @@
         <h3>Recipe Information</h3>
         
             <div class="row">
-                <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+                <form action="{{ url_for('add_ingredients') }}" method="POST" class="col s12">
                     
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_name" type="text" class="validate">
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate">
                             <label for="recipe_name">Recipe Title:</label>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="author" type="text" class="validate">
+                            <input id="author" name="author" type="text" class="validate">
                             <label for="author">Author:</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="origin" type="text" class="validate">
+                            <input id="origin" name="origin" type="text" class="validate">
                             <label for="origin">Author's Nationality:</label>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="servings" type="text" class="validate">
+                            <input id="servings" name="servings" type="text" class="validate">
                             <label for="servings">Number of Servings:</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="prep_time" type="text" class="validate">
+                            <input id="prep_time" name="prep_time" type="text" class="validate">
                             <label for="prep_time">Preparation Time:</label>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="marinate_time" type="text" class="validate">
+                            <input id="marinate_time" name="marinate_time" type="text" class="validate">
                             <label for="marinate_time">Marinate Time (please leave this blank if it doesn't apply):</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="cook_time" type="text" class="validate">
+                            <input id="cook_time" name="cook_time" type="text" class="validate">
                             <label for="cook_time">Cook Time:</label>
                         </div>
                     </div>
                     
                     <!--Allergen selector-->
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s6" id="allergens" name="allergens">
                             <select multiple>
                                 <option value="" disabled selected>Allergens:</option>
-                                <option value="1">dairy</option>
-                                <option value="2">eggs</option>
-                                <option value="3">fish</option>
-                                <option value="1">peanuts</option>
-                                <option value="3">shellfish</option>
-                                <option value="2">soy</option>
-                                <option value="3">tree nuts</option>
-                                <option value="3">wheat</option>
+                                <option value="1" id="dairy" name="dairy">dairy</option>
+                                <option value="2" id="eggs" name="eggs">eggs</option>
+                                <option value="3" id="fish" name="fish">fish</option>
+                                <option value="1" id="peanuts" name="peanuts">peanuts</option>
+                                <option value="3" id="shellfish" name="shellfish">shellfish</option>
+                                <option value="2" id="soy" name="soy">soy</option>
+                                <option value="3" id="tree nuts" name="tree nuts">tree nuts</option>
+                                <option value="3" id="wheat" name="wheat">wheat</option>
                             </select>
                             
                         </div><!--End of allergen selector-->
@@ -68,7 +68,7 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input type="checkbox">
+                                    <input id="vegetarian" name="vegetarian" type="checkbox">
                                     <span class="lever"></span>
                                     Vegetarian
                                 </label>
@@ -77,7 +77,7 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input type="checkbox">
+                                    <input id="vegan" name="vegan" type="checkbox">
                                     <span class="lever"></span>
                                     Vegan
                                 </label>
