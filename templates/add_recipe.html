@@ -1,12 +1,9 @@
 {% extends 'base.html'%} {% block content %}
 
+
     <h2>Add Your Own Recipe</h2>
     
-        <h3>Recipe Information</h3>
-        
-            <div class="row">
-                
-                <form action="{{ url_for('add_ingredients') }}" method="POST" class="col s12">
+                <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
                     <!--The title of the recipe-->
                     <div class="row">
@@ -30,7 +27,7 @@
                             <label for="origin">Author's Nationality:</label>
                         </div>
                         
-                    </div>
+                    </div> <!--End of author information row-->
                     
                     <div class="row">
                         
@@ -46,7 +43,7 @@
                             <label for="prep_time">Preparation Time:</label>
                         </div>
                         
-                    </div>
+                    </div> <!--End of serving quantity and prep time row-->
                     
                     <div class="row">
                         
@@ -62,7 +59,7 @@
                             <label for="cook_time">Cook Time:</label>
                         </div>
                         
-                    </div>
+                    </div> <!--End of marinade and cook time row-->
                     
                     <!--Dietary restrictions-->
                     <div class="row">
@@ -80,9 +77,9 @@
                                 <option value="3" id="tree nuts" name="tree nuts">tree nuts</option>
                                 <option value="3" id="wheat" name="wheat">wheat</option>
                             </select>
-                        </div>
+                        </div> <!--End of allergen selector-->
                         
-                        <!--Selectors to indicate if the recipe is suitable for vegans and/or vegetarians-->
+                        <!--Selector to indicate if the recipe is suitable for vegetarians-->
                         <div class="col s3">
                             <div class="switch">
                                 <label>
@@ -90,8 +87,10 @@
                                     <span class="lever"></span>
                                     Vegetarian
                                 </label>
-                            </div>
-                        </div>
+                            </div> 
+                        </div> <!--End of vegetarian selector-->
+                        
+                        <!--Selector to indicate if the recipe is suitable for vegans-->
                         <div class="col s3">
                             <div class="switch">
                                 <label>
@@ -100,10 +99,33 @@
                                     Vegan
                                 </label>
                             </div>
-                        </div>
-                    </div>
+                        </div> <!--End of vegan selector-->
+                        
+                    </div> <!--End of dietary restrictions row-->
                     
-                    <!--Button to submit the recipe and go to the ingredients page-->
+                    
+                    <!--Input field for the ingredients-->
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
+                                <label for="ingredients">Ingredients:</label>
+                            </div>
+                        </div>
+                    </div> <!--End of ingredients-->
+                    
+                    <!--Input field for the method-->
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="method" name="method" class="materialize-textarea"></textarea>
+                                <label for="method">Method:</label>
+                            </div>
+                        </div>
+                    </div> <!--End of method-->
+                    
+                    
+                    <!--Button to submit the recipe-->
                     <div class="row">
                         <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit Recipe
                             <i class="material-icons right">send</i>
@@ -111,8 +133,6 @@
                     </div>
                     
                 </form>
-              </div>
 
-        <p class="body-text">You will add the ingredients on the next page.</p>
-        
+
 {% endblock %}
