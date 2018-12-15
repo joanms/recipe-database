@@ -3,7 +3,7 @@
 
     <h2>Add Your Own Recipe</h2>
     
-                <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+                <form action="{{ url_for('show_recipe') }}" method="POST" class="col s12">
                     
                     <!--The title of the recipe-->
                     <div class="row">
@@ -67,7 +67,7 @@
                         <!--Allergen selector-->
                         <div class="col s6" id="allergens" name="allergens">
                             <select multiple>
-                                <option value="" disabled selected>Allergens:</option>
+                                <option value="" disabled selected>Allergens (please click to select options:</option>
                                 <option value="1" id="dairy" name="dairy">dairy</option>
                                 <option value="2" id="eggs" name="eggs">eggs</option>
                                 <option value="3" id="fish" name="fish">fish</option>
