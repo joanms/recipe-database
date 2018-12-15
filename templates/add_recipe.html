@@ -5,8 +5,10 @@
         <h3>Recipe Information</h3>
         
             <div class="row">
+                
                 <form action="{{ url_for('add_ingredients') }}" method="POST" class="col s12">
                     
+                    <!--The title of the recipe-->
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="recipe_name" name="recipe_name" type="text" class="validate">
@@ -15,40 +17,57 @@
                     </div>
                     
                     <div class="row">
+                        
+                        <!--The name of the author-->
                         <div class="input-field col s6">
                             <input id="author" name="author" type="text" class="validate">
                             <label for="author">Author:</label>
                         </div>
+                        
+                        <!--The author's country of origin-->
                         <div class="input-field col s6">
                             <input id="origin" name="origin" type="text" class="validate">
                             <label for="origin">Author's Nationality:</label>
                         </div>
+                        
                     </div>
                     
                     <div class="row">
+                        
+                        <!--The number of servings the recipe makes-->
                         <div class="input-field col s6">
                             <input id="servings" name="servings" type="text" class="validate">
                             <label for="servings">Number of Servings:</label>
                         </div>
+                        
+                        <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
                         <div class="input-field col s6">
                             <input id="prep_time" name="prep_time" type="text" class="validate">
                             <label for="prep_time">Preparation Time:</label>
                         </div>
+                        
                     </div>
                     
                     <div class="row">
+                        
+                        <!--The time needed to marindade the recipe, if applicable-->
                         <div class="input-field col s6">
                             <input id="marinate_time" name="marinate_time" type="text" class="validate">
                             <label for="marinate_time">Marinate Time (please leave this blank if it doesn't apply):</label>
                         </div>
+                        
+                        <!--The time needed to cook the recipe-->
                         <div class="input-field col s6">
                             <input id="cook_time" name="cook_time" type="text" class="validate">
                             <label for="cook_time">Cook Time:</label>
                         </div>
+                        
                     </div>
                     
-                    <!--Allergen selector-->
+                    <!--Dietary restrictions-->
                     <div class="row">
+                        
+                        <!--Allergen selector-->
                         <div class="col s6" id="allergens" name="allergens">
                             <select multiple>
                                 <option value="" disabled selected>Allergens:</option>
@@ -61,10 +80,9 @@
                                 <option value="3" id="tree nuts" name="tree nuts">tree nuts</option>
                                 <option value="3" id="wheat" name="wheat">wheat</option>
                             </select>
-                            
-                        </div><!--End of allergen selector-->
+                        </div>
                         
-                        
+                        <!--Selectors to indicate if the recipe is suitable for vegans and/or vegetarians-->
                         <div class="col s3">
                             <div class="switch">
                                 <label>
@@ -85,6 +103,7 @@
                         </div>
                     </div>
                     
+                    <!--Button to submit the recipe and go to the ingredients page-->
                     <div class="row">
                         <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit Recipe
                             <i class="material-icons right">send</i>
@@ -94,7 +113,6 @@
                 </form>
               </div>
 
-        
         <p class="body-text">You will add the ingredients on the next page.</p>
         
 {% endblock %}
