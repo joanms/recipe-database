@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from wtforms import Form, BooleanField, TextField, validators
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipedb'
