@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 from wtforms import Form, BooleanField, TextField, validators
 
 app = Flask(__name__)
+
 app.config["MONGO_DBNAME"] = 'recipedb'
 app.config["MONGO_URI"] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
 
