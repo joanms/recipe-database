@@ -1,4 +1,5 @@
 import os
+
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -6,8 +7,8 @@ from wtforms import Form, BooleanField, TextField, validators
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'recipedb'
-app.config["MONGO_URI"] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
+app.config['MONGO_DBNAME'] = 'recipedb'
+app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
 
 mongo = PyMongo(app)
 
@@ -38,5 +39,5 @@ def show_recipe():
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
+            port=int(os.environ.get('PORT')),
+            debug=True)
