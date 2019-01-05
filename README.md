@@ -36,10 +36,13 @@ In this section, you should go over the different parts of your project, and des
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to write the content of the site.
+- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
+- **[Materialize](https://materializecss.com//)** was used to make it easier to style the content and make the site responsive.
+- **[Flask](http://flask.pocoo.org/)** was used to create routes and render the HTML templates.
+- **[Python](https://www.python.org/)** was used to write the site logic.
+- **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
+- **[Heroku](https://www.heroku.com/)** was used to deploy the project.
 
 
 ## Testing
