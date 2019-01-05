@@ -23,8 +23,14 @@
                         <p>Suitable for vegans and vegetarians</p>
                     {% endif %}    
 
-                    <em>Author:</em> {{recipe.author}}<br>
-                    <em>Country of Origin:</em> {{recipe.origin}}<br>
+                    {% if recipe.author %}
+                        <em>Author:</em> {{recipe.author}}<br>
+                    {% endif %}
+                    
+                    {% if recipe.origin %}
+                        <em>Country of Origin:</em> {{recipe.origin}}<br>
+                    {% endif %}
+                    
                     <em>Serves:</em> {{recipe.servings}}<br>
                     <em>Preparation Time:</em> {{recipe.prep_time}}<br>
         
