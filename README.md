@@ -6,7 +6,7 @@ Essentially, this part is your sales pitch.
  
 ## UX
  
-Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database schema.
+Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database structure.
 
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
