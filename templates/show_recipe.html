@@ -41,13 +41,13 @@
                 <!--Ingredients-->
                 <div class="col l4 body-text" id="ingredients">
                 <h3>Ingredients</h3>
-                    {{recipe.ingredients}}
+                    <pre>{{recipe.ingredients}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
                 <div class="col l5 body-text" id="method">
                     <h3>Method</h3>
-                    {{recipe.method}}
+                    <pre>{{recipe.method}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of preparation instructions-->
                 
             </div> <!--End of recipe-->
