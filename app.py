@@ -20,7 +20,7 @@ def index():
 def add_recipe():
     return render_template('add_recipe.html')
 
-@app.route('/insert_recipe', methods=['POST'])
+@app.route('/insert_recipe', methods=['GET', 'POST'])
 def insert_recipe():
     recipes =  mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
@@ -30,7 +30,7 @@ def insert_recipe():
 def add_ingredients():
     return render_template('add_ingredients.html')
 
-@app.route('/show_recipe', methods=['POST'])
+@app.route('/show_recipe', methods=['GET', 'POST'])
 def show_recipe():
     return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())

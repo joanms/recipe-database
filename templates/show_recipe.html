@@ -41,10 +41,7 @@
                 <!--Ingredients-->
                 <div class="col l4 body-text" id="ingredients">
                 <h3>Ingredients</h3>
-                {% for ingredient in recipe.ingredients %}
-                    {{ingredient.quantity}} {{ingredient.unit}} 
-                    {{ingredient.ingredient}}<br>
-                {% endfor %}  <!--End of loop through ingredients-->
+                    <pre>{{recipe.ingredients}}</pre>
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
