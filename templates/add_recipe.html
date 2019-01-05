@@ -2,14 +2,15 @@
 
 
     <h2>Add Your Own Recipe</h2>
+    <h3>Fields marked with an asterisk are required</h3>
     
                 <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
                     <!--The title of the recipe-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_name" name="recipe_name" type="text" class="validate">
-                            <label for="recipe_name">Recipe Title:</label>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                            <label for="recipe_name">Recipe Title*:</label>
                         </div>
                     </div>
                     
@@ -22,10 +23,10 @@
                             <label for="author">Author:</label>
                         </div>
                         
-                        <!--The author's country of origin-->
+                        <!--The recipe's country of origin-->
                         <div class="input-field col s6">
                             <input id="origin" name="origin" type="text" class="validate">
-                            <label for="origin">Author's Nationality:</label>
+                            <label for="origin">Country of Origin:</label>
                         </div>
                         
                     </div> <!--End of author information row-->
@@ -53,7 +54,7 @@
                         <!--The time needed to marindade the recipe, if applicable-->
                         <div class="input-field col s6">
                             <input id="marinate_time" name="marinate_time" type="text" class="validate">
-                            <label for="marinate_time">Marinate Time (please leave this blank if it doesn't apply):</label>
+                            <label for="marinate_time">Marinate Time:</label>
                         </div>
                         
                         <!--The time needed to cook the recipe-->
@@ -68,20 +69,11 @@
                     <!--Dietary restrictions-->
                     <div class="row">
                         
-                        <!--Allergen selector-->
-                        <div class="col s6" id="allergens" name="allergens">
-                            <select multiple>
-                                <option value="" disabled selected>Allergens (please click to select options):</option>
-                                <option value="1" id="dairy" name="dairy">dairy</option>
-                                <option value="2" id="eggs" name="eggs">eggs</option>
-                                <option value="3" id="fish" name="fish">fish</option>
-                                <option value="4" id="peanuts" name="peanuts">peanuts</option>
-                                <option value="5" id="shellfish" name="shellfish">shellfish</option>
-                                <option value="6" id="soy" name="soy">soy</option>
-                                <option value="7" id="tree nuts" name="tree nuts">tree nuts</option>
-                                <option value="8" id="wheat" name="wheat">wheat</option>
-                            </select>
-                        </div> <!--End of allergen selector-->
+                        <!--Allergens-->
+                        <div class="input-field col s6">
+                            <input id="allergens" name="allergens" type="text" class="validate">
+                            <label for="allergens">Allergens:</label>
+                        </div>
                         
                         <!--Selector to indicate if the recipe is suitable for vegetarians-->
                         <div class="col s3">
@@ -112,8 +104,8 @@
                     <div class="row">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
-                                <label for="ingredients">Ingredients:</label>
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea" required></textarea>
+                                <label for="ingredients">Ingredients*:</label>
                             </div>
                         </div>
                     </div> <!--End of ingredients-->
@@ -122,8 +114,8 @@
                     <div class="row">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="method" name="method" class="materialize-textarea"></textarea>
-                                <label for="method">Method:</label>
+                                <textarea id="method" name="method" class="materialize-textarea" required></textarea>
+                                <label for="method">Method*:</label>
                             </div>
                         </div>
                     </div> <!--End of method-->
