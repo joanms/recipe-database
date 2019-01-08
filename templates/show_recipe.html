@@ -7,52 +7,50 @@
             <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div class="col l3 body-text" id="information">
+                <div class="col l3" id="information">
                     <h3>Information</h3>
                     <!--Optional text to display if the recipe contains common allergens-->
-                    {% if recipe.allergens %}
-                        <p>Contains {{recipe.allergens}}</p>
-                    {% endif %}
-                    
-                    <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
-                    {% if recipe.vegetarian and not recipe.vegan %}
-                        <p>Suitable for vegetarians</p>
-                    {% endif %}
-                    
-                    {% if recipe.vegan %}
-                        <p>Suitable for vegans and vegetarians</p>
-                    {% endif %}    
-
-                    {% if recipe.author %}
-                        <em>Author:</em> {{recipe.author}}<br>
-                    {% endif %}
-                    
-                    {% if recipe.origin %}
-                        <em>Country of Origin:</em> {{recipe.origin}}<br>
-                    {% endif %}
-                    
-                    <em>Serves:</em> {{recipe.servings}}<br>
-                    <em>Preparation Time:</em> {{recipe.prep_time}}<br>
-        
-                    <!--Optional text for marinade-->
-                    {% if recipe.marinate_time %}
-                        <em>Marinate Time:</em> {{recipe.marinate_time}}<br>
-                    {% endif %}
-                    
-                    <em>Cook Time:</em> {{recipe.cook_time}} </p>
-                    
-                    <div class="row">
-                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Edit Recipe
-                            <i class="material-icons right">edit</i>
-                        </button>
+                    <div class="body-text">
+                        {% if recipe.allergens %}
+                            <p>Contains {{recipe.allergens}}</p>
+                        {% endif %}
+                        
+                        <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
+                        {% if recipe.vegetarian and not recipe.vegan %}
+                            <p>Suitable for vegetarians</p>
+                        {% endif %}
+                        
+                        {% if recipe.vegan %}
+                            <p>Suitable for vegans and vegetarians</p>
+                        {% endif %}    
+    
+                        {% if recipe.author %}
+                            <em>Author:</em> {{recipe.author}}<br>
+                        {% endif %}
+                        
+                        {% if recipe.origin %}
+                            <em>Country of Origin:</em> {{recipe.origin}}<br>
+                        {% endif %}
+                        
+                        <em>Serves:</em> {{recipe.servings}}<br>
+                        <em>Preparation Time:</em> {{recipe.prep_time}}<br>
+            
+                        <!--Optional text for marinade-->
+                        {% if recipe.marinate_time %}
+                            <em>Marinate Time:</em> {{recipe.marinate_time}}<br>
+                        {% endif %}
+                        
+                        <em>Cook Time:</em> {{recipe.cook_time}} </p>
                     </div>
+                    
+                    <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">edit</i>Edit Recipe</a>
 
         
                     
                 </div> <!--End of information-->
     
                 <!--Ingredients-->
-                <div class="col l4 body-text" id="ingredients">
+                <div class="col l4" id="ingredients">
                 <h3>Ingredients</h3>
                     <pre>{{recipe.ingredients}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of ingredients-->
