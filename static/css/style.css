@@ -51,7 +51,11 @@ h4 {
     line-height: inherit;
 }
 
-/*The pre tag ensures that linebreaks are preserved in text pulled from MongoDB. This style ensures that the font is correct and the text wraps automatically*/
+#search {
+    color: white;
+}
+
+/*The pre tag ensures that linebreaks are preserved in text pulled from MongoDB. This style ensures that the font matches the rest of the body text and the text wraps automatically*/
 pre {
     font-family: "Merriweather", serif;
     font-size: 14px;
