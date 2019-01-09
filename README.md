@@ -11,7 +11,11 @@ Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJ
 As a user, I want to:
 - **Easily add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
-The templates are set up to format the recipes neatly once they are input.
+The templates are set up to format the recipes neatly once they are input. I considered using a dropdown menu for ingredient units and separate 
+fields for the quantities and names of ingredients so that users would input them consistently, but decided against this for three reasons. 
+Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. Secondly, I might not think 
+of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as those for sauces, marinades, 
+icing, etc. The setup I have used allows much more flexibility and ease of use.
 
 - **Search for recipes according to a wide range of criteria.**
 
