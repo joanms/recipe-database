@@ -11,8 +11,6 @@
                     <h3>Information</h3>
                     <!--Optional text to display if the recipe contains common allergens-->
                     <div class="body-text">
-                        <em>Category:</em> {{recipe.category_name}} </p>
-                        
                         {% if recipe.allergens %}
                             <p>Contains {{recipe.allergens}}</p>
                         {% endif %}
