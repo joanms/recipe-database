@@ -8,9 +8,19 @@
                     
                     <!--The title of the recipe-->
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s9">
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
                             <label for="recipe_name">Recipe Title*:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <select id="category_name" name="category_name">
+                                <option value="" disabled selected>Category*</option>
+                                <option value="Starters">Starters</option>
+                                <option value="Mains">Mains</option>
+                                <option value="Sauces">Sauces</option>
+                                <option value="Sides">Sides</option>
+                                <option value="Desserts">Desserts</option>
+                            </select>
                         </div>
                     </div>
                     
@@ -123,7 +133,7 @@
                     <!--Button to submit the recipe-->
                     <div class="row">
                         <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Add Recipe
-                            <i class="material-icons right">add</i>
+                            <i class="material-icons right">playlist_add</i>
                         </button>
                     </div>
                     
