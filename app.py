@@ -26,10 +26,6 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('show_recipe'))
     
-@app.route('/add_ingredients', methods=['POST'])
-def add_ingredients():
-    return render_template('add_ingredients.html')
-
 @app.route('/show_recipe', methods=['GET', 'POST'])
 def show_recipe():
     return render_template("show_recipe.html", 
