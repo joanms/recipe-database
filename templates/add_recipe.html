@@ -6,12 +6,14 @@
     
                 <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
-                    <!--The title of the recipe-->
+                    <!--The title and category of the recipe-->
                     <div class="row">
+                        
                         <div class="input-field col s9">
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
                             <label for="recipe_name">Recipe Title*</label>
                         </div>
+                        
                         <div class="input-field col s3">
                             <select id="category_name" name="category_name">
                                 <option value="" disabled selected>Category*</option>
@@ -23,7 +25,8 @@
                                 <option value="Desserts">Desserts</option>
                             </select>
                         </div>
-                    </div>
+                        
+                    </div> <!--End of title and category row-->
                     
                     
                     <div class="row">
@@ -40,7 +43,7 @@
                             <label for="origin">Country of Origin</label>
                         </div>
                         
-                    </div> <!--End of author information row-->
+                    </div> <!--End of author and origin row-->
      
                     
                     <div class="row">
