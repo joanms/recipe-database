@@ -26,12 +26,35 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('show_recipe'))
     
+# This is based on code from the Code Institute Data-Centric Development Mini Project
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     return render_template(
         'edit_recipe.html', recipe=the_recipe, categories=all_categories)
+        
+@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+def update_recipe(recipe_id):
+    mongo.db.recipes.update(
+        {'_id': ObjectId(recipe_id)},
+        {
+            'recipe_name': request.form.get('recipe_name'),
+            'category_name': request.form.get('category_name'),
+            'author': request.form.get('author'),
+            'origin': request.form.get('origin'),
+            'servings': request.form.get('servings'),
+            'prep_time': request.form.get('prep_time'),
+            'marinate_time': request.form.get('marinate_time'),
+            'cook_time': request.form.get('cook_time'),
+            'allergens': request.form.get('allergens'),
+            'vegetarian': request.form.get('vegetarian'),
+            'vegan': request.form.get('vegan'),
+            'ingredients': request.form.get('allergens'),
+            'method': request.form.get('vegetarian'),
+        })
+    return redirect(url_for('show_recipe'))
+        
     
 @app.route('/show_recipe', methods=['GET', 'POST'])
 def show_recipe():
