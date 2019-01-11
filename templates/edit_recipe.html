@@ -4,18 +4,18 @@
     <h2>Edit the Recipe</h2>
     <h3>Fields marked with an asterisk are required</h3>
     
-                <form action="{{ url_for('edit_recipe', task_id=recipe._id) }}" method="POST" class="col s12">
+                <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
                     
                     <!--The title and category of the recipe-->
                     <div class="row">
                         
                         <div class="input-field col s9">
-                            <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" required>
                             <label for="recipe_name">Recipe Title*</label>
                         </div>
                         
                         <div class="input-field col s3">
-                            <select id="category_name" name="category_name">
+                            <select id="category" name="category" value="{{recipe.category}}">
                                 <option value="" disabled selected>Category*</option>
                                 <option value="Bread and Baked Goods">Bread and Baked Goods</option>
                                 <option value="Snacks, Soup and Starters">Snacks, Soup and Starters</option>
@@ -33,13 +33,13 @@
                         
                         <!--The name of the author-->
                         <div class="input-field col s6">
-                            <input id="author" name="author" type="text" class="validate">
+                            <input id="author" name="author" type="text" class="validate" value="{{recipe.author}}">
                             <label for="author">Author</label>
                         </div>
                         
                         <!--The recipe's country of origin-->
                         <div class="input-field col s6">
-                            <input id="origin" name="origin" type="text" class="validate">
+                            <input id="origin" name="origin" type="text" class="validate" value="{{recipe.origin}}">
                             <label for="origin">Country of Origin</label>
                         </div>
                         
@@ -50,13 +50,13 @@
                         
                         <!--The number of servings the recipe makes-->
                         <div class="input-field col s6">
-                            <input id="servings" name="servings" type="text" class="validate" required>
+                            <input id="servings" name="servings" type="text" class="validate" value="{{recipe.servings}}" required>
                             <label for="servings">Number of Servings*</label>
                         </div>
                         
                         <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
                         <div class="input-field col s6">
-                            <input id="prep_time" name="prep_time" type="text" class="validate" required>
+                            <input id="prep_time" name="prep_time" type="text" class="validate" value="recipe.prep_time}}" required>
                             <label for="prep_time">Preparation Time*</label>
                         </div>
                         
@@ -67,13 +67,13 @@
                         
                         <!--The time needed to marindade the recipe, if applicable-->
                         <div class="input-field col s6">
-                            <input id="marinate_time" name="marinate_time" type="text" class="validate">
+                            <input id="marinate_time" name="marinate_time" type="text" value="{{recipe.marinate_time}}" class="validate">
                             <label for="marinate_time">Marinate Time</label>
                         </div>
                         
                         <!--The time needed to cook the recipe-->
                         <div class="input-field col s6">
-                            <input id="cook_time" name="cook_time" type="text" class="validate" required>
+                            <input id="cook_time" name="cook_time" type="text" class="validate" value="{{recipe.cook_time}}" required>
                             <label for="cook_time">Cook Time*</label>
                         </div>
                         
@@ -85,7 +85,7 @@
                         
                         <!--Allergens-->
                         <div class="input-field col s6">
-                            <input id="allergens" name="allergens" type="text" class="validate">
+                            <input id="allergens" name="allergens" type="text" value="{{recipe.allergens}}" class="validate">
                             <label for="allergens">Allergens</label>
                         </div>
                         
@@ -93,7 +93,7 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input id="vegetarian" name="vegetarian" type="checkbox">
+                                    <input id="vegetarian" name="vegetarian" type="checkbox" value="{{recipe.vegetarian}}">
                                     <span class="lever"></span>
                                     Vegetarian
                                 </label>
@@ -104,7 +104,7 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input id="vegan" name="vegan" type="checkbox">
+                                    <input id="vegan" name="vegan" type="checkbox" value="{{recipe.vegan}}">
                                     <span class="lever"></span>
                                     Vegan
                                 </label>
@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="ingredients" name="ingredients" class="materialize-textarea" required></textarea>
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea" value="{{recipe.ingredients}}" required></textarea>
                                 <label for="ingredients">Ingredients*:</label>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="method" name="method" class="materialize-textarea" required></textarea>
+                                <textarea id="method" name="method" class="materialize-textarea" value="{{recipe.method}}" required></textarea>
                                 <label for="method">Method*:</label>
                             </div>
                         </div>
@@ -136,8 +136,8 @@
                     
                     <!--Button to submit the recipe-->
                     <div class="row">
-                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Add Recipe
-                            <i class="material-icons right">playlist_add</i>
+                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Update Recipe
+                            <i class="material-icons right">update</i>
                         </button>
                     </div>
                     

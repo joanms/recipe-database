@@ -54,7 +54,6 @@ def update_recipe(recipe_id):
             'method': request.form.get('vegetarian'),
         })
     return redirect(url_for('show_recipe'))
-        
     
 @app.route('/show_recipe', methods=['GET', 'POST'])
 def show_recipe():
