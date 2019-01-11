@@ -82,7 +82,8 @@ label {
    }
    
 .btn {
-    margin: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     width: 225px;
     text-align: left;
 }   
