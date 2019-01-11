@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 
-        <!--Loop through recipes to display-->
+        <!--Loop through recipes in the database-->
         {% for recipe in recipes %}
             <h2>{{recipe.recipe_name}}</h2>
             
@@ -9,32 +9,38 @@
                 <!--Information about the recipe-->
                 <div class="col l3" id="information">
                     <h3>Information</h3>
-                    <!--Optional text to display if the recipe contains common allergens-->
                     <div class="body-text">
+                        
+                        <!--Optional text to display if the recipe contains allergens-->
                         {% if recipe.allergens %}
                             <p>Contains {{recipe.allergens}}</p>
                         {% endif %}
                         
-                        <!--Optional text to display if the recipe is suitable for vegetarians and/or vegans-->
+                        <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
                         {% if recipe.vegetarian and not recipe.vegan %}
                             <p>Suitable for vegetarians</p>
                         {% endif %}
-                        
                         {% if recipe.vegan %}
                             <p>Suitable for vegans and vegetarians</p>
                         {% endif %}    
     
+                        <!--Optional text for the recipe's author-->
                         {% if recipe.author %}
                             <em>Author:</em> {{recipe.author}}<br>
                         {% endif %}
 
+                        <!--The recipe's category-->
                         <em>Category:</em> {{recipe.category_name}} <br>
                         
+                        <!--Optional text for the recipe's country of origin-->
                         {% if recipe.origin %}
                             <em>Country of Origin:</em> {{recipe.origin}}<br>
                         {% endif %}
                         
+                        <!--Number of servings-->
                         <em>Serves:</em> {{recipe.servings}}<br>
+                        
+                        <!--Preparation time, not counting cooking and marindading time-->
                         <em>Preparation Time:</em> {{recipe.prep_time}}<br>
             
                         <!--Optional text for marinade-->
@@ -42,13 +48,18 @@
                             <em>Marinate Time:</em> {{recipe.marinate_time}}<br>
                         {% endif %}
                         
+                        <!--Time needed to cook the recipe-->
                         <em>Cook Time:</em> {{recipe.cook_time}} </p>
                     </div>
                     
+                    <!--Button to edit a recipe-->
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
                         <i class="material-icons right">edit</i>Edit Recipe</a>
+                        
+                    <!--Button to delete a recipe-->
                     <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
-                        <button type="submit" class="waves-effect waves-light btn red darken-4"><i class="material-icons right">delete</i>Delete Recipe</button>
+                        <button type="submit" class="waves-effect waves-light btn red darken-4">
+                            <i class="material-icons right">delete</i>Delete Recipe</button>
                     </form>
         
                     
