@@ -65,7 +65,7 @@ def show_recipe():
 @app.route('/warning', methods=['POST'])
 def warning():
     if request.method == 'POST':
-        flash("Are you sure you want to delete this recipe?")
+        flash("WARNING! The recipe will be permanently deleted. Are you sure you want to proceed?")
     return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())
 
