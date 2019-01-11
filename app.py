@@ -60,7 +60,11 @@ def submit_changes(recipe_id):
 def show_recipe():
     return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())
-    
+
+@app.route('/delete_recipe/<recipe_id>', methods=['POST'])
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('show_recipe'))
 
     
 if __name__ == '__main__':
