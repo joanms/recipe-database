@@ -1,11 +1,12 @@
 import os
 
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from wtforms import Form, BooleanField, TextField, validators
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 app.config['MONGO_DBNAME'] = 'recipedb'
 app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
@@ -58,6 +59,13 @@ def submit_changes(recipe_id):
     
 @app.route('/show_recipe', methods=['GET', 'POST'])
 def show_recipe():
+    return render_template("show_recipe.html", 
+    recipes=mongo.db.recipes.find())
+
+@app.route('/warning', methods=['POST'])
+def warning():
+    if request.method == 'POST':
+        flash("Are you sure you want to delete this recipe?")
     return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())
 
