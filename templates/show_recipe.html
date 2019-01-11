@@ -54,12 +54,12 @@
                     
                     <!--Button to edit a recipe-->
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                        <i class="material-icons right">edit</i>Edit</a>
+                        <i class="material-icons right">edit</i>Edit Recipe</a>
                         
                     <!--Button to delete a recipe-->
                     <form action="{{url_for('warning')}}" method="POST">
                         <button type="submit" class="waves-effect waves-light btn red darken-4">
-                            <i class="material-icons right">delete</i>Delete</button>
+                            <i class="material-icons right">delete</i>Delete Recipe</button>
                     </form>
                             
                     <!--If the DELETE RECIPE button is clicked, a warning appears-->
