@@ -17,12 +17,10 @@
                         <div class="input-field col s3">
                             <select id="category" name="category_name">
                                 <option value="" disabled selected>Category*</option>
-                                <option value="Bread and Baked Goods">Bread and Baked Goods</option>
-                                <option value="Desserts">Desserts</option>
-                                <option value="Mains">Mains</option>
-                                <option value="Sauces">Sauces</option>
-                                <option value="Sides">Sides</option>
-                                <option value="Snacks, Soup and Starters">Snacks, Soup and Starters</option>
+                                <!--The following for loop pulls the list of category names from the categories collection in the database-->
+                                {% for cat in categories %}
+                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         

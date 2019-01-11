@@ -18,7 +18,8 @@ def index():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('add_recipe.html')
+    return render_template(
+        'add_recipe.html', categories=mongo.db.categories.find())
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
 def insert_recipe():
