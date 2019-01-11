@@ -6,14 +6,20 @@
     
                 <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
-                    <!--The title and category of the recipe-->
+                    <!--The recipe's title, author and category-->
                     <div class="row">
                         
-                        <div class="input-field col s9">
+                        <div class="input-field col s6">
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
                             <label for="recipe_name">Recipe Title*</label>
                         </div>
                         
+                        <!--The name of the author-->
+                        <div class="input-field col s3">
+                            <input id="author" name="author" type="text" class="validate">
+                            <label for="author">Author</label>
+                        </div>
+
                         <div class="input-field col s3">
                             <select id="category" name="category_name">
                                 <option value="" disabled selected>Category*</option>
@@ -24,24 +30,46 @@
                             </select>
                         </div>
                         
-                    </div> <!--End of title and category row-->
+                    </div> <!--End of title, author and category row-->
                     
                     
-                    <div class="row">
-                        
-                        <!--The name of the author-->
-                        <div class="input-field col s6">
-                            <input id="author" name="author" type="text" class="validate">
-                            <label for="author">Author</label>
-                        </div>
+                    <div class="row"> <!--Country of origin and dietary restrictions-->
                         
                         <!--The recipe's country of origin-->
-                        <div class="input-field col s6">
+                        <div class="input-field col s4">
                             <input id="origin" name="origin" type="text" class="validate">
                             <label for="origin">Country of Origin</label>
                         </div>
                         
-                    </div> <!--End of author and origin row-->
+                        <!--Allergens-->
+                        <div class="input-field col s4">
+                            <input id="allergens" name="allergens" type="text" class="validate">
+                            <label for="allergens">Allergens</label>
+                        </div>
+                        
+                        <!--Selector to indicate if the recipe is suitable for vegetarians-->
+                        <div class="col s2">
+                            <div class="switch">
+                                <label>
+                                    <input id="vegetarian" name="vegetarian" type="checkbox">
+                                    <span class="lever"></span>
+                                    Vegetarian
+                                </label>
+                            </div> 
+                        </div> <!--End of vegetarian selector-->
+                        
+                        <!--Selector to indicate if the recipe is suitable for vegans-->
+                        <div class="col s2">
+                            <div class="switch">
+                                <label>
+                                    <input id="vegan" name="vegan" type="checkbox">
+                                    <span class="lever"></span>
+                                    Vegan
+                                </label>
+                            </div>
+                        </div> <!--End of vegan selector-->
+
+                    </div> <!--End of country of origin and dietary restrictions-->
      
                     
                     <div class="row"> <!--Recipe statistics-->
@@ -72,40 +100,7 @@
                         
                     </div> <!--End of recipe statistics-->
                     
-                    <!--Dietary restrictions-->
-                    <div class="row">
-                        
-                        <!--Allergens-->
-                        <div class="input-field col s6">
-                            <input id="allergens" name="allergens" type="text" class="validate">
-                            <label for="allergens">Allergens</label>
-                        </div>
-                        
-                        <!--Selector to indicate if the recipe is suitable for vegetarians-->
-                        <div class="col s3">
-                            <div class="switch">
-                                <label>
-                                    <input id="vegetarian" name="vegetarian" type="checkbox">
-                                    <span class="lever"></span>
-                                    Vegetarian
-                                </label>
-                            </div> 
-                        </div> <!--End of vegetarian selector-->
-                        
-                        <!--Selector to indicate if the recipe is suitable for vegans-->
-                        <div class="col s3">
-                            <div class="switch">
-                                <label>
-                                    <input id="vegan" name="vegan" type="checkbox">
-                                    <span class="lever"></span>
-                                    Vegan
-                                </label>
-                            </div>
-                        </div> <!--End of vegan selector-->
-                        
-                    </div> <!--End of dietary restrictions row-->
-                    
-                    
+
                     <!--Input field for the ingredients-->
                     <div class="row">
                         <div class="input-field col s12">
