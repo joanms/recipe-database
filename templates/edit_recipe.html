@@ -4,7 +4,7 @@
     <h2>Edit the Recipe</h2>
     <h3>Fields marked with an asterisk are required</h3>
     
-                <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+                <form action="{{ url_for('submit_changes', recipe_id=recipe._id) }}" method="POST" class="col s12">
                     
                     <!--The title and category of the recipe-->
                     <div class="row">

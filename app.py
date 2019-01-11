@@ -35,8 +35,8 @@ def edit_recipe(recipe_id):
     return render_template(
         'edit_recipe.html', recipe=the_recipe, categories=all_categories)
         
-@app.route('/update_recipe/<recipe_id>', methods=['POST'])
-def update_recipe(recipe_id):
+@app.route('/submit_changes/<recipe_id>', methods=['POST'])
+def submit_changes(recipe_id):
     mongo.db.recipes.update(
         {'_id': ObjectId(recipe_id)},
         {
