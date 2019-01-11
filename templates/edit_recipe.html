@@ -15,14 +15,12 @@
                         </div>
                         
                         <div class="input-field col s3">
-                            <select id="category" name="category" value="{{recipe.category}}">
-                                <option value="" disabled selected>Category*</option>
-                                <option value="Bread and Baked Goods">Bread and Baked Goods</option>
-                                <option value="Snacks, Soup and Starters">Snacks, Soup and Starters</option>
-                                <option value="Sauces">Sauces</option>
-                                <option value="Mains">Mains</option>
-                                <option value="Sides">Sides</option>
-                                <option value="Desserts">Desserts</option>
+                            <select id="category" name="category_name">
+                                {% for category in categories %}
+                                    <option value="{{category.category_name}}"
+                                        {% if category.category_name == recipe.category_name %} selected {% endif %}
+                                    >{{category.category_name}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         
@@ -56,7 +54,7 @@
                         
                         <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
                         <div class="input-field col s6">
-                            <input id="prep_time" name="prep_time" type="text" class="validate" value="recipe.prep_time}}" required>
+                            <input id="prep_time" name="prep_time" type="text" class="validate" value="{{recipe.prep_time}}" required>
                             <label for="prep_time">Preparation Time*</label>
                         </div>
                         
@@ -93,7 +91,8 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input id="vegetarian" name="vegetarian" type="checkbox" value="{{recipe.vegetarian}}">
+                                    <input id="vegetarian" name="vegetarian" type="checkbox"
+                                        {% if recipe.vegetarian %} checked {% endif %}>
                                     <span class="lever"></span>
                                     Vegetarian
                                 </label>
@@ -104,7 +103,8 @@
                         <div class="col s3">
                             <div class="switch">
                                 <label>
-                                    <input id="vegan" name="vegan" type="checkbox" value="{{recipe.vegan}}">
+                                    <input id="vegan" name="vegan" type="checkbox" 
+                                        {% if recipe.vegan %} checked {% endif %}>
                                     <span class="lever"></span>
                                     Vegan
                                 </label>
@@ -116,28 +116,24 @@
                     
                     <!--Input field for the ingredients-->
                     <div class="row">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="ingredients" name="ingredients" class="materialize-textarea" value="{{recipe.ingredients}}" required></textarea>
-                                <label for="ingredients">Ingredients*:</label>
-                            </div>
+                        <div class="input-field col s12">
+                            <textarea id="ingredients" name="ingredients" class="materialize-textarea" value="{{recipe.ingredients}}" required></textarea>
+                            <label for="ingredients">Ingredients*</label>
                         </div>
                     </div> <!--End of ingredients-->
                     
                     <!--Input field for the method-->
                     <div class="row">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="method" name="method" class="materialize-textarea" value="{{recipe.method}}" required></textarea>
-                                <label for="method">Method*:</label>
-                            </div>
+                        <div class="input-field col s12">
+                            <textarea id="method" name="method" class="materialize-textarea" value="{{recipe.method}}" required></textarea>
+                            <label for="method">Method*</label>
                         </div>
                     </div> <!--End of method-->
                     
-                    <!--Button to submit the recipe-->
+                    <!--Button to submit the changes-->
                     <div class="row">
-                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Update Recipe
-                            <i class="material-icons right">update</i>
+                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit Changes
+                            <i class="material-icons right">send</i>
                         </button>
                     </div>
                     

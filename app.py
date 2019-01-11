@@ -50,8 +50,8 @@ def update_recipe(recipe_id):
             'allergens': request.form.get('allergens'),
             'vegetarian': request.form.get('vegetarian'),
             'vegan': request.form.get('vegan'),
-            'ingredients': request.form.get('allergens'),
-            'method': request.form.get('vegetarian'),
+            'ingredients': request.form.get('ingredients'),
+            'method': request.form.get('method'),
         })
     return redirect(url_for('show_recipe'))
     
