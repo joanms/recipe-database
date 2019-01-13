@@ -106,7 +106,7 @@
                     <!--Input field for the ingredients-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="ingredients" name="ingredients" class="materialize-textarea" value="{{recipe.ingredients}}" required></textarea>
+                            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required>{{recipe.ingredients}}</textarea>
                             <label for="ingredients">Ingredients*</label>
                         </div>
                     </div> <!--End of ingredients-->
@@ -114,7 +114,7 @@
                     <!--Input field for the method-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="method" name="method" class="materialize-textarea" value="{{recipe.method}}" required></textarea>
+                            <textarea id="method" name="method" class="materialize-textarea" required>{{recipe.method}}</textarea>
                             <label for="method">Method*</label>
                         </div>
                     </div> <!--End of method-->
@@ -127,6 +127,6 @@
                     </div>
                     
                 </form>
-
+                
 
 {% endblock %}
