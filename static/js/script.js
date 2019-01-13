@@ -7,3 +7,7 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('select').formSelect();
 });
+
+$(document).ready(function(){
+    $('.materialize-textarea').trigger('autoresize');
+});
