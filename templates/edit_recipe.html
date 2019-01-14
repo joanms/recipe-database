@@ -1,8 +1,8 @@
 {% extends 'base.html'%} {% block content %}
 
 
-    <h2>Edit the Recipe</h2>
-    <h3>Fields marked with an asterisk are required</h3>
+    <h1>Edit the Recipe</h1>
+    <h2>Fields marked with an asterisk are required</h2>
     
                 <form action="{{ url_for('submit_changes', recipe_id=recipe._id) }}" method="POST" class="col s12">
                     
@@ -22,12 +22,14 @@
 
                         <div class="input-field col s3">
                             <select id="category" name="category_name">
+                                <option value="" disabled selected>Click to Select</option>
                                 {% for category in categories %}
                                     <option value="{{category.category_name}}"
                                         {% if category.category_name == recipe.category_name %} selected {% endif %}
                                     >{{category.category_name}}</option>
                                 {% endfor %}
                             </select>
+                            <label>Category*</label>
                         </div>
                         
                     </div> <!--End of title, author and category row-->
