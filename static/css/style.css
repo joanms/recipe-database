@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700|Open+Sans:600');
 
 
 /*Main body styles*/
@@ -21,18 +21,20 @@ body {
 h1 {
     font-family: "Fondamento", cursive;
     font-size: 3em;
-    font-weight: 700;
     text-align: center;
 }
 
 h2 {
     font-family: "Fondamento", cursive;
     font-size: 1.875em;
-    font-weight: 700;
 }
 
 
 /*Text Content*/
+.nav-wrapper {
+    font-family: "Open Sans", sans-serif;
+}
+
 body {
     font-family: "Merriweather", serif;
     font-size: 0.875em;
@@ -73,11 +75,11 @@ label {
    }
    
 .btn {
+    font-family: "Open Sans", sans-serif;
     margin-bottom: 20px;
     margin-right: 20px;
     width: 225px;
     text-align: left;
-    font-size: .8em;
 }   
 
 /*Media Queries*/
