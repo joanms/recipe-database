@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Merriweather:400,700|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,700');
 
 
 /*Main body styles*/
 body {
     background-color: #fff8e1;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+    line-height: 2em;
 }
 
 .container {
@@ -33,13 +36,6 @@ h2 {
 /*Text Content*/
 .nav-wrapper {
     font-family: "Open Sans", sans-serif;
-}
-
-body {
-    font-family: "Merriweather", serif;
-    font-size: 0.875em;
-    font-weight: 400;
-    line-height: 2em;
 }
 
 #information {
