@@ -2,14 +2,14 @@
 
         <!--Loop through recipes in the database-->
         {% for recipe in recipes %}
-            <h2>{{recipe.recipe_name}}</h2>
+            <h1>{{recipe.recipe_name}}</h1>
             
             <div  class= "row">
                 
                 <!--Information about the recipe-->
                 <div class="col s12 l3" id="information">
-                    <h3>Information</h3>
-                    <div class="body-text">
+                    <h2>Information</h2>
+                    <div>
                         
                         <!--Optional text to display if the recipe contains allergens-->
                         {% if recipe.allergens %}
@@ -66,7 +66,7 @@
                     {% with messages = get_flashed_messages() %} {% if messages %}
                         {% for message in messages %}
                         
-                        <p class="body-text" id="flash">{{ message }}</p>
+                        <p id="flash">{{ message }}</p>
                         
                         <!--Clicking this button confirms the deletion-->
                         <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
@@ -88,13 +88,13 @@
     
                 <!--Ingredients-->
                 <div class="col s12 l4" id="ingredients">
-                <h3>Ingredients</h3>
+                <h2>Ingredients</h2>
                     <pre>{{recipe.ingredients}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
-                <div class="col s12 l5 body-text" id="method">
-                    <h3>Method</h3>
+                <div class="col s12 l5 " id="method">
+                    <h2>Method</h2>
                     <pre>{{recipe.method}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of preparation instructions-->
                 
