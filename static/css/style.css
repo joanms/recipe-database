@@ -13,26 +13,20 @@ body {
 
 .brand-logo {
     font-family: "Fondamento", cursive;
-    font-size: 50px !important;
+    font-size: 4em !important;
 }
 
 
 /*Headings*/
 h2 {
     font-family: "Fondamento", cursive;
-    font-size: 40px;
+    font-size: 2.5em;
     text-align: center;
 }
 
 h3 {
     font-family: "Merriweather", serif;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-h4 {
-    font-family: "Merriweather", serif;
-    font-size: 16px;
+    font-size: 1.25em;
     font-weight: 700;
 }
 
@@ -40,7 +34,7 @@ h4 {
 /*Text Content*/
 .body-text {
     font-family: "Merriweather", serif;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 400;
     line-height: 24px;
 }
