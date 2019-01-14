@@ -70,9 +70,10 @@ pre {
      color: inherit;
    }
 
-.switch {
-     font-family: "Open Sans", sans-serif;
-     color: #000 !important;
+label {
+     font-family: inherit;
+     font-size: inherit;
+     color: inherit;
 }
    
 .btn {
