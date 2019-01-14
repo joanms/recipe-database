@@ -64,15 +64,20 @@ pre {
 
 /*Form Styles*/
 
-  /* label color */
-label {
-    color: #000;
-    font-size: 15px;
-}
-
-   .input-field label {
-     color: #000;
+.input-field {
+     font-family: "Open Sans", sans-serif;
+     color: #000 !important;
    }
+   
+   .input-field label {
+     font-family: inherit;
+     color: inherit;
+   }
+
+.switch {
+     font-family: "Open Sans", sans-serif;
+     color: #000 !important;
+}
    
 .btn {
     font-family: "Open Sans", sans-serif;
