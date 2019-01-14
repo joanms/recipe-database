@@ -23,11 +23,12 @@
                         <div class="input-field col s3">
                             <select id="category" name="category_name">
                                 <!--The following for loop pulls the list of category names from the categories collection in the database-->
-                                <option value="" disabled selected>Category*</option>
+                                <option value="" disabled selected>Click to Select</option>
                                 {% for cat in categories %}
                                 <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                                 {% endfor %}
                             </select>
+                            <label>Category*</label>
                         </div>
                         
                     </div> <!--End of title, author and category row-->
