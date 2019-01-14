@@ -7,7 +7,7 @@
             <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div class="col l3" id="information">
+                <div class="col s12 l3" id="information">
                     <h3>Information</h3>
                     <div class="body-text">
                         
@@ -65,6 +65,7 @@
                     <!--If the DELETE RECIPE button is clicked, a warning appears-->
                     {% with messages = get_flashed_messages() %} {% if messages %}
                         {% for message in messages %}
+                        
                         <p class="body-text" id="flash">{{ message }}</p>
                         
                         <!--Clicking this button confirms the deletion-->
@@ -80,19 +81,19 @@
                         </form>
                         
                         {% endfor %}
-                    {% endif %} {% endwith %}
+                    {% endif %} {% endwith %} <!--End of loop through flashed-->
         
                     
                 </div> <!--End of information-->
     
                 <!--Ingredients-->
-                <div class="col l4" id="ingredients">
+                <div class="col s12 l4" id="ingredients">
                 <h3>Ingredients</h3>
                     <pre>{{recipe.ingredients}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of ingredients-->
                 
                 <!--Preparation instructions-->
-                <div class="col l5 body-text" id="method">
+                <div class="col s12 l5 body-text" id="method">
                     <h3>Method</h3>
                     <pre>{{recipe.method}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
                 </div> <!--End of preparation instructions-->
