@@ -87,7 +87,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The logo is a free stock image from [Pixabay](https://pixabay.com/).
+- The images are free stock images from [Pixabay](https://pixabay.com/).
 
 ### Acknowledgements
 
