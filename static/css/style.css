@@ -19,6 +19,9 @@ body {
     font-size: 4em !important;
 }
 
+.category {
+    text-align: center;
+}
 
 /*Headings*/
 h1 {
@@ -30,6 +33,7 @@ h1 {
 h2 {
     font-family: "Fondamento", cursive;
     font-size: 1.875em;
+    text-align: center;
 }
 
 
