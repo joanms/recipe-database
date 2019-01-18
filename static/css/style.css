@@ -23,6 +23,12 @@ body {
     text-align: center;
 }
 
+.illustration {
+    border:1px solid black;
+    width: 320px;
+}
+
+
 /*Headings*/
 h1 {
     font-family: "Fondamento", cursive;
