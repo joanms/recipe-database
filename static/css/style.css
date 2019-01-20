@@ -17,6 +17,10 @@ nav {
     font-family: "Open Sans", sans-serif;
 }
 
+/*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
+.navbar-fixed { 
+    z-index: 9999; 
+}
 
 /*Body*/
 
