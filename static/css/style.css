@@ -3,11 +3,6 @@
 
 /*Nav*/
 
-.brand-logo {
-    font-family: "Fondamento", cursive;
-    font-size: 4em !important;
-}
-
 nav {
     height: 100px;
     line-height: 100px;
@@ -17,15 +12,21 @@ nav {
     font-family: "Open Sans", sans-serif;
 }
 
+.brand-logo {
+    font-family: "Fondamento", cursive;
+    font-size: 3.5em !important;
+}
+
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
 .navbar-fixed { 
     z-index: 9999; 
 }
 
-/*Body*/
+
+/*Main content*/
 
 .container {
-    margin-top: 100px;
+    margin-top: 70px;
     width: 80vw;
 }
 
@@ -34,7 +35,7 @@ nav {
 
 h1 {
     font-family: "Fondamento", cursive;
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -57,7 +58,7 @@ h2 {
 }
 
 
-/*Main content*/
+/*Main text*/
 
 body {
     background-color: #fff8e1;
@@ -115,8 +116,19 @@ label {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1265px) {
 .brand-logo {
-    font-size: 40px !important;
+    font-size: 2.5em !important;
+    }
+    
+h1 {
+    font-size: 2em;
+    }
+
+h2 {
+    font-size: 1.5em;
+    } 
+.illustration {
+    width: 270px;
     }
 }
