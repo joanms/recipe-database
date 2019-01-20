@@ -132,3 +132,9 @@ h2 {
     width: 270px;
     }
 }
+
+@media only screen and (max-width: 729px) {
+    .brand-logo {
+    font-size: 1.5em !important;
+    }
+}
