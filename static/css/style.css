@@ -1,35 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,700');
 
 
-/*Main body styles*/
-body {
-    background-color: #fff8e1;
-    font-family: "Open Sans", serif;
-    font-weight: 400;
-    line-height: 2em;
-}
-
-.container {
-    margin-top: 100px;
-    width: 80vw;
-}
+/*Nav*/
 
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 4em !important;
 }
 
-.category {
-    text-align: center;
+nav {
+    height: 100px;
+    line-height: 100px;
 }
 
-.illustration {
-    border:1px solid black;
-    width: 320px;
+.nav-wrapper {
+    font-family: "Open Sans", sans-serif;
+}
+
+
+/*Body*/
+
+.container {
+    margin-top: 100px;
+    width: 80vw;
 }
 
 
 /*Headings*/
+
 h1 {
     font-family: "Fondamento", cursive;
     font-size: 3em;
@@ -43,9 +41,25 @@ h2 {
 }
 
 
-/*Text Content*/
-.nav-wrapper {
-    font-family: "Open Sans", sans-serif;
+/*Landing Page*/
+
+.category {
+    text-align: center;
+}
+
+.illustration {
+    border:1px solid black;
+    width: 320px;
+}
+
+
+/*Main content*/
+
+body {
+    background-color: #fff8e1;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+    line-height: 2em;
 }
 
 #information {
@@ -68,7 +82,7 @@ pre {
 }   
 
 
-/*Form Styles*/
+/*Forms*/
 
 .input-field {
      font-family: "Open Sans", sans-serif;
@@ -94,7 +108,9 @@ label {
     text-align: left;
 }   
 
+
 /*Media Queries*/
+
 @media only screen and (max-width: 992px) {
 .brand-logo {
     font-size: 40px !important;
