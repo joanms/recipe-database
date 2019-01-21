@@ -121,14 +121,19 @@
                         </div>
                     </div> <!--End of method-->
                     
-                    <!--Button to submit the changes-->
                     <div class="row">
+                        
+                        <!--Button to submit the changes-->
                         <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
                         </button>
-                    </div>
+                        
+                        <!--Button to cancel the changes and go back to the recipe display page-->
+                        <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                            <i class="material-icons right">close</i>Cancel</a>
                     
+                    </div>
+
                 </form>
                 
-
 {% endblock %}
