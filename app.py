@@ -26,7 +26,7 @@ def add_recipe():
 def insert_recipe():
     recipes =  mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('show_recipes'))
+    return redirect(url_for('list_recipes'))
     
 # This is based on code from the Code Institute Data-Centric Development Mini Project
 @app.route('/edit_recipe/<recipe_id>')
@@ -55,7 +55,7 @@ def submit_changes(recipe_id):
             'ingredients': request.form.get('ingredients'),
             'method': request.form.get('method'),
         })
-    return redirect(url_for('show_recipes'))
+    return redirect(url_for('show_recipe'))
     
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
@@ -66,13 +66,13 @@ def list_recipes():
 def warning():
     if request.method == 'POST':
         flash("WARNING! The recipe will be permanently deleted. Are you sure you want to proceed?")
-    return render_template("show_recipes.html", 
+    return render_template("show_recipe.html", 
     recipes=mongo.db.recipes.find())
 
 @app.route('/delete_recipe/<recipe_id>', methods=['POST'])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('show_recipes'))
+    return redirect(url_for('list_recipes'))
 
     
 if __name__ == '__main__':
