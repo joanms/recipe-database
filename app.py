@@ -64,19 +64,13 @@ def list_recipes():
     return render_template("list_recipes.html", 
     recipes=mongo.db.recipes.find())
 
-@app.route('/warning', methods=['POST'])
-def warning():
-    if request.method == 'POST':
-        flash("WARNING! The recipe will be permanently deleted. Are you sure you want to proceed?")
-    return render_template("show_recipe.html", 
-    recipes=mongo.db.recipes.find())
 
 @app.route('/show_recipe/<recipe_id>')
 def show_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template(
         'show_recipe.html', recipe=the_recipe)
-
+        
 @app.route('/delete_recipe/<recipe_id>', methods=['POST'])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
