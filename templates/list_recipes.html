@@ -3,49 +3,48 @@
         <h1>Recipes</h1>
         
         <!--Loop through recipes in the database-->
+        
         {% for recipe in recipes %}
-            <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"><h2>{{recipe.recipe_name}}</h2></a>
-            
-                        <!--Optional text to display if the recipe contains allergens-->
+        
+            <h2>{{recipe.recipe_name}}</h2>
+                    
+            <!--The recipe's category-->
+            <strong>Category:</strong> {{recipe.category_name}} <br>
 
-                        <!--The recipe's category-->
-                        <strong>Category:</strong> {{recipe.category_name}} <br>
-
-                        {% if recipe.allergens %}
-                            Contains {{recipe.allergens}}<br>
-                        {% endif %}
+            <!--Optional text to display if the recipe contains allergens-->
+            {% if recipe.allergens %}
+                Contains {{recipe.allergens}}<br>
+            {% endif %}
                         
-                        <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
-                        {% if recipe.vegetarian and not recipe.vegan %}
-                            Suitable for vegetarians</p>
-                        {% endif %}
-                        {% if recipe.vegan %}
-                            <p>Suitable for vegans and vegetarians<br>
-                        {% endif %}    
+            <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
+            {% if recipe.vegetarian and not recipe.vegan %}
+                Suitable for vegetarians<br>
+            {% endif %}
+            {% if recipe.vegan %}
+                Suitable for vegans and vegetarians<br>
+            {% endif %}    
     
+            <!--Number of servings-->
+            {% if recipe.servings %}
+                <strong>Serves:</strong> {{recipe.servings}}<br>
+            {% endif %}
                         
-                        <!--Number of servings-->
-                        {% if recipe.servings %}
-                            <strong>Serves:</strong> {{recipe.servings}}<br>
-                        {% endif %}
-                        
-                        <!--Preparation time, not counting cooking and marindading time-->
-                        {% if recipe.prep_time %}
-                            <strong>Preparation Time:</strong> {{recipe.prep_time}}<br>
-                        {% endif %}
+            <!--Preparation time, not counting cooking and marindading time-->
+            {% if recipe.prep_time %}
+                <strong>Preparation Time:</strong> {{recipe.prep_time}}<br>
+            {% endif %}
             
-                        <!--Optional text for marinade-->
-                        {% if recipe.marinate_time %}
-                            <strong>Marinate Time:</strong> {{recipe.marinate_time}}<br>
-                        {% endif %}
+            <!--Optional text for marinade-->
+            {% if recipe.marinate_time %}
+                <strong>Marinate Time:</strong> {{recipe.marinate_time}}<br>
+            {% endif %}
                         
-                        <!--Time needed to cook the recipe-->
-                        {% if recipe.cook_time %}
-                            <strong>Cook Time:</strong> {{recipe.cook_time}} <br>
-                        {% endif %}
+            <!--Time needed to cook the recipe-->
+            {% if recipe.cook_time %}
+                <strong>Cook Time:</strong> {{recipe.cook_time}} <br>
+            {% endif %}
 
 
-
-        {% endfor %} <!--End of loop through recipes-->
+    {% endfor %} <!--End of loop through recipes-->
 
 {% endblock %}
