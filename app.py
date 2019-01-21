@@ -55,7 +55,9 @@ def submit_changes(recipe_id):
             'ingredients': request.form.get('ingredients'),
             'method': request.form.get('method'),
         })
-    return redirect(url_for('show_recipe'))
+    the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template(
+        'show_recipe.html', recipe=the_recipe)
     
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
