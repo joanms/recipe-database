@@ -1,0 +1,58 @@
+{% extends 'base.html'%} {% block content %}
+
+        <h1>Recipes</h1>
+        
+        <!--Loop through recipes in the database-->
+        {% for recipe in recipes %}
+            <h2>{{recipe.recipe_name}}</h2>
+                        <!--Optional text to display if the recipe contains allergens-->
+                        {% if recipe.allergens %}
+                            <p>Contains {{recipe.allergens}}</p>
+                        {% endif %}
+                        
+                        <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
+                        {% if recipe.vegetarian and not recipe.vegan %}
+                            <p>Suitable for vegetarians</p>
+                        {% endif %}
+                        {% if recipe.vegan %}
+                            <p>Suitable for vegans and vegetarians</p>
+                        {% endif %}    
+    
+                        <!--Optional text for the recipe's author-->
+                        {% if recipe.author %}
+                            <em>Author:</em> {{recipe.author}}<br>
+                        {% endif %}
+
+                        <!--The recipe's category-->
+                        <em>Category:</em> {{recipe.category_name}} <br>
+                        
+                        <!--Optional text for the recipe's country of origin-->
+                        {% if recipe.origin %}
+                            <em>Country of Origin:</em> {{recipe.origin}}<br>
+                        {% endif %}
+                        
+                        <!--Number of servings-->
+                        {% if recipe.servings %}
+                            <em>Serves:</em> {{recipe.servings}}<br>
+                        {% endif %}
+                        
+                        <!--Preparation time, not counting cooking and marindading time-->
+                        {% if recipe.prep_time %}
+                            <em>Preparation Time:</em> {{recipe.prep_time}}<br>
+                        {% endif %}
+            
+                        <!--Optional text for marinade-->
+                        {% if recipe.marinate_time %}
+                            <em>Marinate Time:</em> {{recipe.marinate_time}}<br>
+                        {% endif %}
+                        
+                        <!--Time needed to cook the recipe-->
+                        {% if recipe.cook_time %}
+                            <em>Cook Time:</em> {{recipe.cook_time}} </p>
+                        {% endif %}
+
+
+
+        {% endfor %} <!--End of loop through recipes-->
+
+{% endblock %}

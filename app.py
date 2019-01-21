@@ -57,9 +57,9 @@ def submit_changes(recipe_id):
         })
     return redirect(url_for('show_recipes'))
     
-@app.route('/show_recipes', methods=['GET', 'POST'])
-def show_recipes():
-    return render_template("show_recipes.html", 
+@app.route('/list_recipes', methods=['GET', 'POST'])
+def list_recipes():
+    return render_template("list_recipes.html", 
     recipes=mongo.db.recipes.find())
 
 @app.route('/warning', methods=['POST'])
