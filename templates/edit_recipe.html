@@ -84,22 +84,22 @@
                             <label for="servings">Number of Servings</label>
                         </div>
                         
-                        <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
+                        <!--The time needed to prepare the ingredients for cooking-->
                         <div class="input-field col s3">
                             <input id="prep_time" name="prep_time" type="text" class="validate" value="{{recipe.prep_time}}">
                             <label for="prep_time">Preparation Time</label>
-                        </div>
-                        
-                        <!--The time needed to marindade the recipe, if applicable-->
-                        <div class="input-field col s3">
-                            <input id="marinate_time" name="marinate_time" type="text" value="{{recipe.marinate_time}}" class="validate">
-                            <label for="marinate_time">Marinate Time</label>
                         </div>
                         
                         <!--The time needed to cook the recipe-->
                         <div class="input-field col s3">
                             <input id="cook_time" name="cook_time" type="text" class="validate" value="{{recipe.cook_time}}">
                             <label for="cook_time">Cook Time</label>
+                        </div>
+                        
+                        <!--Additional time-->
+                        <div class="input-field col s3">
+                            <input id="extra_time" name="extra_time" type="text" value="{{recipe.extra_time}}" class="validate">
+                            <label for="extra_time">Extra Time</label>
                         </div>
 
                     </div> <!--End of recipe statistics-->
