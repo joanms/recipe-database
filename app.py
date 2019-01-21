@@ -72,9 +72,8 @@ def warning():
 @app.route('/show_recipe/<recipe_id>')
 def show_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
     return render_template(
-        'show_recipe.html', recipe=the_recipe, categories=all_categories)
+        'show_recipe.html', recipe=the_recipe)
 
 @app.route('/delete_recipe/<recipe_id>', methods=['POST'])
 def delete_recipe(recipe_id):
