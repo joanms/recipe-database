@@ -4,7 +4,8 @@
         
         <!--Loop through recipes in the database-->
         {% for recipe in recipes %}
-            <h2>{{recipe.recipe_name}}</h2>
+            <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"><h2>{{recipe.recipe_name}}</h2></a>
+            
                         <!--Optional text to display if the recipe contains allergens-->
 
                         <!--The recipe's category-->
