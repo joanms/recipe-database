@@ -64,7 +64,7 @@ def list_recipes():
     return render_template("list_recipes.html", 
     recipes=mongo.db.recipes.find())
 
-@app.route('/show_recipe/<recipe_id>')
+@app.route('/show_recipe/<recipe_id>', methods=['GET', 'POST'])
 def show_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template(
