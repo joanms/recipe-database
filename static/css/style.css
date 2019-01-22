@@ -69,6 +69,15 @@ body {
     margin-top: 0px;
 }
 
+a.recipe-title{
+    color: black;
+}
+
+a.recipe-title:hover {
+    color: #b71c1c;
+    text-decoration: underline;
+}
+
 #information {
     margin-bottom: 0px;
     margin-top: 0px;
