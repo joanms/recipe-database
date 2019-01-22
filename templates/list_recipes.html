@@ -6,13 +6,10 @@
         
         {% for recipe in recipes %}
         
-            <h2>{{recipe.recipe_name}}</h2> 
-                    
             <div class="row">
-                <div class="col s8">
-                    <!--The recipe's category-->
-                    <strong></strong>Category: {{recipe.category_name}}</strong><br>
-        
+                
+                <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}"><h2>{{recipe.recipe_name}}</h2></a>
+                    
                     <!--Optional text to display if the recipe contains allergens-->
                     {% if recipe.allergens %}
                         Contains {{recipe.allergens}}.
@@ -45,13 +42,7 @@
                     {% if recipe.cook_time %}
                         Cook Time: {{recipe.cook_time}}.
                     {% endif %}
-                </div>
-                
-                <div class="col s4">
-                    <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                        <i class="material-icons right">view_compact</i>View</a>
-                </div>
-                
+
             </div>
 
     {% endfor %} <!--End of loop through recipes-->
