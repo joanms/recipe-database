@@ -9,43 +9,41 @@
             <h2>{{recipe.recipe_name}}</h2> 
                     
             <div class="row">
-                <div class="col s4">
+                <div class="col s8">
                     <!--The recipe's category-->
-                    Category: {{recipe.category_name}} <br>
+                    <strong></strong>Category: {{recipe.category_name}}</strong><br>
         
                     <!--Optional text to display if the recipe contains allergens-->
                     {% if recipe.allergens %}
-                        Contains {{recipe.allergens}}<br>
+                        Contains {{recipe.allergens}}.
                     {% endif %}
                                 
                     <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
                     {% if recipe.vegetarian and not recipe.vegan %}
-                        Suitable for vegetarians<br>
+                        Suitable for vegetarians.
                     {% endif %}
                     {% if recipe.vegan %}
-                        Suitable for vegans and vegetarians<br>
+                        Suitable for vegans and vegetarians.
                     {% endif %}    
             
                     <!--Number of servings-->
                     {% if recipe.servings %}
-                        Serves: {{recipe.servings}}<br>
+                        Serves: {{recipe.servings}}.
                     {% endif %}
-                </div>
-                
-                <div class="col s4">
+
                     <!--Preparation time, not counting cooking and marindading time-->
                     {% if recipe.prep_time %}
-                        Preparation Time: {{recipe.prep_time}}<br>
+                        Preparation Time: {{recipe.prep_time}}.
                     {% endif %}
                     
                     <!--Optional text for marinading, proving, etc.-->
                     {% if recipe.extra_time %}
-                        Extra Time: {{recipe.extra_time}}<br>
+                        Extra Time: {{recipe.extra_time}}.
                     {% endif %}
                                 
                     <!--Time needed to cook the recipe-->
                     {% if recipe.cook_time %}
-                        Cook Time: {{recipe.cook_time}} <br>
+                        Cook Time: {{recipe.cook_time}}.
                     {% endif %}
                 </div>
                 
