@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% block content %}
 
 
-    <h1>Edit the Recipe</h1>
+    <h1>Edit {{recipe.recipe_name}}</h1>
     <h2>Fields marked with an asterisk are required</h2>
     
                 <form action="{{ url_for('submit_changes', recipe_id=recipe._id) }}" method="POST" class="col s12">
