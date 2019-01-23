@@ -11,15 +11,19 @@
                         
                         <!--Optional text to display if the recipe contains allergens-->
                         {% if recipe.allergens %}
-                            <p>Contains {{recipe.allergens}}</p>
+                            Contains {{recipe.allergens}}<br>
                         {% endif %}
-                        
+
+                        {% if recipe.gluten_free %}
+                            Gluten-free<br>
+                        {% endif %}
+
                         <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
                         {% if recipe.vegetarian and not recipe.vegan %}
-                            <p>Suitable for vegetarians</p>
+                            Suitable for vegetarians<br>
                         {% endif %}
                         {% if recipe.vegan %}
-                            <p>Suitable for vegans and vegetarians</p>
+                            Suitable for vegans and vegetarians<br>
                         {% endif %}    
     
                         <!--Optional text for the recipe's author-->
