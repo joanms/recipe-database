@@ -11,6 +11,10 @@
                 <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="recipe-title"><h2>{{recipe.recipe_name}}</h2></a>
                     
                     <!--Optional text to display if the recipe contains allergens-->
+                    {% if recipe.gluten_free %}
+                        Gluten-free.
+                    {% endif %}
+                    
                     {% if recipe.allergens %}
                         Contains {{recipe.allergens}}.
                     {% endif %}
