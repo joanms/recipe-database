@@ -41,17 +41,18 @@ def submit_changes(recipe_id):
     mongo.db.recipes.update(
         {'_id': ObjectId(recipe_id)},
         {
-            'recipe_name': request.form.get('recipe_name'),
+            'recipe_title': request.form.get('recipe_title'),
             'category_name': request.form.get('category_name'),
             'author': request.form.get('author'),
             'origin': request.form.get('origin'),
             'servings': request.form.get('servings'),
             'prep_time': request.form.get('prep_time'),
-            'marinate_time': request.form.get('marinate_time'),
+            'extra_time': request.form.get('extra_time'),
             'cook_time': request.form.get('cook_time'),
             'allergens': request.form.get('allergens'),
             'vegetarian': request.form.get('vegetarian'),
             'vegan': request.form.get('vegan'),
+            'gluten_free': request.form.get('gluten_free'),
             'ingredients': request.form.get('ingredients'),
             'method': request.form.get('method'),
         })
