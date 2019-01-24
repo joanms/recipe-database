@@ -15,12 +15,18 @@
                         </div>
                         
                         <!--The name of the author-->
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             <input id="author" name="author" type="text" class="validate" value="{{recipe.author}}">
                             <label for="author">Author</label>
                         </div>
+                        
+                        <div class="input-field col s2">
+                            <input id="image_url" name="image_url" type="text" class="validate" value="{{recipe.image_url}}">
+                            <label for="image_url">URL of Image</label>
+                        </div>
+                        
 
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             <select id="category" name="category_name">
                                 <option value="" disabled selected>Click to Select</option>
                                 {% for category in categories %}
