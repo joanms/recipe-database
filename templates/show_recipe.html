@@ -1,9 +1,8 @@
 {% extends 'base.html'%} {% block content %}
 
-            <h1>{{recipe.recipe_title}}</h1>
-            
-            <div class="row">
-                
+            <div class="row centre">
+                <h1>{{recipe.recipe_title}}</h1>
+
                 <!--Button to edit a recipe-->
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
                         <i class="material-icons right">edit</i>Edit</a>
@@ -17,8 +16,10 @@
             <div  class= "row">
                 
                 <!--Information about the recipe-->
-                <div class="col  l3" id="information">
-                    <h2>Information</h2>
+                <div class="col  l4" id="information">
+                    
+                    <img class="illustration" src="{{recipe.image_url}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+                    
                     <div>
                         
                         <!--Optional text to display if the recipe contains allergens-->

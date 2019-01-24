@@ -44,6 +44,7 @@ h2 {
     font-size: 1.875em;
     text-align: inherit;
     margin-bottom: 5px;
+    margin-top: 0px;
 }
 
 
@@ -97,6 +98,9 @@ pre {
     white-space: pre-wrap; /*This line ensures that the text in the pre tag wraps automatically*/
 }   
 
+.centre{
+    text-align: center;
+}
 
 /*Forms*/
 
