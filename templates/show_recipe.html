@@ -2,6 +2,18 @@
 
             <h1>{{recipe.recipe_title}}</h1>
             
+            <div class="row">
+                
+                <!--Button to edit a recipe-->
+                    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                        <i class="material-icons right">edit</i>Edit</a>
+                        
+                <!--Button to delete a-->
+                    <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                        <i class="material-icons right">delete</i>Delete</a>
+
+            </div> <!--End of buttons-->
+            
             <div  class= "row">
                 
                 <!--Information about the recipe-->
@@ -98,17 +110,7 @@
                 
             </div> <!--End of recipe-->
             
-            <div class="row">
-                
-                <!--Button to edit a recipe-->
-                    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                        <i class="material-icons right">edit</i>Edit</a>
-                        
-                <!--Button to delete a-->
-                    <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                        <i class="material-icons right">delete</i>Delete</a>
-
-            </div> <!--End of buttons-->
+            
             
 
 {% endblock %}
