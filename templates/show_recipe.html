@@ -60,16 +60,6 @@
                         {% endif %}
                     </div>
                     
-                    <!--Button to edit a recipe-->
-                    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                        <i class="material-icons right">edit</i>Edit</a>
-                        
-                    <!--Button to delete a recipe-->
-                    <form action="{{url_for('warning', recipe_id=recipe._id)}}" method="POST">
-                        <button type="submit" class="waves-effect waves-light btn red darken-4">
-                            <i class="material-icons right">delete</i>Delete</button>
-                    </form>
-                            
                     <!--If the DELETE RECIPE button is clicked, a warning appears-->
                     {% with messages = get_flashed_messages() %} {% if messages %}
                         {% for message in messages %}
@@ -107,6 +97,18 @@
                 </div> <!--End of preparation instructions-->
                 
             </div> <!--End of recipe-->
+            
+            <div class="row">
+                
+                <!--Button to edit a recipe-->
+                    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                        <i class="material-icons right">edit</i>Edit</a>
+                        
+                <!--Button to delete a-->
+                    <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                        <i class="material-icons right">delete</i>Delete</a>
+
+            </div> <!--End of buttons-->
             
 
 {% endblock %}
