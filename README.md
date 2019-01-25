@@ -83,11 +83,9 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-
-### Media
-- The images are free stock images from [Pixabay](https://pixabay.com/).
+### Media and Content
+- The logo is a free stock image from [Pixabay](https://pixabay.com/).
+- The recipes and their illustrations are from [BBC Good Food](https://www.bbcgoodfood.com/recipes).
 
 ### Acknowledgements
 
