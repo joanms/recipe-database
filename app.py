@@ -42,7 +42,7 @@ def submit_changes(recipe_id):
         {'_id': ObjectId(recipe_id)},
         {
             'recipe_title': request.form.get('recipe_title'),
-            'image_url': request.form.get('image_url'),
+            'image_path': request.form.get('image_path'),
             'category_name': request.form.get('category_name'),
             'author': request.form.get('author'),
             'origin': request.form.get('origin'),
