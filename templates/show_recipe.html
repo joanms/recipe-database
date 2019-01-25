@@ -12,7 +12,7 @@
                     <i class="material-icons right">edit</i>Edit</a>
                             
             <!--Button to delete a recipe-->
-                <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+                <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
                     <i class="material-icons right">delete</i>Delete</a>
     
                     <!--If the DELETE RECIPE button is clicked, a warning appears-->

@@ -78,7 +78,7 @@ def warning(recipe_id):
     return render_template(
         'show_recipe.html', recipe=the_recipe)
         
-@app.route('/delete_recipe/<recipe_id>', methods=['POST'])
+@app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('list_recipes'))
