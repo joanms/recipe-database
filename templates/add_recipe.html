@@ -1,147 +1,146 @@
 {% extends 'base.html'%} {% block content %}
 
-
 <h1>Add Your Own Recipe</h1>
 <h2>Fields marked with an asterisk are required</h2>
     
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+<form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
-        <!--The recipe's title, author and category-->
-        <div class="row">
+    <!--The recipe's title, author and category-->
+    <div class="row">
             
-            <!--The title of the recipe-->
-            <div class="input-field col s4">
-                <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
-                <label for="recipe_title">Recipe Title*</label>
-            </div>
-                        
-            <!--The author of the recipe-->
-            <div class="input-field col s2">
-                <input id="author" name="author" type="text" class="validate">
-                <label for="author">Author</label>
-            </div>
-                        
-            <!--The location of the recipe's illustration-->
-            <div class="input-field col s4">
-                <input id="image_url" name="image_url" type="text" class="validate">
-                <label for="image_url">URL of Image (please don't hotlink)</label>
-            </div>
-                        
-            <!--The category of the recipe-->
-            <div class="input-field col s2">
-                <select id="category" name="category_name">
-                    <!--The following for loop pulls the list of category names from the categories collection in the database-->
-                    <option value="" disabled selected>Click to Select</option>
-                    {% for cat in categories %}
-                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                </select>
-                <label>Category*</label>
-            </div>
-                        
-        </div> <!--End of title, author, image and category row-->
-                    
-        <!--Country of origin and dietary restrictions-->
-        <div class="row"> 
-                        
-            <!--The recipe's country of origin-->
-            <div class="input-field col s3">
-                <input id="origin" name="origin" type="text" class="validate">
-                <label for="origin">Country of Origin</label>
-            </div>
-                        
-            <!--Allergens-->
-            <div class="input-field col s3">
-                <input id="allergens" name="allergens" type="text" class="validate">
-                <label for="allergens">Allergens</label>
-            </div>
-                        
-            <!--Selector to indicate if the recipe is suitable for vegetarians-->
-            <div class="col s2">
-                <div class="switch">
-                    <label>
-                        <input id="vegetarian" name="vegetarian" type="checkbox">
-                        <span class="lever"></span>
-                        Vegetarian
-                    </label>
-                </div> 
-            </div> <!--End of vegetarian selector-->
-                        
-            <!--Selector to indicate if the recipe is suitable for vegans-->
-            <div class="col s2">
-                <div class="switch">
-                    <label>
-                        <input id="vegan" name="vegan" type="checkbox">
-                        <span class="lever"></span>
-                        Vegan
-                    </label>
-                </div>
-            </div> <!--End of vegan selector-->
-                        
-            <!--Selector to indicate if the recipe is gluten-free-->
-            <div class="col s2">
-                <div class="switch">
-                    <label>
-                        <input id="gluten_free" name="gluten_free" type="checkbox">
-                        <span class="lever"></span>
-                        Gluten-Free
-                    </label>
-                </div>
-            </div> <!--End of gluten-free selector-->
-
-        </div> <!--End of country of origin and dietary restrictions-->
-     
-        <!--Recipe statistics-->
-        <div class="row"> 
-                        
-            <!--The number of servings the recipe makes-->
-            <div class="input-field col s3">
-                <input id="servings" name="servings" type="text" class="validate">
-                <label for="servings">Number of Servings</label>
-            </div>
-                        
-            <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
-            <div class="input-field col s3">
-                <input id="prep_time" name="prep_time" type="text" class="validate">
-                <label for="prep_time">Preparation Time</label>
-            </div>
-                        
-            <!--This is for processes such as marinading, proving, etc.-->
-            <div class="input-field col s3">
-                <input id="extra_time" name="extra_time" type="text" class="validate">
-                <label for="extra_time">Extra Time</label>
-            </div>
-
-            <!--The time needed to cook the recipe-->
-            <div class="input-field col s3">
-                <input id="cook_time" name="cook_time" type="text" class="validate">
-                <label for="cook_time">Cook Time</label>
-            </div>
-                        
-        </div> <!--End of recipe statistics-->
-                    
-        <!--Input field for the ingredients-->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="ingredients" name="ingredients" class="materialize-textarea" required></textarea>
-                <label for="ingredients">Ingredients*</label>
-            </div>
-        </div> <!--End of ingredients-->
-                    
-        <!--Input field for the method-->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="method" name="method" class="materialize-textarea" required></textarea>
-                <label for="method">Method*</label>
-            </div>
-        </div> <!--End of method-->
-                
-        <!--Button to submit the recipe-->
-        <div class="row">
-            <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Add
-                <i class="material-icons right">playlist_add</i>
-            </button>
+        <!--The title of the recipe-->
+        <div class="input-field col s4">
+            <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
+            <label for="recipe_title">Recipe Title*</label>
         </div>
+                        
+        <!--The author of the recipe-->
+        <div class="input-field col s2">
+            <input id="author" name="author" type="text" class="validate">
+            <label for="author">Author</label>
+        </div>
+                        
+        <!--The location of the recipe's illustration-->
+        <div class="input-field col s4">
+            <input id="image_url" name="image_url" type="text" class="validate">
+            <label for="image_url">URL of Image (please don't hotlink)</label>
+        </div>
+                        
+        <!--The category of the recipe-->
+        <div class="input-field col s2">
+            <select id="category" name="category_name">
+                <!--The following for loop pulls the list of category names from the categories collection in the database-->
+                <option value="" disabled selected>Click to Select</option>
+                {% for cat in categories %}
+                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Category*</label>
+        </div>
+                        
+    </div> <!--End of title, author, image and category row-->
+                    
+    <!--Country of origin and dietary restrictions-->
+    <div class="row"> 
+                        
+        <!--The recipe's country of origin-->
+        <div class="input-field col s3">
+            <input id="origin" name="origin" type="text" class="validate">
+            <label for="origin">Country of Origin</label>
+        </div>
+                        
+        <!--Allergens-->
+        <div class="input-field col s3">
+            <input id="allergens" name="allergens" type="text" class="validate">
+            <label for="allergens">Allergens</label>
+        </div>
+                        
+        <!--Selector to indicate if the recipe is suitable for vegetarians-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="vegetarian" name="vegetarian" type="checkbox">
+                    <span class="lever"></span>
+                    Vegetarian
+                </label>
+            </div> 
+        </div> <!--End of vegetarian selector-->
+                        
+        <!--Selector to indicate if the recipe is suitable for vegans-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="vegan" name="vegan" type="checkbox">
+                    <span class="lever"></span>
+                    Vegan
+                </label>
+            </div>
+        </div> <!--End of vegan selector-->
+                    
+        <!--Selector to indicate if the recipe is gluten-free-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="gluten_free" name="gluten_free" type="checkbox">
+                    <span class="lever"></span>
+                    Gluten-Free
+                </label>
+            </div>
+        </div> <!--End of gluten-free selector-->
+
+    </div> <!--End of country of origin and dietary restrictions-->
+     
+    <!--Recipe statistics-->
+    <div class="row"> 
+                    
+        <!--The number of servings the recipe makes-->
+        <div class="input-field col s3">
+            <input id="servings" name="servings" type="text" class="validate">
+            <label for="servings">Number of Servings</label>
+        </div>
+                        
+        <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
+        <div class="input-field col s3">
+            <input id="prep_time" name="prep_time" type="text" class="validate">
+            <label for="prep_time">Preparation Time</label>
+        </div>
+                        
+        <!--This is for processes such as marinading, proving, etc.-->
+        <div class="input-field col s3">
+            <input id="extra_time" name="extra_time" type="text" class="validate">
+            <label for="extra_time">Extra Time</label>
+        </div>
+
+        <!--The time needed to cook the recipe-->
+        <div class="input-field col s3">
+            <input id="cook_time" name="cook_time" type="text" class="validate">
+            <label for="cook_time">Cook Time</label>
+        </div>
+                        
+    </div> <!--End of recipe statistics-->
+                    
+    <!--Input field for the ingredients-->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required></textarea>
+            <label for="ingredients">Ingredients*</label>
+        </div>
+    </div> <!--End of ingredients-->
+                    
+    <!--Input field for the method-->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="method" name="method" class="materialize-textarea" required></textarea>
+            <label for="method">Method*</label>
+        </div>
+    </div> <!--End of method-->
+            
+    <!--Button to submit the recipe-->
+    <div class="row">
+        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Add
+            <i class="material-icons right">playlist_add</i>
+        </button>
+    </div>
                     
 </form>
 

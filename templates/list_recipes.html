@@ -1,54 +1,55 @@
 {% extends 'base.html'%} {% block content %}
 
-        <h1>Recipes</h1>
+<h1>Recipes</h1>
         
-        <!--Loop through recipes in the database-->
+<!--Loop through recipes in the database-->
         
-        {% for recipe in recipes %}
+{% for recipe in recipes %}
         
-            <div class="row">
+    <div class="row">
                 
-                <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="recipe-title"><h2>{{recipe.recipe_title}}</h2></a>
+        <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="recipe-title"><h2>{{recipe.recipe_title}}</h2></a>
                     
-                    <!--Optional text to display if the recipe contains allergens-->
-                    {% if recipe.gluten_free %}
-                        Gluten-free.
-                    {% endif %}
+        <!--Optional text to display if the recipe contains allergens-->
+        {% if recipe.gluten_free %}
+            Gluten-free.
+        {% endif %}
                     
-                    {% if recipe.allergens %}
-                        Contains {{recipe.allergens}}.
-                    {% endif %}
+        {% if recipe.allergens %}
+            Contains {{recipe.allergens}}.
+        {% endif %}
                                 
-                    <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
-                    {% if recipe.vegetarian and not recipe.vegan %}
-                        Suitable for vegetarians.
-                    {% endif %}
-                    {% if recipe.vegan %}
-                        Suitable for vegans and vegetarians.
-                    {% endif %}    
+        <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
+        {% if recipe.vegetarian and not recipe.vegan %}
+            Suitable for vegetarians.
+        {% endif %}
             
-                    <!--Number of servings-->
-                    {% if recipe.servings %}
-                        Serves {{recipe.servings}}.
-                    {% endif %}
+        {% if recipe.vegan %}
+            Suitable for vegans and vegetarians.
+        {% endif %}    
+            
+        <!--Number of servings-->
+        {% if recipe.servings %}
+            Serves {{recipe.servings}}.
+        {% endif %}
 
-                    <!--Preparation time, not counting cooking and marindading time-->
-                    {% if recipe.prep_time %}
-                        Preparation Time: {{recipe.prep_time}}.
-                    {% endif %}
+        <!--Preparation time, not counting cooking and marindading time-->
+        {% if recipe.prep_time %}
+            Preparation Time: {{recipe.prep_time}}.
+        {% endif %}
                     
-                    <!--Optional text for marinading, proving, etc.-->
-                    {% if recipe.extra_time %}
-                        Extra Time: {{recipe.extra_time}}.
-                    {% endif %}
+        <!--Optional text for marinading, proving, etc.-->
+        {% if recipe.extra_time %}
+            Extra Time: {{recipe.extra_time}}.
+        {% endif %}
                                 
-                    <!--Time needed to cook the recipe-->
-                    {% if recipe.cook_time %}
-                        Cook Time: {{recipe.cook_time}}.
-                    {% endif %}
+        <!--Time needed to cook the recipe-->
+        {% if recipe.cook_time %}
+            Cook Time: {{recipe.cook_time}}.
+        {% endif %}
 
-            </div>
+    </div>
 
-    {% endfor %} <!--End of loop through recipes-->
+{% endfor %} <!--End of loop through recipes-->
 
 {% endblock %}
