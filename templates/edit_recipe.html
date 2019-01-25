@@ -1,158 +1,157 @@
 {% extends 'base.html'%} {% block content %}
 
 
-    <h1>Edit {{recipe.recipe_title}}</h1>
-    <h2>Fields marked with an asterisk are required</h2>
+<h1>Edit {{recipe.recipe_title}}</h1>
     
-                <form action="{{ url_for('submit_changes', recipe_id=recipe._id) }}" method="POST" class="col s12">
+<h2>Fields marked with an asterisk are required</h2>
+    
+<form action="{{ url_for('submit_changes', recipe_id=recipe._id) }}" method="POST" class="col s12">
                     
-                    <!--The recipe's title, author and category-->
-                    <div class="row">
+    <!--The recipe's title, author, image location and category-->
+    <div class="row">
                         
-                        <div class="input-field col s4">
-                            <input id="recipe_title" name="recipe_title" type="text" class="validate" value="{{recipe.recipe_title}}" required>
-                            <label for="recipe_title">Recipe Title*</label>
-                        </div>
+        <div class="input-field col s4">
+            <input id="recipe_title" name="recipe_title" type="text" class="validate" value="{{recipe.recipe_title}}" required>
+            <label for="recipe_title">Recipe Title*</label>
+        </div>
                         
-                        <!--The name of the author-->
-                        <div class="input-field col s2">
-                            <input id="author" name="author" type="text" class="validate" value="{{recipe.author}}">
-                            <label for="author">Author</label>
-                        </div>
+        <!--The name of the author-->
+        <div class="input-field col s2">
+            <input id="author" name="author" type="text" class="validate" value="{{recipe.author}}">
+            <label for="author">Author</label>
+        </div>
                         
-                        <div class="input-field col s4">
-                            <input id="image_url" name="image_url" type="text" class="validate" value="{{recipe.image_url}}">
-                            <label for="image_url">URL of Image (please don't hotlink)</label>
-                        </div>
+        <div class="input-field col s4">
+            <input id="image_url" name="image_url" type="text" class="validate" value="{{recipe.image_url}}">
+            <label for="image_url">URL of Image (please don't hotlink)</label>
+        </div>
                         
-
-                        <div class="input-field col s2">
-                            <select id="category" name="category_name">
-                                <option value="" disabled selected>Click to Select</option>
-                                {% for category in categories %}
-                                    <option value="{{category.category_name}}"
-                                        {% if category.category_name == recipe.category_name %} selected {% endif %}
-                                    >{{category.category_name}}</option>
-                                {% endfor %}
-                            </select>
-                            <label>Category*</label>
-                        </div>
+        <div class="input-field col s2">
+            <select id="category" name="category_name">
+                <option value="" disabled selected>Click to Select</option>
+                {% for category in categories %}
+                    <option value="{{category.category_name}}"
+                        {% if category.category_name == recipe.category_name %} selected {% endif %}>
+                        {{category.category_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Category*</label>
+        </div>
                         
-                    </div> <!--End of title, author and category row-->
+    </div> <!--End of title, author and category row-->
                     
-                    
-                    <div class="row"> <!--Country of origin and dietary restrictions-->
+    <!--Country of origin and dietary restrictions-->    
+    <div class="row"> 
                         
-                        <!--The recipe's country of origin-->
-                        <div class="input-field col s3">
-                            <input id="origin" name="origin" type="text" class="validate" value="{{recipe.origin}}">
-                            <label for="origin">Country of Origin</label>
-                        </div>
+        <!--The recipe's country of origin-->
+        <div class="input-field col s3">
+            <input id="origin" name="origin" type="text" class="validate" value="{{recipe.origin}}">
+            <label for="origin">Country of Origin</label>
+        </div>
                         
-                        <!--Allergens-->
-                        <div class="input-field col s3">
-                            <input id="allergens" name="allergens" type="text" value="{{recipe.allergens}}" class="validate">
-                            <label for="allergens">Allergens</label>
-                        </div>
+        <!--Allergens-->
+        <div class="input-field col s3">
+            <input id="allergens" name="allergens" type="text" value="{{recipe.allergens}}" class="validate">
+            <label for="allergens">Allergens</label>
+        </div>
                         
-                        <!--Selector to indicate if the recipe is suitable for vegetarians-->
-                        <div class="col s2">
-                            <div class="switch">
-                                <label>
-                                    <input id="vegetarian" name="vegetarian" type="checkbox"
-                                        {% if recipe.vegetarian %} checked {% endif %}>
-                                    <span class="lever"></span>
-                                    Vegetarian
-                                </label>
-                            </div> 
-                        </div> <!--End of vegetarian selector-->
+        <!--Selector to indicate if the recipe is suitable for vegetarians-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="vegetarian" name="vegetarian" type="checkbox"
+                        {% if recipe.vegetarian %} checked {% endif %}>
+                    <span class="lever"></span>
+                        Vegetarian
+                </label>
+            </div> 
+        </div> <!--End of vegetarian selector-->
                         
-                        <!--Selector to indicate if the recipe is suitable for vegans-->
-                        <div class="col s2">
-                            <div class="switch">
-                                <label>
-                                    <input id="vegan" name="vegan" type="checkbox" 
-                                        {% if recipe.vegan %} checked {% endif %}>
-                                    <span class="lever"></span>
-                                    Vegan
-                                </label>
-                            </div>
-                        </div> <!--End of vegan selector-->
+        <!--Selector to indicate if the recipe is suitable for vegans-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="vegan" name="vegan" type="checkbox" 
+                        {% if recipe.vegan %} checked {% endif %}>
+                    <span class="lever"></span>
+                    Vegan
+                </label>
+            </div>
+        </div> <!--End of vegan selector-->
                         
-                        <!--Selector to indicate if the recipe is gluten-free-->
-                        <div class="col s2">
-                            <div class="switch">
-                                <label>
-                                    <input id="gluten_free" name="gluten_free" type="checkbox" 
-                                        {% if recipe.gluten_free %} checked {% endif %}>
-                                    <span class="lever"></span>
-                                    Gluten-Free
-                                </label>
-                            </div>
-                        </div> <!--End of gluten-free selector-->
+        <!--Selector to indicate if the recipe is gluten-free-->
+        <div class="col s2">
+            <div class="switch">
+                <label>
+                    <input id="gluten_free" name="gluten_free" type="checkbox" 
+                        {% if recipe.gluten_free %} checked {% endif %}>
+                    <span class="lever"></span>
+                    Gluten-Free
+                </label>
+            </div>
+        </div> <!--End of gluten-free selector-->
 
-
-                    </div> <!--End of country of origin and dietary restrictions-->
+    </div> <!--End of country of origin and dietary restrictions-->
      
+    <!--Recipe statistics-->
+    <div class="row"> 
+                        
+        <!--The number of servings the recipe makes-->
+        <div class="input-field col s3">
+            <input id="servings" name="servings" type="text" class="validate" value="{{recipe.servings}}">
+            <label for="servings">Number of Servings</label>
+        </div>
+                        
+        <!--The time needed to prepare the ingredients for cooking-->
+        <div class="input-field col s3">
+            <input id="prep_time" name="prep_time" type="text" class="validate" value="{{recipe.prep_time}}">
+            <label for="prep_time">Preparation Time</label>
+        </div>
                     
-                    <div class="row"> <!--Recipe statistics-->
+        <!--Additional time-->
+        <div class="input-field col s3">
+            <input id="extra_time" name="extra_time" type="text" value="{{recipe.extra_time}}" class="validate">
+            <label for="extra_time">Extra Time</label>
+        </div>
                         
-                        <!--The number of servings the recipe makes-->
-                        <div class="input-field col s3">
-                            <input id="servings" name="servings" type="text" class="validate" value="{{recipe.servings}}">
-                            <label for="servings">Number of Servings</label>
-                        </div>
-                        
-                        <!--The time needed to prepare the ingredients for cooking-->
-                        <div class="input-field col s3">
-                            <input id="prep_time" name="prep_time" type="text" class="validate" value="{{recipe.prep_time}}">
-                            <label for="prep_time">Preparation Time</label>
-                        </div>
-                        
-                        <!--Additional time-->
-                        <div class="input-field col s3">
-                            <input id="extra_time" name="extra_time" type="text" value="{{recipe.extra_time}}" class="validate">
-                            <label for="extra_time">Extra Time</label>
-                        </div>
-                        
-                        <!--The time needed to cook the recipe-->
-                        <div class="input-field col s3">
-                            <input id="cook_time" name="cook_time" type="text" class="validate" value="{{recipe.cook_time}}">
-                            <label for="cook_time">Cook Time</label>
-                        </div>
+        <!--The time needed to cook the recipe-->
+        <div class="input-field col s3">
+            <input id="cook_time" name="cook_time" type="text" class="validate" value="{{recipe.cook_time}}">
+            <label for="cook_time">Cook Time</label>
+        </div>
 
-                    </div> <!--End of recipe statistics-->
+    </div> <!--End of recipe statistics-->
                     
+    <!--Input field for the ingredients-->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required>{{recipe.ingredients}}</textarea>
+            <label for="ingredients">Ingredients*</label>
+        </div>
+    </div> <!--End of ingredients-->
                     
-                    <!--Input field for the ingredients-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required>{{recipe.ingredients}}</textarea>
-                            <label for="ingredients">Ingredients*</label>
-                        </div>
-                    </div> <!--End of ingredients-->
+    <!--Input field for the method-->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="method" name="method" class="materialize-textarea" required>{{recipe.method}}</textarea>
+            <label for="method">Method*</label>
+        </div>
+    </div> <!--End of method-->
                     
-                    <!--Input field for the method-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="method" name="method" class="materialize-textarea" required>{{recipe.method}}</textarea>
-                            <label for="method">Method*</label>
-                        </div>
-                    </div> <!--End of method-->
-                    
-                    <div class="row">
+    <!--Buttons to submit or cancel the changes-->
+    <div class="row">
                         
-                        <!--Button to submit the changes-->
-                        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
+        <!--Button to submit the changes-->
+        <button class="btn waves-effect waves-light red darken-4" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
                         
-                        <!--Button to cancel the changes and go back to the recipe display page-->
-                        <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
-                            <i class="material-icons right">close</i>Cancel</a>
+        <!--Button to cancel the changes and go back to the recipe display page-->
+        <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn red darken-4">
+            <i class="material-icons right">close</i>Cancel</a>
                     
-                    </div>
+    </div>  <!--End of buttons-->
 
-                </form>
+</form>  <!--End of recipe input form-->
                 
 {% endblock %}
