@@ -1,19 +1,23 @@
 {% extends 'base.html'%} {% block content %}
 
-<h1>{{recipe.recipe_title}}</h1>
+<div class="row centre">
+    <h1>{{recipe.recipe_title}}</h1>
+    <p></p>
+</div>
 
 <div  class= "row">
                 
-    <!--Buttons, illustration and information about the recipe-->
-    <div class="col l4">
-                    
-        <!--Recipe illustration-->
-        <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
-        <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+    <!--Illustration and information about the recipe-->
+    <div class="col s12 m6 l4">
                     
         <!--Information about the recipe-->
         <div id="information">
                         
+            <!--Optional text for the recipe's author-->
+            {% if recipe.author %}
+                By {{recipe.author}}<br>
+            {% endif %}
+            
             <!--Optional text to display if the recipe contains allergens-->
             {% if recipe.allergens %}
                 Contains {{recipe.allergens}}<br>
@@ -33,52 +37,49 @@
             {% if recipe.vegan %}
                 Suitable for vegans and vegetarians<br> <!--If it's suitable for vegans, it's also suitable for vegetarians-->
             {% endif %}    
-        
-            <!--Optional text for the recipe's author-->
-            {% if recipe.author %}
-                <em>Author:</em> {{recipe.author}}<br>
-            {% endif %}
     
-            <!--The recipe's category-->
-            <em>Category:</em> {{recipe.category_name}} <br>
-                        
             <!--Optional text for the recipe's country of origin-->
             {% if recipe.origin %}
-                <em>Country of Origin:</em> {{recipe.origin}}<br>
+                Country of Origin: {{recipe.origin}}<br>
             {% endif %}
                             
             <!--Optional text for number of servings-->
             {% if recipe.servings %}
-                <em>Serves:</em> {{recipe.servings}}<br>
+                Serves {{recipe.servings}}<br>
             {% endif %}
                             
             <!--Optional text for ingredient preparation time-->
             {% if recipe.prep_time %}
-                <em>Preparation Time:</em> {{recipe.prep_time}}<br>
+                Preparation Time: {{recipe.prep_time}}<br>
             {% endif %}
             
             <!--Optional text for any extra time-->
             {% if recipe.extra_time %}
-                <em>Extra Time:</em> {{recipe.extra_time}}<br>
+                Extra Time: {{recipe.extra_time}}<br>
             {% endif %}
                         
-            <!--Optional text for ime needed to cook the recipe-->
+            <!--Optional text for time needed to cook the recipe-->
             {% if recipe.cook_time %}
-                <em>Cook Time:</em> {{recipe.cook_time}} </p>
+                Cook Time: {{recipe.cook_time}} </p>
             {% endif %}
+            
+            <!--Recipe illustration-->
+            <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
+            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+
                         
         </div> <!--End of information text-->
                     
     </div> <!--End of first column-->
     
     <!--Ingredients-->
-    <div class="col l4" id="ingredients">
+    <div class="col s12 m6 l3" id="ingredients">
     <h2>Ingredients</h2>
         <pre>{{recipe.ingredients}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
     </div> <!--End of ingredients-->
                     
     <!--Preparation instructions-->
-    <div class="col l4" id="method">
+    <div class="col s12 l5" id="method">
         <h2>Method</h2>
         <pre>{{recipe.method}}</pre> <!--The pre tag preserves the line breaks in the text from MongoDB-->
     </div> <!--End of preparation instructions-->
