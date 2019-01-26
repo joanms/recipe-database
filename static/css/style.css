@@ -124,11 +124,16 @@ label {
    
 .btn {
     font-family: "Open Sans", sans-serif;
+    background-color: #bf360c;
     margin-bottom: 20px;
     margin-right: 20px;
     width: 160px;
     text-align: left;
-}   
+}
+
+.btn:hover {
+    background-color: #009688;
+}
 
 
 /*Media Queries*/
