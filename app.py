@@ -69,45 +69,44 @@ def list_recipes():
 @app.route('/bread', methods=['GET', 'POST'])
 def bread():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Bread and Baked Goods"})
+    results=recipes.find({"category_name": "Bread"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/starters', methods=['GET', 'POST'])
 def starters():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Snacks and Starters"})
+    results=recipes.find({"category_name": "Starters"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/mains', methods=['GET', 'POST'])
 def mains():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Snacks and Starters"})
+    results=recipes.find({"category_name": "Mains"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sides', methods=['GET', 'POST'])
 def sides():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Snacks and Starters"})
+    results=recipes.find({"category_name": "Sides"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sauces', methods=['GET', 'POST'])
 def sauces():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Snacks and Starters"})
+    results=recipes.find({"category_name": "Sauces"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/desserts', methods=['GET', 'POST'])
 def desserts():
     recipes=mongo.db.recipes
-    results=recipes.find({"category_name": "Snacks and Starters"})
+    results=recipes.find({"category_name": "Desserts"})
     return render_template("list_recipes.html", 
     recipes=results)
-
 
 @app.route('/show_recipe/<recipe_id>', methods=['GET', 'POST'])
 def show_recipe(recipe_id):
