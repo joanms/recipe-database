@@ -67,6 +67,12 @@ h2 {
     margin-bottom: 20px;
 }
 
+.category-image {
+    width: 250px;
+    border:1px solid black;
+    margin-bottom: 20px;
+
+}
 
 /*Main text*/
 
@@ -138,17 +144,17 @@ label {
 
 @media only screen and (max-width: 1350px) {
 
-h1 {
-    font-size: 2em;
-    }
-
-h2 {
-    font-size: 1.5em;
-    }
+    h1 {
+        font-size: 2em;
+        }
     
-.illustration {
-    width: 250px;
-    }
+    h2 {
+        font-size: 1.5em;
+        }
+        
+    .illustration {
+        width: 250px;
+        }
 }
 
 @media only screen and (max-width: 729px) {
