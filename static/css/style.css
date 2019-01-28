@@ -136,11 +136,8 @@ label {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 1265px) {
-.brand-logo {
-    font-size: 2.5em !important;
-    }
-    
+@media only screen and (max-width: 1350px) {
+
 h1 {
     font-size: 2em;
     }
@@ -150,12 +147,12 @@ h2 {
     }
     
 .illustration {
-    width: 270px;
+    width: 250px;
     }
 }
 
 @media only screen and (max-width: 729px) {
     .brand-logo {
-    font-size: 1.5em !important;
+    font-size: 2em !important;
     }
 }
