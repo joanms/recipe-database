@@ -18,7 +18,6 @@ app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipe
 
 mongo = PyMongo(app)
 recipes =  mongo.db.recipes
-recipes.create_index([('h', TEXT)], default_language='english') # This creates a text index that facilitates searching
 
 @app.route('/')
 def index():
@@ -76,7 +75,7 @@ def list_recipes():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     search = request.form.get('search')
-    results=recipes.find({"category_name": "Starters"})
+    results=recipes.find()
     return render_template("list_recipes.html", 
     recipes=results)
     
@@ -94,7 +93,6 @@ def starters():
 
 @app.route('/mains', methods=['GET', 'POST'])
 def mains():
-    
     results=recipes.find({"category_name": "Mains"})
     return render_template("list_recipes.html", 
     recipes=results)

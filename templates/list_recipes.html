@@ -4,52 +4,102 @@
         
 <!--Loop through recipes in the database-->
         
-{% for recipe in recipes %}
-        
-    <div class="row">
-                
-        <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="recipe-title"><h2>{{recipe.recipe_title}}</h2></a>
-                    
-        <!--Optional text to display if the recipe contains allergens-->
-        {% if recipe.gluten_free %}
-            Gluten-free.
-        {% endif %}
-                    
-        {% if recipe.allergens %}
-            Contains {{recipe.allergens}}.
-        {% endif %}
-                                
-        <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
-        {% if recipe.vegetarian and not recipe.vegan %}
-            Suitable for vegetarians.
-        {% endif %}
-            
-        {% if recipe.vegan %}
-            Suitable for vegans and vegetarians.
-        {% endif %}    
-            
-        <!--Number of servings-->
-        {% if recipe.servings %}
-            Serves {{recipe.servings}}.
-        {% endif %}
+<div class="row">
 
-        <!--Preparation time, not counting cooking and marindading time-->
-        {% if recipe.prep_time %}
-            Preparation Time: {{recipe.prep_time}}.
-        {% endif %}
-                    
-        <!--Optional text for marinading, proving, etc.-->
-        {% if recipe.extra_time %}
-            Extra Time: {{recipe.extra_time}}.
-        {% endif %}
-                                
-        <!--Time needed to cook the recipe-->
-        {% if recipe.cook_time %}
-            Cook Time: {{recipe.cook_time}}.
-        {% endif %}
+    <div class="col s12 m6">
+        
+        {% for recipe in recipes %}
+            
+            <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}" class="recipe-title"><h2>{{recipe.recipe_title}}</h2></a>
+                        
+            <!--Optional text to display if the recipe contains allergens-->
+            {% if recipe.gluten_free %}
+                Gluten-free.
+            {% endif %}
+                        
+            {% if recipe.allergens %}
+                Contains {{recipe.allergens}}.
+            {% endif %}
+                                    
+            <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
+            {% if recipe.vegetarian and not recipe.vegan %}
+                Suitable for vegetarians.
+            {% endif %}
+                
+            {% if recipe.vegan %}
+                Suitable for vegans and vegetarians.
+            {% endif %}    
+                
+            <!--Number of servings-->
+            {% if recipe.servings %}
+                Serves {{recipe.servings}}.
+            {% endif %}
+    
+            <!--Preparation time, not counting cooking and marindading time-->
+            {% if recipe.prep_time %}
+                Preparation Time: {{recipe.prep_time}}.
+            {% endif %}
+                        
+            <!--Optional text for marinading, proving, etc.-->
+            {% if recipe.extra_time %}
+                Extra Time: {{recipe.extra_time}}.
+            {% endif %}
+                                    
+            <!--Time needed to cook the recipe-->
+            {% if recipe.cook_time %}
+                Cook Time: {{recipe.cook_time}}.
+            {% endif %}
+        {% endfor %} <!--End of loop through recipes-->
+        
+    </div> <!--End of recipe list-->
+
+    
+    <div class="col s12 m4 offset-m2">
+        <h2>Refine the Search Results</h2>
+        <h3>Allergens</h3>
+        <form action="#">
+            <p>
+                <input type="checkbox" id="dairy" />
+                <label for="dairy">Dairy</label>
+            </p>
+            <p>
+                <input type="checkbox" id="eggs" />
+                <label for="eggs">Eggs</label>
+            </p>
+            <p>
+                <input type="checkbox" id="fish" />
+                <label for="fish">Fish</label>
+            </p>
+            <p>
+                <input type="checkbox" id="fruit" />
+                <label for="tfruitest5">Fruit</label>
+            </p>
+            <p>
+                <input type="checkbox" id="peanuts" />
+                <label for="peanuts">Peanuts</label>
+            </p>
+            <p>
+                <input type="checkbox" id="shellfish" />
+                <label for="shellfish">Shellfish</label>
+            </p>
+            <p>
+                <input type="checkbox" id="soy" />
+                <label for="soy">Soy</label>
+            </p>
+            <p>
+                <input type="checkbox" id="tree-nuts" />
+                <label for="tree-nuts">Tree Nuts</label>
+            </p>
+            <p>
+                <input type="checkbox" id="wheat" />
+                <label for="wheat">Wheat</label>
+            </p>
+        </form>    
+    </div>    
+    
 
 </div>
 
-{% endfor %} <!--End of loop through recipes-->
+
 
 {% endblock %}
