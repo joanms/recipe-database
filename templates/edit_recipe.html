@@ -30,11 +30,11 @@
         <!--The recipe's category-->
         <div class="input-field col s12 m6 l2">
             <select id="category" name="category_name">
-                <option value="" disabled selected>Click to Select</option>
-                {% for category in categories %}
-                    <option value="{{category.category_name}}"
-                        {% if category.category_name == recipe.category_name %} selected {% endif %}>
-                        {{category.category_name}}</option>
+                <option value="" disabled>Click to Select</option>
+                {% for cat in categories %}
+                    <option value="{{cat.category_name}}"
+                        {% if cat.category_name == recipe.category_name %} selected {% endif %}
+                        >{{cat.category_name}}</option>
                 {% endfor %}
             </select>
             <label>Category*</label>
