@@ -4,6 +4,11 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from wtforms import Form, BooleanField, TextField, validators
+from pymongo import MongoClient
+from pymongo import ASCENDING
+from pymongo import DESCENDING
+from pymongo import TEXT
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -13,6 +18,7 @@ app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipe
 
 mongo = PyMongo(app)
 recipes =  mongo.db.recipes
+recipes.create_index([('h', TEXT)], default_language='english') # This creates a text index that facilitates searching
 
 @app.route('/')
 def index():
@@ -70,7 +76,9 @@ def list_recipes():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     search = request.form.get('search')
-    results=recipes.find({"category_name": "Bread"})
+    results=recipes.find({"category_name": "Starters"})
+    return render_template("list_recipes.html", 
+    recipes=results)
     
 @app.route('/bread', methods=['GET', 'POST'])
 def bread():
