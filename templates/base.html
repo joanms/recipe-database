@@ -22,6 +22,7 @@
             
                 <nav>
                     
+                    <!--Logo and title-->
                     <div class="nav-wrapper deep-orange darken-4">
                         <a href="{{url_for('index')}}" class="brand-logo center">
                             <img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42">Cookbase</a>
@@ -41,8 +42,19 @@
                             <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
                         </ul>
                         
-                    </div> <!--End of nav wrapper-->
+                    </div> <!--End of logo, title and nav menus-->
                     
+                    <!--Search Field-->
+                    <div class="nav-wrapper deep-orange darken-4">
+                      <form>
+                        <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                        </div>
+                      </form>
+                    </div> <!--End of search field-->
+
                 </nav> 
             
             </div> <!--End of navbar-->
