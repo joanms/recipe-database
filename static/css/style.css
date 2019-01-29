@@ -29,6 +29,9 @@ nav {
     z-index: 9999; 
 }
 
+.material-icons {
+    color: white !important;
+}
 
 /*Main content*/
 
