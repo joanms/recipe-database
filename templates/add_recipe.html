@@ -9,25 +9,25 @@
     <div class="row">
             
         <!--The title of the recipe-->
-        <div class="input-field col s4">
+        <div class="input-field col s12 m6 l4">
             <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
             <label for="recipe_title">Recipe Title*</label>
         </div>
                         
         <!--The author of the recipe-->
-        <div class="input-field col s2">
+        <div class="input-field col s12 m6 l2">
             <input id="author" name="author" type="text" class="validate">
             <label for="author">Author</label>
         </div>
                         
         <!--The location of the recipe's illustration-->
-        <div class="input-field col s4">
+        <div class="input-field col s12 m6 l4">
             <input id="image_path" name="image_path" type="text" class="validate">
             <label for="image_path">URL of Image (please don't hotlink)</label>
         </div>
                         
         <!--The category of the recipe-->
-        <div class="input-field col s2">
+        <div class="input-field col s12 m6 l2">
             <select id="category" name="category_name">
                 <!--The following for loop pulls the list of category names from the categories collection in the database-->
                 <option value="" disabled selected>Click to Select</option>
@@ -44,19 +44,19 @@
     <div class="row"> 
                         
         <!--The recipe's country of origin-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="origin" name="origin" type="text" class="validate">
             <label for="origin">Country of Origin</label>
         </div>
                         
         <!--Allergens-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="allergens" name="allergens" type="text" class="validate">
             <label for="allergens">Allergens</label>
         </div>
                         
         <!--Selector to indicate if the recipe is suitable for vegetarians-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="vegetarian" name="vegetarian" type="checkbox">
@@ -67,7 +67,7 @@
         </div> <!--End of vegetarian selector-->
                         
         <!--Selector to indicate if the recipe is suitable for vegans-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="vegan" name="vegan" type="checkbox">
@@ -78,7 +78,7 @@
         </div> <!--End of vegan selector-->
                     
         <!--Selector to indicate if the recipe is gluten-free-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="gluten_free" name="gluten_free" type="checkbox">
@@ -94,25 +94,25 @@
     <div class="row"> 
                     
         <!--The number of servings the recipe makes-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="servings" name="servings" type="text" class="validate">
             <label for="servings">Number of Servings</label>
         </div>
                         
         <!--The time needed to prepare the recipe, not counting marinading and cooking time-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="prep_time" name="prep_time" type="text" class="validate">
             <label for="prep_time">Preparation Time</label>
         </div>
                         
         <!--This is for processes such as marinading, proving, etc.-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="extra_time" name="extra_time" type="text" class="validate">
             <label for="extra_time">Extra Time</label>
         </div>
 
         <!--The time needed to cook the recipe-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="cook_time" name="cook_time" type="text" class="validate">
             <label for="cook_time">Cook Time</label>
         </div>
