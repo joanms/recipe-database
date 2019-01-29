@@ -10,25 +10,25 @@
     <div class="row">
                         
         <!--The recipe's title-->
-        <div class="input-field col s4">
+        <div class="input-field col s12 m6 l4">
             <input id="recipe_title" name="recipe_title" type="text" class="validate" value="{{recipe.recipe_title}}" required>
             <label for="recipe_title">Recipe Title*</label>
         </div>
                         
         <!--The recipe's author-->
-        <div class="input-field col s2">
+        <div class="input-field col s12 m6 l2">
             <input id="author" name="author" type="text" class="validate" value="{{recipe.author}}">
             <label for="author">Author</label>
         </div>
                         
         <!--The location of the recipe's illustration-->
-        <div class="input-field col s4">
+        <div class="input-field col s12 m6 l4">
             <input id="image_path" name="image_path" type="text" class="validate" value="{{recipe.image_path}}">
             <label for="image_path">URL of Image (please don't hotlink)</label>
         </div>
                         
         <!--The recipe's category-->
-        <div class="input-field col s2">
+        <div class="input-field col s12 m6 l2">
             <select id="category" name="category_name">
                 <option value="" disabled selected>Click to Select</option>
                 {% for category in categories %}
@@ -46,19 +46,19 @@
     <div class="row"> 
                         
         <!--The recipe's country of origin-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="origin" name="origin" type="text" class="validate" value="{{recipe.origin}}">
             <label for="origin">Country of Origin</label>
         </div>
                         
         <!--Allergens-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="allergens" name="allergens" type="text" value="{{recipe.allergens}}" class="validate">
             <label for="allergens">Allergens</label>
         </div>
                         
         <!--Selector to indicate if the recipe is suitable for vegetarians-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="vegetarian" name="vegetarian" type="checkbox"
@@ -70,7 +70,7 @@
         </div> <!--End of vegetarian selector-->
                         
         <!--Selector to indicate if the recipe is suitable for vegans-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="vegan" name="vegan" type="checkbox" 
@@ -82,7 +82,7 @@
         </div> <!--End of vegan selector-->
                         
         <!--Selector to indicate if the recipe is gluten-free-->
-        <div class="col s2">
+        <div class="col s4 l2">
             <div class="switch">
                 <label>
                     <input id="gluten_free" name="gluten_free" type="checkbox" 
@@ -99,25 +99,25 @@
     <div class="row"> 
                         
         <!--The number of servings the recipe makes-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="servings" name="servings" type="text" class="validate" value="{{recipe.servings}}">
             <label for="servings">Number of Servings</label>
         </div>
                         
         <!--The time needed to prepare the ingredients for cooking-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="prep_time" name="prep_time" type="text" class="validate" value="{{recipe.prep_time}}">
             <label for="prep_time">Preparation Time</label>
         </div>
                     
         <!--Additional time-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="extra_time" name="extra_time" type="text" value="{{recipe.extra_time}}" class="validate">
             <label for="extra_time">Extra Time</label>
         </div>
                         
         <!--The time needed to cook the recipe-->
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <input id="cook_time" name="cook_time" type="text" class="validate" value="{{recipe.cook_time}}">
             <label for="cook_time">Cook Time</label>
         </div>
