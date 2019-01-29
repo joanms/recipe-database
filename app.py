@@ -12,6 +12,7 @@ app.config['MONGO_DBNAME'] = 'recipedb'
 app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
 
 mongo = PyMongo(app)
+recipes =  mongo.db.recipes
 
 @app.route('/')
 def index():
@@ -65,45 +66,45 @@ def submit_changes(recipe_id):
 def list_recipes():
     return render_template("list_recipes.html", 
     recipes=mongo.db.recipes.find())
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    search = request.form.get('search')
+    results=recipes.find({"category_name": "Bread"})
     
 @app.route('/bread', methods=['GET', 'POST'])
 def bread():
-    recipes=mongo.db.recipes
     results=recipes.find({"category_name": "Bread"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/starters', methods=['GET', 'POST'])
 def starters():
-    recipes=mongo.db.recipes
     results=recipes.find({"category_name": "Starters"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/mains', methods=['GET', 'POST'])
 def mains():
-    recipes=mongo.db.recipes
+    
     results=recipes.find({"category_name": "Mains"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sides', methods=['GET', 'POST'])
 def sides():
-    recipes=mongo.db.recipes
     results=recipes.find({"category_name": "Sides"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sauces', methods=['GET', 'POST'])
 def sauces():
-    recipes=mongo.db.recipes
     results=recipes.find({"category_name": "Sauces"})
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/desserts', methods=['GET', 'POST'])
 def desserts():
-    recipes=mongo.db.recipes
     results=recipes.find({"category_name": "Desserts"})
     return render_template("list_recipes.html", 
     recipes=results)
