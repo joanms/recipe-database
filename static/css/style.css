@@ -73,7 +73,7 @@ h1 {
     font-family: "Fondamento", cursive;
     font-size: 2.5em;
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     
 }
 
@@ -81,14 +81,14 @@ h2 {
     font-family: "Fondamento", cursive;
     font-size: 1.875em;
     text-align: inherit;
-    margin-bottom: 0px;
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 
 h3 {
     font-family: "Fondamento", cursive;
     font-size: 1.5em;
 }
-
 
 a.recipe-title{
     color: black;
@@ -104,7 +104,7 @@ a.recipe-title:hover {
 
 #information {
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 25px;
     line-height: inherit;
 }
 
