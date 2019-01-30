@@ -6,7 +6,7 @@
         
 <div class="row">
 
-    <div class="col s12 m6">
+    <div class="col m12 l8">
         
         {% for recipe in recipes %}
             
@@ -54,46 +54,69 @@
     </div> <!--End of recipe list-->
 
     
-    <div class="col s12 m4 offset-m2 sidebar">
+    <div class="col m12 l4 sidebar">
         <h2>Refine the Search Results</h2>
-        <h3>Exclude Allergens</h3>
         <form action="#">
+            
+            <h3>Allergens</h3>
+            <div class="input-field">
+                <input id="origin" type="text" class="validate">
+                <label for="allergens">Enter allergens to exclude from the results:</label>
+            </div>
+
+            <h3>Category</h3>
             <p>
-                <input type="checkbox" id="dairy" />
-                <label for="dairy">Dairy</label>
+                <input type="checkbox" id="bread"/>
+                <label for="bread">Bread</label>
             </p>
             <p>
-                <input type="checkbox" id="eggs" />
-                <label for="eggs">Eggs</label>
+                <input type="checkbox" id="desserts"/>
+                <label for="desserts">Desserts</label>
             </p>
             <p>
-                <input type="checkbox" id="fish" />
-                <label for="fish">Fish</label>
+                <input type="checkbox" id="mains"/>
+                <label for="mains">Mains</label>
             </p>
             <p>
-                <input type="checkbox" id="fruit" />
-                <label for="tfruitest5">Fruit</label>
+                <input type="checkbox" id="sauces"/>
+                <label for="sauces">Sauces</label>
             </p>
             <p>
-                <input type="checkbox" id="peanuts" />
-                <label for="peanuts">Peanuts</label>
+                <input type="checkbox" id="sides"/>
+                <label for="sides">Sides</label>
             </p>
             <p>
-                <input type="checkbox" id="shellfish" />
-                <label for="shellfish">Shellfish</label>
+                <input type="checkbox" id="starters"/>
+                <label for="starters">Starters</label>
+            </p>
+
+            
+            <h3>Country of Origin</h3>
+            <div class="input-field">
+                <input id="origin" type="text" class="validate">
+                <label for="orign">Enter the country of origin:</label>
+            </div>
+
+            <h3>Dietary Restrictions</h3>
+            <p>
+                <input type="checkbox" id="vegetarian"/>
+                <label for="vegetarian">Vegetarian</label>
             </p>
             <p>
-                <input type="checkbox" id="soy" />
-                <label for="soy">Soy</label>
+                <input type="checkbox" id="vegan"/>
+                <label for="vegan">Vegan</label>
             </p>
             <p>
-                <input type="checkbox" id="tree-nuts" />
-                <label for="tree-nuts">Tree Nuts</label>
+                <input type="checkbox" id="gluten-free"/>
+                <label for="gluten-free">Gluten-Free</label>
             </p>
-            <p>
-                <input type="checkbox" id="wheat" />
-                <label for="wheat">Wheat</label>
-            </p>
+            
+            <h3>Ingredients</h3>
+            <div class="input-field">
+                <input id="origin" type="text" class="validate">
+                <label for="allergens">Enter ingredients to include in the results:</label>
+            </div>
+
         </form>    
     </div>    
     
