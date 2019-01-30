@@ -38,6 +38,7 @@ nav {
 
 .container {
     margin-top: 100px;
+    width: 90vw;
 }
 
 .category {
@@ -45,8 +46,9 @@ nav {
 }
 
 .sidebar {
-    background-color: #ffe082;
+    background-color: #ffecb3;
     padding: 20px;
+    border:1px solid black;
 }
 
 
@@ -86,7 +88,7 @@ h3 {
     font-family: "Fondamento", cursive;
     font-size: 1.5em;
     margin-bottom: 0px;
-    margin-top: 15px
+    margin-top: 20px
 }
 
 

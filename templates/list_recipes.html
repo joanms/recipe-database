@@ -6,7 +6,7 @@
         
 <div class="row">
 
-    <div class="col m12 l8">
+    <div class="col m12 xl7">
         
         {% for recipe in recipes %}
             
@@ -54,16 +54,10 @@
     </div> <!--End of recipe list-->
 
     
-    <div class="col m12 l4 sidebar">
+    <div class="col m12 xl4 offset-xl1 sidebar">
         <h2>Refine the Search Results</h2>
         <form action="#">
             
-            <h3>Allergens</h3>
-            <div class="input-field">
-                <input id="origin" type="text" class="validate">
-                <label for="allergens">Enter allergens to exclude from the results:</label>
-            </div>
-
             <h3>Category</h3>
             <p>
                 <input type="checkbox" id="bread"/>
@@ -90,13 +84,6 @@
                 <label for="starters">Starters</label>
             </p>
 
-            
-            <h3>Country of Origin</h3>
-            <div class="input-field">
-                <input id="origin" type="text" class="validate">
-                <label for="orign">Enter the country of origin:</label>
-            </div>
-
             <h3>Dietary Restrictions</h3>
             <p>
                 <input type="checkbox" id="vegetarian"/>
@@ -111,11 +98,24 @@
                 <label for="gluten-free">Gluten-Free</label>
             </p>
             
-            <h3>Ingredients</h3>
             <div class="input-field">
                 <input id="origin" type="text" class="validate">
-                <label for="allergens">Enter ingredients to include in the results:</label>
+                <label for="allergens">Allergens to exclude:</label>
             </div>
+
+            <div class="input-field">
+                <input id="origin" type="text" class="validate">
+                <label for="orign">Country of origin:</label>
+            </div>
+            
+            <div class="input-field">
+                <input id="origin" type="text" class="validate">
+                <label for="allergens">Ingredients to include:</label>
+            </div>
+            
+            <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                <i class="material-icons right">sync</i>
+            </button>
 
         </form>    
     </div>    
