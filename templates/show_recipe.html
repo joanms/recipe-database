@@ -1,15 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 
-<div class="row centre">
-    <h1>{{recipe.recipe_title}}</h1>
-    <p></p>
-</div>
+<h1>{{recipe.recipe_title}}</h1>
 
 <div  class= "row">
                 
     <!--Illustration and information about the recipe-->
     <div class="col s12 m6 l4">
-                    
+        
         <!--Information about the recipe-->
         <div id="information">
                         
@@ -62,13 +59,13 @@
             {% if recipe.cook_time %}
                 Cook Time: {{recipe.cook_time}} </p>
             {% endif %}
-            
-            <!--Recipe illustration-->
-            <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
-            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
-
                         
         </div> <!--End of information text-->
+        
+        <!--Recipe illustration-->
+        <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
+        <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+
                     
     </div> <!--End of first column-->
     
