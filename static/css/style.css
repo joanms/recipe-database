@@ -43,10 +43,11 @@ nav {
 /*--------------------------------------------Containers*/
 
 .container {
-    background-color: rgba(255, 248, 225, .7);
+    background-color: rgba(255, 248, 225, .8);
     width: 90vw;
     height: 100%;
     padding: 25px;
+    margin-top: 70px;
 }
 
 .category {
@@ -82,9 +83,8 @@ h1 {
     font-family: "Fondamento", cursive;
     font-size: 2.5em;
     text-align: center;
-    margin-top: 80px;
     margin-bottom: 30px;
-    
+    margin-top: 0px;
 }
 
 h2 {
