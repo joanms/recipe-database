@@ -74,8 +74,9 @@ def list_recipes():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    search = request.form.get('search')
-    results=recipes.find()
+    if request.method == 'POST': 
+        search = (request.form.getlist('search'))
+        results = recipes.find({ "$text": { "$search":  "/.*"+search[0]+".*/i" } })
     return render_template("list_recipes.html", 
     recipes=results)
     
