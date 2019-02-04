@@ -93,9 +93,11 @@
                 
             {% endif %} {% endwith %} <!--End of loop through flashed messages-->
 
-        <!--Recipe illustration-->
+        <!--Recipe illustration if it exists-->
         <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
-        <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+        {% if recipe.image_path %}
+            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+        {% endif %}
                     
     </div> <!--End of first column-->
     
