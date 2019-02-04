@@ -62,10 +62,40 @@
                         
         </div> <!--End of information text-->
         
+        <!--Button to edit a recipe-->
+        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
+            <i class="material-icons right">edit</i>Edit</a>
+                                
+        <!--Button to delete a recipe-->
+        <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
+            <i class="material-icons right">delete</i>Delete</a>
+        
+            <!--If the DELETE RECIPE button is clicked, a warning appears-->
+            {% with messages = get_flashed_messages() %} {% if messages %}
+            
+                {% for message in messages %}
+                                    
+                <p id="flash">{{ message }} </p>
+                
+                <!--Clicking this button confirms the deletion-->
+                <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
+                <button type="submit" class="btn waves-effect waves-light">
+                    <i class="material-icons right">check</i>Confirm</button>
+                </form>
+    
+                <!--Clicking this button cancels the deletion-->
+                <form action="{{url_for('show_recipe', recipe_id=recipe._id)}}" method="POST">
+                <button type="submit" class="btn waves-effect waves-light">
+                    <i class="material-icons right">close</i>Cancel</button>
+                </form>
+    
+                {% endfor %}
+                
+            {% endif %} {% endwith %} <!--End of loop through flashed messages-->
+
         <!--Recipe illustration-->
         <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
         <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
-
                     
     </div> <!--End of first column-->
     
@@ -83,42 +113,4 @@
                 
 </div> <!--End of recipe-->
 
-<!--Buttons to edit and delete the recipe-->
-<div class="row centre">
-    
-    <!--Button to edit a recipe-->
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
-        <i class="material-icons right">edit</i>Edit</a>
-                            
-    <!--Button to delete a recipe-->
-    <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="btn waves-effect waves-light" title="WARNING: NO UNDO">
-        <i class="material-icons right">delete</i>Delete</a>
-    
-        <!--If the DELETE RECIPE button is clicked, a warning appears-->
-        {% with messages = get_flashed_messages() %} {% if messages %}
-        
-            {% for message in messages %}
-                                
-            <p id="flash">{{ message }} </p>
-            
-            <div class="row centre">
-                <!--Clicking this button confirms the deletion-->
-                <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
-                <button type="submit" class="btn waves-effect waves-light">
-                    <i class="material-icons right">check</i>Confirm</button>
-                </form>
-                
-                <!--Clicking this button cancels the deletion-->
-                <form action="{{url_for('show_recipe', recipe_id=recipe._id)}}" method="POST">
-                <button type="submit" class="btn waves-effect waves-light">
-                    <i class="material-icons right">close</i>Cancel</button>
-                </form>
-            </div>
-            
-            {% endfor %}
-            
-        {% endif %} {% endwith %} <!--End of loop through flashed messages-->
-    
-</div>
-            
 {% endblock %}
