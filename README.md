@@ -6,7 +6,7 @@ This is a recipe database that users can search using a range of search terms. T
  
 Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database structure.
 
-The wireframes are located in the project folder at static/recipe_database_wireframes.pdf. 
+Please [click here](https://github.com/joanms/recipe-database/blob/master/static/recipe_database_wireframes.pdf) to view the wireframes. 
 
 ### User Stories
 
@@ -38,7 +38,7 @@ In this section, you should go over the different parts of your project, and des
 ### Existing Features
 - Search bar in the header allows users to search for recipes containing the keywords of their choice.
 - Links to all recipe categories on the home page.
-- Page listin summary details of either all recipes in the database, or recipes in certain categories.
+- Page listing summary details of either all recipes in the database, or recipes in certain categories.
 - Sidebar in the summary details page that allows users to filter the search results.
 - Recipe input form in add_recipe.html enables users to add their own recipes to the database and display them on the site.
 - Recipe editing form that enables users to edit recipes.
@@ -110,6 +110,9 @@ I conducted manual tests of the application as follows:
     For all recipes:
     1. Click the Delete button at the bottom of the recipe display page.
     2. Ensure that the recipe has been deleted from the database.
+
+6. Searching for Recipes
+    1. 
 
 
 ## Deployment
