@@ -1,6 +1,7 @@
 # Recipe Database
 
 This is a recipe database that users can search using a range of search terms. They can also add and edit recipes.
+
  
 ## UX
  
@@ -22,7 +23,6 @@ a list of ingredients from elsewhere. Secondly, I might not think of all possibl
 for subsets of ingredients, such as those for sauces, marinades, icing, etc. I also decided against a dropdown menu for allergens, as an 
 exhaustive list of all possible allergens would be too unwieldy and risk omitting some allergens.
 
-
 - **Search for recipes according to a wide range of criteria.**
 There is a search bar at the top of each page to allow users to search for any keywords they want. There are links to all the categories on the 
 home page allowing users to see a list of all recipes in whichever category they are looking for. In addition, the page to list recipes (either 
@@ -33,17 +33,16 @@ country of origin and any other keywords they wish to include in their search re
 Each recipe page has buttons that allow users to edit or delete recipes.
 
 - **See how popular recipes are with other users.**
- 
 
 ### Design
+
 The colour scheme of warm orange-reds and yellows with green accents is intended to be warm and appetising. The background image was selected to 
 harmonise with this colour scheme. The heading font is calligraphy style to give the site a classic, graceful look and the body text font is a simple 
 sans-serif to maximise legibility and elegance.
 
+
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
 - Search bar in the header allows users to search for recipes containing the keywords of their choice.
 - Links to all recipe categories on the home page.
@@ -53,15 +52,16 @@ In this section, you should go over the different parts of your project, and des
 - Recipe editing form that enables users to edit recipes.
 - Delete button for deleting recipes.
 
-
 ### Features Left to Implement
 - Secure login with a password.
+
 
 ## Technologies Used
 
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to write the content of the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
-- **[Materialize](https://materializecss.com//)** was used to make it easier to style the content and make the site responsive.
+- **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
+- **[JavaScript](https://www.javascript.com/)** was used to initialise some of the Materialize elements and ensure that they worked correctly.
 - **[Flask](http://flask.pocoo.org/)** was used to create routes and render the HTML templates.
 - **[Python](https://www.python.org/)** was used to write the site logic.
 - **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
@@ -127,7 +127,6 @@ I conducted manual tests of the application as follows:
 ## Deployment
 
 I deployed the project on Heroku as follows:
-
 1. Create a new app on Heroku and name it joans-riddle-game.
 2. Create a Heroku remote.
 3. Ensure that the project included a Procfile and requirements.txt.
@@ -146,6 +145,7 @@ I deployed the project on Heroku as follows:
 ## Credits
 
 ### Media and Content
+
 - The logo and background image are free stock images from [Pixabay](https://pixabay.com/).
 - The recipes and their illustrations are from [BBC Good Food](https://www.bbcgoodfood.com/recipes).
 
