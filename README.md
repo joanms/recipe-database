@@ -58,12 +58,15 @@ sans-serif to maximise legibility and elegance.
 
 ## Technologies Used
 
-- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to write the content of the site.
-- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
+- **[MongoDB](https://www.mongodb.com/) was used as the database program.
+- **[mLab](https://mlab.com/home) was used to set up the database.
+- **[Pencil](https://pencil.evolus.vn/) was used to create the wireframes.
+- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to set up the templates for the site.
+- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the site content.
 - **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
 - **[JavaScript](https://www.javascript.com/)** was used to initialise some of the Materialize elements and ensure that they worked correctly.
+- **[Python](https://www.python.org/)** was used to write the app's logic.
 - **[Flask](http://flask.pocoo.org/)** was used to create routes and render the HTML templates.
-- **[Python](https://www.python.org/)** was used to write the site logic.
 - **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
 - **[Heroku](https://www.heroku.com/)** was used to deploy the project.
 
