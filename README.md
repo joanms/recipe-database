@@ -105,7 +105,10 @@ I conducted manual tests of the application as follows:
     7. Click on each recipe in the list in turn
     8. Ensure that all the recipe details are displayed correctly on the page that loads.
  
-4. Editing Recipes
+4. Adding Recipes
+    1. 
+ 
+5. Editing Recipes
     For all recipes:    
     1. Click on the Edit button at the bottom of a page displaying a recipe.
     2. Ensure that the form for editing the recipe loads.
@@ -118,12 +121,17 @@ I conducted manual tests of the application as follows:
     8. Click the Cancel button.
     9. Ensure that the recipe reloads with none of the cancelled changes saved to the database.
 
-5. Deleting Recipes
+6. Deleting Recipes
     For all recipes:
     1. Click the Delete button at the bottom of the recipe display page.
-    2. Ensure that the recipe has been deleted from the database.
+    2. Ensure that a warning message appears, along with buttons to cancel or confirm the deletion.
+    3. Click Cancel.
+    4. Ensure that the page reloads correctly.
+    5. Click the Delete button again.
+    5. Click Confirm.
+    6. Ensure that the recipe is deleted from the database.
 
-6. Searching for Recipes
+7. Searching for Recipes
     1. 
 
 
