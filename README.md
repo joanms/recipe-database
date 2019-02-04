@@ -6,6 +6,8 @@ This is a recipe database that users can search using a range of search terms. T
  
 Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database structure.
 
+The wireframes are located in the project folder at static/recipe_database_wireframes.pdf. 
+
 ### User Stories
 
 As a user, I want to:
@@ -27,8 +29,6 @@ country of origin and any other keywords they wish to include in their search re
 Each recipe page has buttons that allow users to edit or delete recipes.
 
 - **See how popular recipes are with other users.**
-
-
 
 
 ## Features
@@ -105,6 +105,11 @@ I conducted manual tests of the application as follows:
     8. Edit the recipe details.
     8. Click the Cancel button.
     9. Ensure that the recipe reloads with none of the cancelled changes saved to the database.
+
+5. Deleting Recipes
+    For all recipes:
+    1. Click the Delete button at the bottom of the recipe display page.
+    2. Ensure that the recipe has been deleted from the database.
 
 
 ## Deployment
