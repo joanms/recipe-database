@@ -1,23 +1,27 @@
 # Recipe Database
 
-This is a recipe database that users can search using a range of search terms. They can also add their own recipes and edit recieps.
+This is a recipe database that users can search using a range of search terms. They can also add and edit recipes.
  
 ## UX
  
-Please [click here](https://docs.google.com/document/d/1sBT4_3UXoEjqRvrDu9hr3lfJOWcQb9BYC8f4kiqR5iw/edit?usp=sharing) to see the database structure.
+Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe-database_schema.pdf) to see the database schema.
 
-Please [click here](https://github.com/joanms/recipe-database/blob/master/static/recipe_database_wireframes.pdf) to view the wireframes. 
+Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
 
 ### User Stories
 
 As a user, I want to:
 - **Easily add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
-The templates are set up to format the recipes neatly once they are input. I considered using a dropdown menu for ingredient units and separate 
-fields for the quantities and names of ingredients so that users would input them consistently, but decided against this for three reasons. 
-Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. Secondly, I might not think 
-of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as those for sauces, marinades, 
-icing, etc. The setup I have used allows much more flexibility and ease of use.
+The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes. All values are text, except 
+the ones for Vegetarian, Vegan and Gluten-Free, which are boolean. The templates are set up to format the recipes neatly once they are input. 
+
+I considered using a dropdown menu for ingredient units and separate fields for the quantities and names of ingredients so that users would 
+input them consistently, but decided against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste 
+a list of ingredients from elsewhere. Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow 
+for subsets of ingredients, such as those for sauces, marinades, icing, etc. I also decided against a dropdown menu for allergens, as an 
+exhaustive list of all possible allergens would be too unwieldy and risk omitting some allergens.
+
 
 - **Search for recipes according to a wide range of criteria.**
 There is a search bar at the top of each page to allow users to search for any keywords they want. There are links to all the categories on the 
