@@ -125,7 +125,7 @@ def show_recipe(recipe_id):
 @app.route('/warning/<recipe_id>', methods=['GET', 'POST'])
 def warning(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    flash("Are you sure you want to permanently delete the recipe?")
+    flash("This will permanently delete the recipe. Are you sure?")
     return render_template(
         'show_recipe.html', recipe=the_recipe)
 
