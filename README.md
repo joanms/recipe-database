@@ -33,7 +33,12 @@ country of origin and any other keywords they wish to include in their search re
 Each recipe page has buttons that allow users to edit or delete recipes.
 
 - **See how popular recipes are with other users.**
+ 
 
+### Design
+The colour scheme of warm orange-reds and yellows with green accents is intended to be warm and appetising. The background image was selected to 
+harmonise with this colour scheme. The heading font is calligraphy style to give the site a classic, graceful look and the body text font is a simple 
+sans-serif to maximise legibility and elegance.
 
 ## Features
 
