@@ -2,26 +2,29 @@
 
 This is a recipe database that users can search using a range of search terms. They can also add and edit recipes.
 
- 
-## UX
- 
+
+## Database Schema
+
 Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe-database_schema.pdf) to see the database schema.
 
-Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
+The database is set up to make it as easy as possible for users to add and edit their own recipes. I considered using a dropdown menu for 
+ingredient units and separate fields for the quantities and names of ingredients so that users would input them consistently, but decided 
+against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. 
+Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as 
+those for sauces, marinades, icing, etc. I also decided against a dropdown menu for allergens, as an exhaustive list of all possible allergens 
+would be too unwieldy and risk omitting some allergens.
+
+ 
+## UX
 
 ### User Stories
 
 As a user, I want to:
 - **Easily add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
-The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes. All values are text, except 
-the ones for Vegetarian, Vegan and Gluten-Free, which are boolean. The templates are set up to format the recipes neatly once they are input. 
-
-I considered using a dropdown menu for ingredient units and separate fields for the quantities and names of ingredients so that users would 
-input them consistently, but decided against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste 
-a list of ingredients from elsewhere. Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow 
-for subsets of ingredients, such as those for sauces, marinades, icing, etc. I also decided against a dropdown menu for allergens, as an 
-exhaustive list of all possible allergens would be too unwieldy and risk omitting some allergens.
+The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes. Form fields are text 
+wherever possible so that users are not limited in the information that they can input. For example, if they want to add a caveat to a value 
+such as the preparation time, they can. The templates are set up to format the recipes neatly once they are input. 
 
 - **Search for recipes according to a wide range of criteria.**
 There is a search bar at the top of each page to allow users to search for any keywords they want. There are links to all the categories on the 
@@ -30,15 +33,21 @@ by category or all recipes) has a sidebar allowing users to filter the results b
 country of origin and any other keywords they wish to include in their search results.
 
 - **Edit and delete recipes.**
-Each recipe page has buttons that allow users to edit or delete recipes.
+Each recipe page has buttons that allow users to edit or delete recipes. When the delete button is clicked, a warning appears telling the user that
+this action is permanent. This prevents users from accidentally deleting recipes.
 
 - **See how popular recipes are with other users.**
 
 ### Design
 
+Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
+
+I kept the layout as simple as possible to make it easy for users to find their way around the site. None of the pages are too cluttered - they 
+have all the information that the user needs and no more. The buttons that users need to click to perform various actions are easy to find.
+
 The colour scheme of warm orange-reds and yellows with green accents is intended to be warm and appetising. The background image was selected to 
-harmonise with this colour scheme. The heading font is calligraphy style to give the site a classic, graceful look and the body text font is a simple 
-sans-serif to maximise legibility and elegance.
+harmonise with this colour scheme. The heading font is calligraphy style to give the site a classic, graceful look and the body text font is a 
+simple sans-serif to maximise legibility and elegance.
 
 
 ## Features
@@ -58,9 +67,9 @@ sans-serif to maximise legibility and elegance.
 
 ## Technologies Used
 
-- **[MongoDB](https://www.mongodb.com/) was used as the database program.
-- **[mLab](https://mlab.com/home) was used to set up the database.
-- **[Pencil](https://pencil.evolus.vn/) was used to create the wireframes.
+- **[MongoDB](https://www.mongodb.com/)** was used as the database program.
+- **[mLab](https://mlab.com/home)** was used to set up the database.
+- **[Pencil](https://pencil.evolus.vn/)** was used to create the wireframes.
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to set up the templates for the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the site content.
 - **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
@@ -87,15 +96,27 @@ I conducted automated testing of the app routes with unittests, and the tests ar
 I conducted manual tests of the application as follows:
 
 1. Cross-browser and Device Compatibility
-    1. Play the game on Chrome, Edge, Firefox and Opera browsers to ensure that it works on all of them.
-    2. Play the game on a desktop, laptop, tablet and smartphone to ensure that it works on all devices.
+    1. Test the app on Chrome, Edge, Firefox and Opera browsers to ensure that it works on all of them.
+    2. Test the app on a desktop, laptop, tablet and smartphone to ensure that it works on all devices.
 
 2. Responsiveness
-    1. Check the game in responsive mode with Chrome Developer Tools to ensure that the size and position of elements adjusts correctly.
-    2. Check the game on a desktop, laptop, tablet and smartphone to ensure that it displays correctly. On large screens, the navbar appears 
-    at the top right of the page. On smaller screens, it appears below the main heading, and the size of all text is reduced to avoid overflow.
+    1. View the app in responsive mode with Chrome Developer Tools to ensure that the size and position of elements adjusts correctly.
+    2. View the app on a desktop, laptop, tablet and smartphone to ensure that it displays correctly.
 
-3. Viewing Recipes
+3. Adding Recipes
+    For all recipes:
+    1. Click on the "Add a Recipe" link in the navbar.
+    2. Ensure that the form appears correctly.
+    3. Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
+    4. Submit a fully completed form.
+    5. Click on the link to the new recipe in the list of recipes that appears.
+    6. Ensure that the page showing that recipe loads correctly, with all entered details appearing.
+    7. Ensure that all the recipe details have been saved in the database.
+
+4. Searching for Recipes
+    1. 
+ 
+5. Viewing Recipes
     1. Click on the 'View All Recipes' link in the navbar.
     2. Ensure that all recipes in the database are listed on the page that loads.
     3. Click on each recipe in the list in turn
@@ -105,10 +126,7 @@ I conducted manual tests of the application as follows:
     7. Click on each recipe in the list in turn
     8. Ensure that all the recipe details are displayed correctly on the page that loads.
  
-4. Adding Recipes
-    1. 
- 
-5. Editing Recipes
+6. Editing Recipes
     For all recipes:    
     1. Click on the Edit button at the bottom of a page displaying a recipe.
     2. Ensure that the form for editing the recipe loads.
@@ -121,7 +139,7 @@ I conducted manual tests of the application as follows:
     8. Click the Cancel button.
     9. Ensure that the recipe reloads with none of the cancelled changes saved to the database.
 
-6. Deleting Recipes
+7. Deleting Recipes
     For all recipes:
     1. Click the Delete button at the bottom of the recipe display page.
     2. Ensure that a warning message appears, along with buttons to cancel or confirm the deletion.
@@ -130,9 +148,6 @@ I conducted manual tests of the application as follows:
     5. Click the Delete button again.
     5. Click Confirm.
     6. Ensure that the recipe is deleted from the database.
-
-7. Searching for Recipes
-    1. 
 
 
 ## Deployment
