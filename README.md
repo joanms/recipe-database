@@ -7,12 +7,15 @@ This is a recipe database that users can search using a range of search terms. T
 
 Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe-database_schema.pdf) to see the database schema.
 
-The database is set up to make it as easy as possible for users to add and edit their own recipes. I considered using a dropdown menu for 
-ingredient units and separate fields for the quantities and names of ingredients so that users would input them consistently, but decided 
-against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. 
-Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as 
-those for sauces, marinades, icing, etc. I also decided against a dropdown menu for allergens, as an exhaustive list of all possible allergens 
-would be too unwieldy and risk omitting some allergens.
+The database is set up to make it as easy as possible for users to add and edit their own recipes. Values are text wherever possible so that 
+users are not limited in the information that they can input. For example, if they want to add a caveat to a value such as the preparation 
+time, they can. 
+
+I considered separate values for the quantities and names of ingredients so that users would input them consistently, but decided against this 
+for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. Secondly, I 
+might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as those for sauces, 
+marinades, icing, etc. I also decided against a preset list of allergens, as an exhaustive list of all possible food allergens would be too unwieldy 
+and risk omitting some allergens.
 
  
 ## UX
@@ -22,19 +25,19 @@ would be too unwieldy and risk omitting some allergens.
 As a user, I want to:
 - **Easily add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
-The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes. Form fields are text 
-wherever possible so that users are not limited in the information that they can input. For example, if they want to add a caveat to a value 
-such as the preparation time, they can. The templates are set up to format the recipes neatly once they are input. 
+The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes, as outlined in the database 
+schema explanation above. The HTML templates are set up to format the recipes neatly once they are input.
 
 - **Search for recipes according to a wide range of criteria.**
 There is a search bar at the top of each page to allow users to search for any keywords they want. There are links to all the categories on the 
 home page allowing users to see a list of all recipes in whichever category they are looking for. In addition, the page to list recipes (either 
 by category or all recipes) has a sidebar allowing users to filter the results by various criteria such as category, allergens, dietary restrictions, 
-country of origin and any other keywords they wish to include in their search results.
+country of origin and any keywords they wish to include in their search results.
 
 - **Edit and delete recipes.**
-Each recipe page has buttons that allow users to edit or delete recipes. When the delete button is clicked, a warning appears telling the user that
-this action is permanent. This prevents users from accidentally deleting recipes.
+Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
+the user thatthis action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
+deleting recipes.
 
 - **See how popular recipes are with other users.**
 
