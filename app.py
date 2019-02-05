@@ -72,11 +72,13 @@ def list_recipes():
     return render_template("list_recipes.html", 
     recipes=mongo.db.recipes.find())
 
-@app.route('/search', methods=['GET', 'POST'])
+# THIS FUNCTION NEEDS WORK
+@app.route("/search", methods=["GET", "POST"])
 def search():
-    if request.method == 'POST': 
-        search = (request.form.getlist('search'))
-        results = recipes.find({ "$text": { "$search":  "/.*"+search[0]+".*/i" } })
+    mongo.db.recipes.create_index([('$**', 'text')])
+    keywords = request.form.get('search')
+    query = ( { "$text": { "$search": keywords } } )
+    results = mongo.db.recipes.find(query)
     return render_template("list_recipes.html", 
     recipes=results)
     
