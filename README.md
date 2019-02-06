@@ -7,15 +7,12 @@ This is a recipe database that users can search using a range of search terms. T
 
 Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe-database_schema.pdf) to see the database schema.
 
-The database is set up to make it as easy as possible for users to add and edit their own recipes. Values are text wherever possible so that 
-users are not limited in the information that they can input. For example, if they want to add a caveat to a value such as the preparation 
-time, they can. 
-
-I considered separate values for the quantities and names of ingredients so that users would input them consistently, but decided against this 
-for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from elsewhere. Secondly, I 
-might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, such as those for sauces, 
-marinades, icing, etc. I also decided against a preset list of allergens, as an exhaustive list of all possible food allergens would be too unwieldy 
-and risk omitting some allergens.
+The database is set up to make it as easy as possible for users to add and edit their own recipes, with minimal limitations on the type of data 
+that they can input. I considered separate values for the quantities and names of ingredients so that users would input them consistently, but 
+decided against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from 
+elsewhere. Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, 
+such as those for sauces, marinades, icing, etc. I also decided against a preset list of allergens, as an exhaustive list of all possible food 
+allergens would be too unwieldy and risk omitting some allergens.
 
  
 ## UX
