@@ -70,7 +70,7 @@ def submit_changes(recipe_id):
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
     return render_template("list_recipes.html", 
-    recipes=mongo.db.recipes.find())
+    recipes=recipes.find().sort('recipe_title',1))
 
 # THIS FUNCTION NEEDS WORK
 @app.route("/search", methods=["GET", "POST"])
@@ -84,37 +84,37 @@ def search():
     
 @app.route('/bread', methods=['GET', 'POST'])
 def bread():
-    results=recipes.find({"category_name": "Bread"})
+    results=recipes.find({"category_name": "Bread"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/starters', methods=['GET', 'POST'])
 def starters():
-    results=recipes.find({"category_name": "Starters"})
+    results=recipes.find({"category_name": "Starters"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/mains', methods=['GET', 'POST'])
 def mains():
-    results=recipes.find({"category_name": "Mains"})
+    results=recipes.find({"category_name": "Mains"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sides', methods=['GET', 'POST'])
 def sides():
-    results=recipes.find({"category_name": "Sides"})
+    results=recipes.find({"category_name": "Sides"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/sauces', methods=['GET', 'POST'])
 def sauces():
-    results=recipes.find({"category_name": "Sauces"})
+    results=recipes.find({"category_name": "Sauces"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
 @app.route('/desserts', methods=['GET', 'POST'])
 def desserts():
-    results=recipes.find({"category_name": "Desserts"})
+    results=recipes.find({"category_name": "Desserts"}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 
