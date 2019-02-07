@@ -32,7 +32,8 @@ def add_recipe():
 def insert_recipe():
     recipes =  mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('list_recipes'))
+    return render_template("list_recipes.html", 
+    recipes=recipes.find().sort('_id',-1))
     
 # This is based on code from the Code Institute Data-Centric Development Mini Project
 @app.route('/edit_recipe/<recipe_id>')
