@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from wtforms import Form, BooleanField, TextField, validators
@@ -27,12 +27,11 @@ def index():
 def login():
     if request.method == 'POST':
         username = request.form['username']
+        session['user'] = username
         users =  mongo.db.users
-        if username in users:
-            flash("Welcome back, {}".format(username))
-        else:
-            users.insert_one(request.form.to_dict())
-            flash("Welcome, {}".format(username))
+        users.insert_one(request.form.to_dict())
+        flash("Welcome, {}".format(username))
+    return render_template('login.html')        
 
 @app.route('/add_recipe')
 def add_recipe():
