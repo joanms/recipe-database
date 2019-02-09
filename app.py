@@ -30,8 +30,14 @@ def login():
         session['user'] = username
         users =  mongo.db.users
         users.insert_one(request.form.to_dict())
-        flash("Welcome, {}".format(username))
-    return render_template('login.html')        
+        return redirect(url_for('index', username=username))
+    return render_template('login.html') 
+    
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+    session.clear()
+    return render_template('index.html')
+    
 
 @app.route('/add_recipe')
 def add_recipe():
