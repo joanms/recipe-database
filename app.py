@@ -23,6 +23,17 @@ recipes =  mongo.db.recipes
 def index():
     return render_template('index.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        users =  mongo.db.users
+        if username in users:
+            flash("Welcome back, {}".format(username))
+        else:
+            users.insert_one(request.form.to_dict())
+            flash("Welcome, {}".format(username))
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template(
@@ -33,7 +44,7 @@ def insert_recipe():
     recipes =  mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return render_template("list_recipes.html", 
-    recipes=recipes.find().sort('_id',-1))
+    recipes=recipes.find().sort('_id',-1)) # The recipe list will load with the new recipe at the top
     
 # This is based on code from the Code Institute Data-Centric Development Mini Project
 @app.route('/edit_recipe/<recipe_id>')
