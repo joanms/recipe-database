@@ -30,6 +30,7 @@ def login():
         session['user'] = username
         users =  mongo.db.users
         users.insert_one(request.form.to_dict())
+        flash('Welcome, {}!'.format(username))
         return redirect(url_for('index', username=username))
     return render_template('login.html') 
     
