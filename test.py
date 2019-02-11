@@ -10,5 +10,16 @@ class FlaskTestCase(unittest.TestCase):
                     response = tester.get('/', content_type='html/text')
                     self.assertEqual(response.status_code, 200)
           
+          def test_list_recipes(self):
+                    tester = app.test_client(self)
+                    response = tester.get('/list_recipes', content_type='html/text')
+                    self.assertEqual(response.status_code, 200)
+
+          def test_login(self):
+                    tester = app.test_client(self)
+                    response = tester.get('/login', content_type='html/text')
+                    self.assertEqual(response.status_code, 200)
+
+          
 if  __name__ == '__main__':
           unittest.main()
