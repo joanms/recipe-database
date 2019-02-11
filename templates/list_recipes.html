@@ -56,11 +56,11 @@
     
     <div class="col s12 xl4 offset-xl1 sidebar">
         <h2>Refine the Search Results</h2>
-        <form action="#">
+        <form method="POST" action="/search">
             
             <p>Categories to include:</p>
             <p>
-                <input type="checkbox" id="bread"/>
+                <input type="checkbox" id="bread" name="bread"/>  <!--Add names to all other items in the list-->
                 <label for="bread">Bread</label>
             </p>
             <p>
