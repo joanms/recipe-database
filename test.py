@@ -4,12 +4,21 @@ import unittest
 
 class FlaskTestCase(unittest.TestCase):
 
-          # Ensure that Flask was set up correctly
           def test_index(self):
                     tester = app.test_client(self)
                     response = tester.get('/', content_type='html/text')
                     self.assertEqual(response.status_code, 200)
-          
+
+          def test_add_recipe(self):
+                    tester = app.test_client(self)
+                    response = tester.get('/add_recipe', follow_redirects=True)
+                    self.assertIn(b'Add Your Own Recipe', response.data)
+
+          def test_insert_recipe(self):
+                    tester = app.test_client(self)
+                    response = tester.get('/insert_recipe', content_type='html/text')
+                    self.assertEqual(response.status_code, 200)
+
           def test_list_recipes(self):
                     tester = app.test_client(self)
                     response = tester.get('/list_recipes', content_type='html/text')
@@ -17,9 +26,8 @@ class FlaskTestCase(unittest.TestCase):
 
           def test_login(self):
                     tester = app.test_client(self)
-                    response = tester.get('/login', content_type='html/text')
-                    self.assertEqual(response.status_code, 200)
+                    response = tester.get('/login', follow_redirects=True)
+                    self.assertIn(b'Please Enter Your Username', response.data)
 
-          
 if  __name__ == '__main__':
           unittest.main()
