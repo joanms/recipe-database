@@ -85,11 +85,6 @@ def submit_changes(recipe_id):
     return render_template(
         'show_recipe.html', recipe=the_recipe)
     
-@app.route('/list_recipes', methods=['GET', 'POST'])
-def list_recipes():
-    return render_template("list_recipes.html", 
-    recipes=recipes.find().sort('recipe_title',1))
-
 # THIS FUNCTION NEEDS WORK
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -100,39 +95,9 @@ def search():
     return render_template("list_recipes.html", 
     recipes=results)
     
-@app.route('/bread', methods=['GET', 'POST'])
-def bread():
-    results=recipes.find({"category_name": "Bread"}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
-    recipes=results)
-
-@app.route('/starters', methods=['GET', 'POST'])
-def starters():
-    results=recipes.find({"category_name": "Starters"}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
-    recipes=results)
-
-@app.route('/mains', methods=['GET', 'POST'])
-def mains():
-    results=recipes.find({"category_name": "Mains"}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
-    recipes=results)
-
-@app.route('/sides', methods=['GET', 'POST'])
-def sides():
-    results=recipes.find({"category_name": "Sides"}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
-    recipes=results)
-
-@app.route('/sauces', methods=['GET', 'POST'])
-def sauces():
-    results=recipes.find({"category_name": "Sauces"}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
-    recipes=results)
-
-@app.route('/desserts', methods=['GET', 'POST'])
-def desserts():
-    results=recipes.find({"category_name": "Desserts"}).sort('recipe_title',1)
+@app.route('/list_recipes/<category_name>', methods=['GET', 'POST'])
+def list_recipes(category_name):
+    results=recipes.find({"category_name": category_name}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
 

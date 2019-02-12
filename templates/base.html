@@ -32,7 +32,7 @@
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
                             <li><a href="{{url_for('index')}}">Home</a></li>
                             <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                            <li><a href="{{url_for('list_recipes', category_name=all_categories)}}">View All Recipes</a></li>
                             {% if session %}
                                 <li><a href="{{url_for('logout')}}">Log Out</a></li>
                             {% else %}
@@ -44,7 +44,7 @@
                         <ul class="side-nav" id="mobile-demo">
                             <li><a href="{{url_for('index')}}">Home</a></li>
                             <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                            <li><a href="{{url_for('list_recipes', category_name=all_categories)}}">View All Recipes</a></li>
                             <li><a href="{{url_for('login')}}">Log In</a></li>
                         </ul>
                         
