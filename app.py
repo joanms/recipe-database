@@ -85,7 +85,6 @@ def submit_changes(recipe_id):
     return render_template(
         'show_recipe.html', recipe=the_recipe)
     
-# THIS FUNCTION NEEDS WORK
 @app.route("/search", methods=["GET", "POST"])
 def search():
     mongo.db.recipes.create_index([('$**', 'text')])
@@ -95,8 +94,13 @@ def search():
     return render_template("list_recipes.html", 
     recipes=results)
     
-@app.route('/list_recipes/<category_name>', methods=['GET', 'POST'])
-def list_recipes(category_name):
+@app.route('/list_recipes', methods=['GET', 'POST'])
+def list_recipes():
+    return render_template("list_recipes.html", 
+    recipes=recipes.find().sort('recipe_title',1))
+    
+@app.route('/list_recipes_by_cat/<category_name>', methods=['GET', 'POST'])
+def list_recipes_by_cat(category_name):
     results=recipes.find({"category_name": category_name}).sort('recipe_title',1)
     return render_template("list_recipes.html", 
     recipes=results)
