@@ -56,50 +56,50 @@
     
     <div class="col s12 xl4 offset-xl1 sidebar">
         <h2>Refine the Search Results</h2>
-        <form method="POST" action="/search">
+        <form method="POST" action="{{ url_for('search') }}">
             
             <p>Categories to include:</p>
             <p>
-                <input type="checkbox" id="bread" name="bread"/>  <!--Add names to all other items in the list-->
+                <input type="checkbox" id="bread" name="bread"/>
                 <label for="bread">Bread</label>
             </p>
             <p>
-                <input type="checkbox" id="desserts"/>
+                <input type="checkbox" id="desserts" name="desserts"/>
                 <label for="desserts">Desserts</label>
             </p>
             <p>
-                <input type="checkbox" id="mains"/>
+                <input type="checkbox" id="mains" name="mains"/>
                 <label for="mains">Mains</label>
             </p>
             <p>
-                <input type="checkbox" id="sauces"/>
+                <input type="checkbox" id="sauces" name="sauces"/>
                 <label for="sauces">Sauces</label>
             </p>
             <p>
-                <input type="checkbox" id="sides"/>
+                <input type="checkbox" id="sides" name="sides"/>
                 <label for="sides">Sides</label>
             </p>
             <p>
-                <input type="checkbox" id="starters"/>
+                <input type="checkbox" id="starters" name="starters"/>
                 <label for="starters">Starters</label>
             </p>
 
             <p>Dietary restrictions:</p>
             <p>
-                <input type="checkbox" id="vegetarian"/>
+                <input type="checkbox" id="vegetarian" name="vegetarian"/>
                 <label for="vegetarian">Vegetarian</label>
             </p>
             <p>
-                <input type="checkbox" id="vegan"/>
+                <input type="checkbox" id="vegan" name="vegan"/>
                 <label for="vegan">Vegan</label>
             </p>
             <p>
-                <input type="checkbox" id="gluten-free"/>
+                <input type="checkbox" id="gluten-free" name="gluten-free"/>
                 <label for="gluten-free">Gluten-Free</label>
             </p>
             
             <div class="input-field">
-                <input id="allergens" type="text" class="validate">
+                <input id="allergens" type="text" class="validate" name="allergens">
                 <label for="allergens">Allergens to exclude:</label>
             </div>
 
