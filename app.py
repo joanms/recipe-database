@@ -49,7 +49,7 @@ def add_recipe():
 def insert_recipe():
     recipes =  mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return render_template("list_recipes.html", 
+    return render_template('list_recipes.html', 
     recipes=recipes.find().sort('_id',-1)) # The recipe list will load with the new recipe at the top
     
 # This is based on code from the Code Institute Data-Centric Development Mini Project
@@ -85,24 +85,24 @@ def submit_changes(recipe_id):
     return render_template(
         'show_recipe.html', recipe=the_recipe)
     
-@app.route("/search", methods=["GET", "POST"])
+@app.route('/search', methods=['GET', 'POST'])
 def search():
     mongo.db.recipes.create_index([('$**', 'text')])
     keywords = request.form.get('search')
-    query = ( { "$text": { "$search": keywords } } )
+    query = ( { '$text': { '$search': keywords } } )
     results = mongo.db.recipes.find(query)
-    return render_template("list_recipes.html", 
+    return render_template('list_recipes.html', 
     recipes=results)
     
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
-    return render_template("list_recipes.html", 
+    return render_template('list_recipes.html', 
     recipes=recipes.find().sort('recipe_title',1))
     
 @app.route('/list_recipes_by_cat/<category_name>', methods=['GET', 'POST'])
 def list_recipes_by_cat(category_name):
-    results=recipes.find({"category_name": category_name}).sort('recipe_title',1)
-    return render_template("list_recipes.html", 
+    results=recipes.find({'category_name': category_name}).sort('recipe_title',1)
+    return render_template('list_recipes.html', 
     recipes=results)
 
 @app.route('/show_recipe/<recipe_id>', methods=['GET', 'POST'])
@@ -114,7 +114,7 @@ def show_recipe(recipe_id):
 @app.route('/warning/<recipe_id>', methods=['GET', 'POST'])
 def warning(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    flash("This will permanently delete the recipe. Are you sure?")
+    flash('This will permanently delete the recipe. Are you sure?')
     return render_template(
         'show_recipe.html', recipe=the_recipe)
 
