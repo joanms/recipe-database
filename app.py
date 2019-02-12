@@ -87,7 +87,8 @@ def submit_changes(recipe_id):
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    mongo.db.recipes.create_index([('$**', 'text')])
+    mongo.db.recipes.create_index([('recipe_title', 'text'), ('author', 'text'), 
+    ('origin', 'text'), ('category_name', 'text'), ('ingredients', 'text'), ('method', 'text')])
     keywords = request.form.get('search')
     query = ( { '$text': { '$search': keywords } } )
     results = mongo.db.recipes.find(query)
