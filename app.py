@@ -89,7 +89,14 @@ def submit_changes(recipe_id):
 def search():
     mongo.db.recipes.create_index([('$**', 'text')])
     keywords = request.form.get('search')
-    query = ( { '$text': { '$search': keywords } } )
+    if 'gluten-free' in keywords:
+        query = ({'$and': [{'gluten_free': 'on'}, { '$text': { '$search': keywords } }]})
+    elif 'vegetarian' in keywords:
+        query = ({'$and': [{'vegetarian': 'on'}, { '$text': { '$search': keywords } }]})
+    elif 'vegan' in keywords:
+        query = ({'$and': [{'vegan': 'on'}, { '$text': { '$search': keywords } }]})
+    else:
+        query = ( { '$text': { '$search': keywords } } )
     results = mongo.db.recipes.find(query)
     return render_template('list_recipes.html', 
     recipes=results)
