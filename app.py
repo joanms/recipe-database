@@ -89,7 +89,7 @@ def search():
     mongo.db.recipes.create_index([('$**', 'text')])
     keywords = request.form.get('search')
     if 'gluten-free' in keywords:
-        query = ({'$or': [{'gluten_free': 'on'}, { '$text': { '$search': keywords } }]})
+        query = ({'$or': [{ '$text': { '$search': keywords }}, {'gluten_free': 'on'} ]})
     elif 'vegetarian' in keywords:
         query = ({'$or': [{'vegetarian': 'on'}, { '$text': { '$search': keywords } }]})
     elif 'vegan' in keywords:
