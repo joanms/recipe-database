@@ -3,7 +3,6 @@ import os
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from wtforms import Form, BooleanField, TextField, validators
 from pymongo import MongoClient
 from pymongo import ASCENDING
 from pymongo import DESCENDING
@@ -90,11 +89,11 @@ def search():
     mongo.db.recipes.create_index([('$**', 'text')])
     keywords = request.form.get('search')
     if 'gluten-free' in keywords:
-        query = ({'$and': [{'gluten_free': 'on'}, { '$text': { '$search': keywords } }]})
+        query = ({'$or': [{'gluten_free': 'on'}, { '$text': { '$search': keywords } }]})
     elif 'vegetarian' in keywords:
-        query = ({'$and': [{'vegetarian': 'on'}, { '$text': { '$search': keywords } }]})
+        query = ({'$or': [{'vegetarian': 'on'}, { '$text': { '$search': keywords } }]})
     elif 'vegan' in keywords:
-        query = ({'$and': [{'vegan': 'on'}, { '$text': { '$search': keywords } }]})
+        query = ({'$or': [{'vegan': 'on'}, { '$text': { '$search': keywords } }]})
     else:
         query = ( { '$text': { '$search': keywords } } )
     results = mongo.db.recipes.find(query)
