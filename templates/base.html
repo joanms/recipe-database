@@ -64,17 +64,6 @@
         
         <div class="container">
             
-            <!--Code to display flashed messages to the user-->
-            {% with messages = get_flashed_messages() %} {% if messages %}
-            
-                {% for message in messages %}
-                                    
-                <p id="flash">{{ message }} </p>
-                
-                {% endfor %}
-                
-            {% endif %} {% endwith %} <!--End of loop through flashed messages-->
-            
             {% block content %} {% endblock %}
             
         </div>
