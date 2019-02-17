@@ -5,6 +5,7 @@
 
 <form action="{{ url_for('find_recipes') }}" method="POST" class="col s12">
                     
+    <!--Recipe keywords, category and origin-->
     <div class="row">
             
         <div class="input-field col s12 m6">
@@ -28,8 +29,9 @@
             <label for="origin">Country of Origin:</label>
         </div>
 
-    </div>
+    </div> <!--End of keywords, category and origin row-->
                     
+    <!--Dietary restrictions-->
     <div class="row">
         
         <!--Allergens-->
@@ -71,7 +73,7 @@
             </div>
         </div> <!--End of gluten-free selector-->
 
-    </div> <!--End of country of origin and dietary restrictions-->
+    </div> <!--End of dietary restrictions-->
      
     <!--Button to submit the search-->
     <div class="row">
