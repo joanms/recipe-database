@@ -33,6 +33,7 @@
                             <li><a href="{{url_for('index')}}">Home</a></li>
                             <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                             <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                            <li><a href="{{url_for('search')}}">Search</a></li>
                             {% if session %}
                                 <li><a href="{{url_for('logout')}}">Log Out</a></li>
                             {% else %}
@@ -45,7 +46,12 @@
                             <li><a href="{{url_for('index')}}">Home</a></li>
                             <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                             <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                            <li><a href="{{url_for('login')}}">Log In</a></li>
+                            <li><a href="{{url_for('search')}}">Search</a></li>
+                            {% if session %}
+                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                            {% else %}
+                                <li><a href="{{url_for('login')}}">Log In</a></li>
+                            {% endif %}
                         </ul>
                         
                     </div> <!--End of logo, title and nav menus-->
