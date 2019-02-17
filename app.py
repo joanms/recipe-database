@@ -86,7 +86,7 @@ def submit_changes(recipe_id):
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    return render_template('search.html')
+    return render_template('search.html', categories=mongo.db.categories.find())
 
 @app.route('/find_recipes', methods=['GET', 'POST'])
 def find_recipes():

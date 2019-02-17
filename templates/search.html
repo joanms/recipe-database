@@ -1,37 +1,45 @@
 {% extends 'base.html'%} {% block content %}
 
 <h1>Search the Database</h1>
+<p>Please fill in all applicable fields and click the Search button</p>
 
 <form action="{{ url_for('find_recipes') }}" method="POST" class="col s12">
                     
-    <!--The recipe's title, author and category-->
     <div class="row">
             
-        <!--Search terms-->
-        <div class="input-field col s12">
+        <div class="input-field col s12 m6">
             <input id="search" name="search" type="text" class="validate">
-            <label for="search">Keywords</label>
+            <label for="search">Keywords:</label>
         </div>
-                        
-    </div> <!--End of title, author, image and category row-->
-                    
-    <!--Country of origin and dietary restrictions-->
-    <div class="row"> 
+        
+        <div class="input-field col s12 m6 l3">
+            <select multiple>
+                <option value="" disabled selected>Click to Select</option>
+                {% for cat in categories %}
+                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Categories:</label>
+        </div> 
                         
         <!--The recipe's country of origin-->
         <div class="input-field col s12 m6 l3">
             <input id="origin" name="origin" type="text" class="validate">
-            <label for="origin">Country of Origin</label>
+            <label for="origin">Country of Origin:</label>
         </div>
-                        
+
+    </div>
+                    
+    <div class="row">
+        
         <!--Allergens-->
-        <div class="input-field col s12 m6 l3">
+        <div class="input-field col s12 m6">
             <input id="allergens" name="allergens" type="text" class="validate">
-            <label for="allergens">Allergens</label>
+            <label for="allergens">Allergens to Exclude:</label>
         </div>
                         
         <!--Vegetarian selector-->
-        <div class="col s4 l2">
+        <div class="col s4 m2">
             <div class="switch">
                 <label>
                     <input id="vegetarian" name="vegetarian" type="checkbox">

@@ -38,10 +38,10 @@ nav {
     z-index: 9999; 
 }
 
-.material-icons {
-    color: white !important;
+/*This fixes a bug that causes misalignment of checkboxes and text in the Materialize multiple select menu*/
+.multiple-select-dropdown label {
+  top: -10px !important;
 }
-
 
 /*--------------------------------------------Containers*/
 
