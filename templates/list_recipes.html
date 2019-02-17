@@ -6,7 +6,7 @@
         
 <div class="row">
 
-    <div class="col s12 xl7">
+    <div class="col s12">
         
         {% for recipe in recipes %}
             
@@ -52,74 +52,6 @@
         {% endfor %} <!--End of loop through recipes-->
         
     </div> <!--End of recipe list-->
-
-    
-    <div class="col s12 xl4 offset-xl1 sidebar">
-        <h2>Refine the Search Results</h2>
-        <form method="POST" action="{{ url_for('search') }}">
-            
-            <p>Categories to include:</p>
-            <p>
-                <input type="checkbox" id="bread" name="bread"/>
-                <label for="bread">Bread</label>
-            </p>
-            <p>
-                <input type="checkbox" id="desserts" name="desserts"/>
-                <label for="desserts">Desserts</label>
-            </p>
-            <p>
-                <input type="checkbox" id="mains" name="mains"/>
-                <label for="mains">Mains</label>
-            </p>
-            <p>
-                <input type="checkbox" id="sauces" name="sauces"/>
-                <label for="sauces">Sauces</label>
-            </p>
-            <p>
-                <input type="checkbox" id="sides" name="sides"/>
-                <label for="sides">Sides</label>
-            </p>
-            <p>
-                <input type="checkbox" id="starters" name="starters"/>
-                <label for="starters">Starters</label>
-            </p>
-
-            <p>Dietary restrictions:</p>
-            <p>
-                <input type="checkbox" id="vegetarian" name="vegetarian"/>
-                <label for="vegetarian">Vegetarian</label>
-            </p>
-            <p>
-                <input type="checkbox" id="vegan" name="vegan"/>
-                <label for="vegan">Vegan</label>
-            </p>
-            <p>
-                <input type="checkbox" id="gluten-free" name="gluten-free"/>
-                <label for="gluten-free">Gluten-Free</label>
-            </p>
-            
-            <div class="input-field">
-                <input id="allergens" type="text" class="validate" name="allergens">
-                <label for="allergens">Allergens to exclude:</label>
-            </div>
-
-            <div class="input-field">
-                <input id="origin" type="text" class="validate">
-                <label for="orign">Country of origin:</label>
-            </div>
-            
-            <div class="input-field">
-                <input id="keywords" type="text" class="validate">
-                <label for="keywords">Keywords to include:</label>
-            </div>
-            
-            <button class="btn waves-effect waves-light" type="submit" name="action">Update
-                <i class="material-icons right">sync</i>
-            </button>
-
-        </form>    
-    </div>    
-    
 
 </div>
 
