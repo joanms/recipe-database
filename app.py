@@ -91,8 +91,11 @@ def search():
 @app.route('/find_recipes', methods=['GET', 'POST'])
 def find_recipes():
     mongo.db.recipes.create_index([('$**', 'text')])
-    keywords = request.form.get('search')
-    query = ( { '$text': { '$search': keywords } } )
+    keywords = request.form.get('keywords')
+    origin = request.form.get('origin')
+    category_name = request.form.get('category_name')
+    allergens = request.form.get('allergens')
+    query = ({'$and': [{ '$text': { '$search': keywords } }, {'category_name': category_name}] })
     results = mongo.db.recipes.find(query)
     return render_template('list_recipes.html', 
     recipes=results)

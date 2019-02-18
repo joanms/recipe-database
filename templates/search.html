@@ -9,12 +9,12 @@
     <div class="row">
             
         <div class="input-field col s12 m6">
-            <input id="search" name="search" type="text" class="validate">
-            <label for="search">Keywords:</label>
+            <input id="keywords" name="keywords" type="text" class="validate">
+            <label for="keywords">Keywords:</label>
         </div>
         
         <div class="input-field col s12 m6 l3">
-            <select multiple>
+            <select multiple id="category" name="category_name">
                 <option value="" disabled selected>Click to Select</option>
                 {% for cat in categories %}
                 <option value="{{cat.category_name}}">{{cat.category_name}}</option>
