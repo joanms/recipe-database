@@ -91,11 +91,10 @@ def search():
 @app.route('/find_recipes', methods=['GET', 'POST'])
 def find_recipes():
     vegan = request.form.get('vegan')
-    print(vegan)
     vegetarian = request.form.get('vegetarian')
     gluten_free = request.form.get('gluten_free')
-    query = ({'$and': [{'vegetarian': vegetarian}, {'vegan': vegan}, {'gluten_free': gluten_free}]})
-    results = mongo.db.recipes.find(query)
+    query = ({'$or': [{'vegetarian': vegetarian}, {'vegan': vegan}, {'gluten_free': gluten_free}]})
+    results = mongo.db.recipes.find(query).sort('recipe_title',1)
     return render_template('list_recipes.html', 
     recipes=results)
     
