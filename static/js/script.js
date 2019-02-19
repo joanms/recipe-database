@@ -14,3 +14,14 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.materialize-textarea').trigger('autoresize');
 });
+
+function veganSelector() {
+  var vegan = document.getElementById("vegan");
+  var vegetarian = document.getElementById("vegetarian");
+
+  if (vegan.checked == true){
+    vegetarian.checked == true;
+  } 
+}
+
+veganSelector();
