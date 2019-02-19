@@ -61,7 +61,9 @@
         <div class="col s4 l2">
             <div class="switch">
                 <label>
-                    <input id="vegetarian" name="vegetarian" type="checkbox"
+                     <!--If a recipe isn't vegetarian, it isn't vegan either-->
+                    <input id="vegetarian" name="vegetarian" type="checkbox" 
+                    onclick="if (!this.checked) document.getElementById('vegan').checked = false;"
                         {% if recipe.vegetarian %} checked {% endif %}>
                     <span class="lever"></span>
                         Vegetarian
@@ -73,7 +75,9 @@
         <div class="col s4 l2">
             <div class="switch">
                 <label>
+                    <!--If a recipe is vegan, it's also vegetarian-->
                     <input id="vegan" name="vegan" type="checkbox" 
+                    onclick="if (this.checked) document.getElementById('vegetarian').checked = true;"
                         {% if recipe.vegan %} checked {% endif %}>
                     <span class="lever"></span>
                     Vegan
