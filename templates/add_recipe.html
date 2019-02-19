@@ -59,7 +59,8 @@
         <div class="col s4 l2">
             <div class="switch">
                 <label>
-                    <input id="vegetarian" name="vegetarian" type="checkbox">
+                    <input id="vegetarian" name="vegetarian" type="checkbox" 
+                    onclick="if (this.checked) document.getElementById('vegetarian').checked = true;"> <!--If 'Vegan' is selected, 'Vegetarian' is automatically selected-->
                     <span class="lever"></span>
                     Vegetarian
                 </label>
