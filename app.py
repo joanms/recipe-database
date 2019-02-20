@@ -102,6 +102,9 @@ def find_recipes():
     {'origin': origin}, {'allergens': {'$ne': allergens} }, {'vegetarian': vegetarian}, 
     {'vegan': vegan}, {'gluten_free': gluten_free}]})
     results = mongo.db.recipes.find(query).sort('recipe_title',1)
+    return render_template('list_recipes.html', 
+    recipes=results)
+
 
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
