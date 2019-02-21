@@ -127,19 +127,20 @@ def find_recipes():
         {'vegan': vegan}, 
         {'gluten_free': gluten_free}]})
     results = mongo.db.recipes.find(query).sort('recipe_title',1)
+    count = results.count()
     return render_template('list_recipes.html',
-    recipes=results)
+    recipes=results, count=count)
 
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
     return render_template('list_recipes.html', 
-    recipes=recipes.find().sort('recipe_title',1))
+    recipes=recipes.find().sort('recipe_title',1), count=recipes.count())
     
 @app.route('/list_recipes_by_cat/<category_name>', methods=['GET', 'POST'])
 def list_recipes_by_cat(category_name):
     results=recipes.find({'category_name': category_name}).sort('recipe_title',1)
     return render_template('list_recipes.html', 
-    recipes=results)
+    recipes=results, count=results.count())
 
 @app.route('/show_recipe/<recipe_id>', methods=['GET', 'POST'])
 def show_recipe(recipe_id):
