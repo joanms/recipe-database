@@ -31,6 +31,7 @@ nav {
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 3.5em !important;
+    margin-left: 30px;
 }
 
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
@@ -95,7 +96,7 @@ h2 {
     font-size: 1.875em;
     text-align: inherit;
     margin-top: 25px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 h3 {
