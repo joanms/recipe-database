@@ -51,8 +51,13 @@
                         
         <!--Allergens-->
         <div class="input-field col s12 m6 l3">
-            <input id="allergens" name="allergens" type="text" class="validate">
-            <label for="allergens">Allergens</label>
+            <select multiple id="allergens" name="allergens">
+                <option value="" disabled selected>Click to Select</option>
+                {% for allergen in allergens %}
+                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Allergens:</label>
         </div>
                         
         <!--Selector to indicate if the recipe is suitable for vegetarians-->

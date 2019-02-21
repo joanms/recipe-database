@@ -42,12 +42,30 @@ def logout():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template(
-        'add_recipe.html', categories=mongo.db.categories.find())
+        'add_recipe.html', categories=mongo.db.categories.find(), 
+        allergens=mongo.db.allergens.find())
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
 def insert_recipe():
     recipes =  mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    new_recipe = {
+        'recipe_title': request.form.get('recipe_title'),
+        'image_path': request.form.get('image_path'),
+        'category_name': request.form.get('category_name'),
+        'author': request.form.get('author'),
+        'origin': request.form.get('origin'),
+        'servings': request.form.get('servings'),
+        'prep_time': request.form.get('prep_time'),
+        'extra_time': request.form.get('extra_time'),
+        'cook_time': request.form.get('cook_time'),
+        'allergens': request.form.getlist('allergens'),
+        'vegetarian': request.form.get('vegetarian'),
+        'vegan': request.form.get('vegan'),
+        'gluten_free': request.form.get('gluten_free'),
+        'ingredients': request.form.get('ingredients'),
+        'method': request.form.get('method')
+    }
+    recipes.insert_one(new_recipe)
     return render_template('list_recipes.html', 
     recipes=recipes.find().sort('_id',-1)) # The recipe list will load with the new recipe at the top
     
@@ -56,8 +74,9 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
+    allergens=mongo.db.allergens.find()
     return render_template(
-        'edit_recipe.html', recipe=the_recipe, categories=all_categories)
+        'edit_recipe.html', recipe=the_recipe, categories=all_categories, allergens=allergens)
         
 @app.route('/submit_changes/<recipe_id>', methods=['POST'])
 def submit_changes(recipe_id):
@@ -73,12 +92,12 @@ def submit_changes(recipe_id):
             'prep_time': request.form.get('prep_time'),
             'extra_time': request.form.get('extra_time'),
             'cook_time': request.form.get('cook_time'),
-            'allergens': request.form.get('allergens'),
+            'allergens': request.form.getlist('allergens'),
             'vegetarian': request.form.get('vegetarian'),
             'vegan': request.form.get('vegan'),
             'gluten_free': request.form.get('gluten_free'),
             'ingredients': request.form.get('ingredients'),
-            'method': request.form.get('method'),
+            'method': request.form.get('method')
         })
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template(
@@ -86,23 +105,16 @@ def submit_changes(recipe_id):
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    return render_template('search.html', categories=mongo.db.categories.find())
+    return render_template('search.html', categories=mongo.db.categories.find(), 
+    allergens=mongo.db.allergens.find())
 
 @app.route('/find_recipes', methods=['GET', 'POST'])
 def find_recipes():
     mongo.db.recipes.create_index([('$**', 'text')])
-    keywords = request.form.get('keywords')
-    category_name = request.form.get('category_name')
-    origin = request.form.get('origin')
-    allergens = request.form.get('allergens')
-    vegan = request.form.get('vegan')
-    vegetarian = request.form.get('vegetarian')
-    gluten_free = request.form.get('gluten_free')
-    query = ({'$and': [{ '$text': { '$search': keywords } }, {'category_name': category_name}, 
-    {'origin': origin}, {'allergens': {'$ne': allergens} }, {'vegetarian': vegetarian}, 
-    {'vegan': vegan}, {'gluten_free': gluten_free}]})
+    allergens = request.form.getlist('allergens')
+    query = ({'allergens': {'$nin': allergens}})
     results = mongo.db.recipes.find(query).sort('recipe_title',1)
-    return render_template('list_recipes.html', 
+    return render_template('list_recipes.html',
     recipes=results)
 
 

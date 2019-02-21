@@ -17,7 +17,7 @@
             
             <!--Optional text to display if the recipe contains allergens-->
             {% if recipe.allergens %}
-                Contains {{recipe.allergens}}<br>
+                Contains {{recipe.allergens|join(', ')}}<br>
             {% endif %}
     
             <!--Optional text to display if the recipe is gluten-free-->
