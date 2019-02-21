@@ -11,8 +11,7 @@ The database is set up to make it as easy as possible for users to add and edit 
 that they can input. I considered separate values for the quantities and names of ingredients so that users would input them consistently, but 
 decided against this for three reasons. Firstly, it would be very tedious for a user who wanted to copy and paste a list of ingredients from 
 elsewhere. Secondly, I might not think of all possible units a user might want to input. Thirdly, it wouldn't allow for subsets of ingredients, 
-such as those for sauces, marinades, icing, etc. I also decided against a preset list of allergens, as an exhaustive list of all possible food 
-allergens would be too unwieldy and risk omitting some allergens.
+such as those for sauces, marinades, icing, etc. 
 
  
 ## UX
@@ -26,10 +25,9 @@ The database is structured to allow users maximum flexibility and ease of use wh
 schema explanation above. The HTML templates are set up to format the recipes neatly once they are input.
 
 - **Search for recipes according to a wide range of criteria.**
-There is a search bar at the top of each page to allow users to search for any keywords they want. There are links to all the categories on the 
-home page allowing users to see a list of all recipes in whichever category they are looking for. In addition, the page to list recipes (either 
-by category or all recipes) has a sidebar allowing users to filter the results by various criteria such as category, allergens, dietary restrictions, 
-country of origin and any keywords they wish to include in their search results.
+There are links to all the categories on the home page allowing users to see a list of all recipes in whichever category they are looking for. 
+When a user clicks on the Search link in the navbar, they are taken to a search page which allows them to search for recipes according to various 
+criteria such as keywords, categories, country of origin and dietary restrictions. 
 
 - **Edit and delete recipes.**
 Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
@@ -53,13 +51,14 @@ simple sans-serif to maximise legibility and elegance.
 ## Features
 
 ### Existing Features
-- Search bar in the header allows users to search for recipes containing the keywords of their choice.
 - Links to all recipe categories on the home page.
-- Page listing summary details of either all recipes in the database, or recipes in certain categories.
-- Sidebar in the summary details page that allows users to filter the search results.
 - Recipe input form in add_recipe.html enables users to add their own recipes to the database and display them on the site.
-- Recipe editing form that enables users to edit recipes.
+- Search page to search for recipes according to various criteria such as keywords, categories and dietary restrictions.
+- Page listing summary details of either all recipes in the database, or recipes returned from a user's search.
+- Page for each recipe displaying its ingredients, method and information such as suitability for restricted diets.
+- Edit button on the recipe display page, linking to a form that enables users to edit the recipe.
 - Delete button for deleting recipes.
+- A warning that displays when the delete button is clicked, in case the user clicks it accidentally.
 
 ### Features Left to Implement
 - Secure login with a password.
