@@ -8,12 +8,12 @@
     <!--Recipe keywords, category and origin-->
     <div class="row">
             
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m8">
             <input id="keywords" name="keywords" type="text" class="validate">
             <label for="keywords">Keywords:</label>
         </div>
         
-        <div class="input-field col s12 m6 l3">
+        <div class="input-field col s12 m4">
             <select multiple id="category_name" name="category_name">
                 <option value="" disabled selected>Click to Select</option>
                 {% for cat in categories %}
@@ -23,19 +23,20 @@
             <label>Categories:</label>
         </div> 
                         
-        <!--The recipe's country of origin-->
-        <div class="input-field col s12 m6 l3">
-            <input id="origin" name="origin" type="text" class="validate">
-            <label for="origin">Country of Origin:</label>
-        </div>
 
     </div> <!--End of keywords, category and origin row-->
                     
     <!--Dietary restrictions-->
     <div class="row">
         
+        <!--The recipe's country of origin-->
+        <div class="input-field col s12 m6 l3">
+            <input id="origin" name="origin" type="text" class="validate">
+            <label for="origin">Country of Origin:</label>
+        </div>
+
         <!--Allergens-->
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m6 l3">
             <select multiple id="allergens" name="allergens">
                 <option value="" disabled selected>Click to Select</option>
                 {% for allergen in allergens %}
@@ -46,7 +47,7 @@
         </div>
                         
         <!--Vegetarian selector-->
-        <div class="col s4 m2">
+        <div class="col s12 m3 l2">
             <div class="switch">
                 <label>
                     <input id="vegetarian" name="vegetarian" type="checkbox" 
@@ -58,7 +59,7 @@
         </div> <!--End of vegetarian selector-->
                         
         <!--Vegan selector-->
-        <div class="col s4 l2">
+        <div class="col s12 m3 l2">
             <div class="switch">
                 <label>
                     <input id="vegan" name="vegan" type="checkbox" 
@@ -70,7 +71,7 @@
         </div> <!--End of vegan selector-->
                     
         <!--Gluten-free selector-->
-        <div class="col s4 l2">
+        <div class="col s12 m3 l2">
             <div class="switch">
                 <label>
                     <input id="gluten_free" name="gluten_free" type="checkbox">
