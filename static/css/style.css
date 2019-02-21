@@ -200,7 +200,7 @@ label {
         }
         
     .category-image {
-        width: 150px;
+        width: 200px;
         }
         
     .brand-logo {
@@ -209,3 +209,18 @@ label {
         }
 }
 
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.75em;
+        margin-bottom: 0px;
+        }
+    
+    h2 {
+        font-size: 1.25em;
+        margin-top: 20px;
+        }
+        
+    .category-image {
+        width: 100px;
+        }
+}
