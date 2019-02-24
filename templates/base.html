@@ -1,78 +1,76 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-        <link rel="shortcut icon" href="{{url_for('static', filename='images/chef_hat.ico')}}" type="image/x-icon">
-        <title>Reciprocator</title> 
-    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/chef_hat.ico')}}" type="image/x-icon">
+    <title>Reciprocator</title> 
+</head>
     
-    <body>
+<body>
         
-        <header>
+    <header>
         
-            <!--Navbar-->
+        <!--Navbar-->
             
-            <div class="navbar-fixed"> <!--This ensures that the navbar remains visible when the user scrolls down the page-->
+        <div class="navbar-fixed"> <!--This ensures that the navbar remains visible when the user scrolls down the page-->
             
-                <nav>
+            <nav>
                     
-                    <!--Logo and title-->
-                    <div class="nav-wrapper deep-orange darken-4" id="main-nav">
-                        <a href="{{url_for('index')}}" class="brand-logo">
-                            <img src="../static/images/chefs-hat-white.png" id="logo" alt="Logo"">Reciprocator</a>
+                <!--Logo and title-->
+                <div class="nav-wrapper deep-orange darken-4" id="main-nav">
+                    <a href="{{url_for('index')}}" class="brand-logo">
+                        <img src="../static/images/chefs-hat-white.png" id="logo" alt="Logo">Reciprocator</a>
 
-                        <!--Nav for desktop and laptop devices-->
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="{{url_for('index')}}">Home</a></li>
-                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                            <li><a href="{{url_for('search')}}">Search</a></li>
-                            {% if session %}
-                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
-                            {% else %}
-                                <li><a href="{{url_for('login')}}">Log In</a></li>
-                            {% endif %}
-                        </ul>
+                    <!--Nav for desktop and laptop devices-->
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+                        <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                        <li><a href="{{url_for('search')}}">Search</a></li>
+                        {% if session %}
+                            <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{url_for('login')}}">Log In</a></li>
+                        {% endif %}
+                    </ul>
                         
-                        <!--Side nav for mobile devices-->
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="{{url_for('index')}}">Home</a></li>
-                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                            <li><a href="{{url_for('search')}}">Search</a></li>
-                            {% if session %}
-                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
-                            {% else %}
-                                <li><a href="{{url_for('login')}}">Log In</a></li>
-                            {% endif %}
-                        </ul>
+                    <!--Side nav for mobile devices-->
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+                        <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                        <li><a href="{{url_for('search')}}">Search</a></li>
+                        {% if session %}
+                            <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{url_for('login')}}">Log In</a></li>
+                        {% endif %}
+                    </ul>
                         
-                    </div> <!--End of logo, title and nav menus-->
+                </div> <!--End of logo, title and nav menus-->
                     
-                </nav> 
+            </nav> 
             
-            </div> <!--End of navbar-->
+        </div> <!--End of navbar-->
 
-        </header>
+    </header>
         
-        <div class="container">
+    <div class="container" id="main-container">
             
-            {% block content %} {% endblock %}
+        {% block content %} {% endblock %}
             
-        </div>
+    </div>
         
-        <!--Scripts-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-    </body>
+    <!--Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        
+</body>
     
 </html>    
