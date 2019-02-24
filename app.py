@@ -1,4 +1,5 @@
 import os
+import env
 
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
@@ -13,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 app.config['MONGO_DBNAME'] = 'recipedb'
-app.config['MONGO_URI'] = 'mongodb://admin:o1deA$@ds127624.mlab.com:27624/recipedb'
+app.config['MONGO_URI'] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 recipes =  mongo.db.recipes
