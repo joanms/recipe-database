@@ -7,8 +7,9 @@ html {
     font-size: 100%;
     background: url("../images/background.jpg") no-repeat center fixed; 
     background-size: cover;
-
+    overflow: scroll;
 }
+
 
 /*--------------------------------------------Nav*/
 
@@ -45,6 +46,7 @@ nav {
 #main-container {
     background-color: rgba(255, 248, 225, .8);
     width: 90vw;
+    height: auto;
     padding: 25px;
     margin-top: 30px;
 }
