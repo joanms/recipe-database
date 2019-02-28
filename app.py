@@ -105,19 +105,13 @@ def submit_changes(recipe_id):
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    return render_template('search.html', categories=mongo.db.categories.find(), 
-    allergens=mongo.db.allergens.find())
-
-@app.route('/find_recipes', methods=['GET', 'POST'])
-def find_recipes():
     mongo.db.recipes.create_index([('$**', 'text')])
-    keywords = request.form.get('keywords')
-    query = ({'$text': {'$search': keywords}})
-    results = mongo.db.recipes.find(query).sort('recipe_title',1)
-    count = results.count()
-    return render_template('list_recipes.html',
-    recipes=results, count=count)
-
+    keywords = request.form.get('search')
+    query = ( { '$text': { '$search': keywords } } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+    
 @app.route('/list_recipes', methods=['GET', 'POST'])
 def list_recipes():
     return render_template('list_recipes.html', 
