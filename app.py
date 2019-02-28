@@ -118,14 +118,20 @@ def find_recipes():
     vegetarian = request.form.get('vegetarian')
     vegan = request.form.get('vegan')
     gluten_free = request.form.get('gluten_free')
-    query = ({'$and': [
-        {'$text': {'$search': keywords}}, 
-        {'category_name': {'$in': category_name}}, 
-        {'origin': origin}, 
-        {'allergens': {'$nin': allergens}}, 
-        {'vegetarian': vegetarian}, 
-        {'vegan': vegan}, 
-        {'gluten_free': gluten_free}]})
+    if keywords:
+        query = ({'$text': {'$search': keywords}})
+    if category_name:
+        query = ({'category_name': {'$in': category_name}})
+    if origin:
+        query = ({'origin': origin})
+    if allergens:
+        query = ({'allergens': {'$nin': allergens}})
+    if vegetarian:
+        query = ({'vegetarian': vegetarian})
+    if vegan:
+        query = ({'vegan': vegan})
+    if gluten_free:
+        query = ({'gluten_free': gluten_free})
     results = mongo.db.recipes.find(query).sort('recipe_title',1)
     count = results.count()
     return render_template('list_recipes.html',
