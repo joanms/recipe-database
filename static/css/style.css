@@ -19,6 +19,8 @@ nav {
 
 .nav-wrapper {
     font-family: "Open Sans", sans-serif;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 #main-nav {
@@ -28,8 +30,8 @@ nav {
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 3.5em !important;
-    margin-left: 30px;
 }
+
 
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
 .navbar-fixed { 
@@ -68,6 +70,10 @@ nav {
 #logo {
     height: 50px;
     width: 50px;
+}
+
+.material-icons {
+    color: white !important;
 }
 
 .illustration {
