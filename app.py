@@ -114,6 +114,27 @@ def search():
     return render_template('list_recipes.html', 
     recipes=results, count=results.count())
     
+@app.route('/vegetarian', methods=['GET', 'POST'])
+def vegetarian():
+    query = ( { 'vegetarian': 'on' } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+    
+@app.route('/vegan', methods=['GET', 'POST'])
+def vegan():
+    query = ( { 'vegan': 'on' } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+
+@app.route('/gluten_free', methods=['GET', 'POST'])
+def gluten_free():
+    query = ( { 'gluten_free': 'on' } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+
 @app.route('/allergens', methods=['GET', 'POST'])
 def allergens():
     allergens = request.form.getlist('allergens')
