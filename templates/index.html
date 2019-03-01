@@ -43,21 +43,42 @@
             <a href="{{url_for('list_recipes_by_cat', category_name="Desserts")}}">
                 <img class="category-image" src="../static/images/meringue-roulade.jpg" title="Roulade" alt="Roulade"></a>
         </div>
+        
+        <h1>Exclude Allergens</h1>
+        
+        <div class="input-field col s12 m6 l3">
+            <select multiple id="allergens" name="allergens">
+                <option value="" disabled selected>Click to Select</option>
+                {% for allergen in allergens %}
+                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Allergens:</label>
+        </div>
     
     </div>
     
-    <div class="col s12 l3 center">
+    <div class="col s12 l3 sidebar">
         
         <h1>Special Diets</h1>
         
-        <div class="col s12 l3 category">
+        <div>
             <h2>Vegetarian</h2>
             <a href="#">
                 <img class="category-image" src="../static/images/spicy-root-lentil.jpg" title="Root and Lentil Casserole" alt="Root and Lentil Casserole"></a>
         </div>
 
+        <div>
+            <h2>Vegan</h2>
+            <a href="#">
+                <img class="category-image" src="../static/images/storecupboard-side.jpg" title="Storecupboard Side" alt="Storecupboard Side"></a>
+        </div>
 
-        
+        <div>
+            <h2>Gluten-Free</h2>
+            <a href="#">
+                <img class="category-image" src="../static/images/quinoa-feta-salad.jpg" title="Quinoa Salad" alt="Quinoa Salad"></a>
+
     </div>
             
 </div>

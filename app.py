@@ -20,7 +20,8 @@ recipes =  mongo.db.recipes
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', 
+        allergens=mongo.db.allergens.find())
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
