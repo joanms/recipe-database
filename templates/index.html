@@ -4,8 +4,7 @@
 
 <div class="row">
             
-    <div class="col s12 l9">
-    
+
         <h1>Browse by Category</h1>
         
         <div class="col s6 l4 category">
@@ -44,43 +43,49 @@
                 <img class="category-image" src="../static/images/meringue-roulade.jpg" title="Roulade" alt="Roulade"></a>
         </div>
         
-        <h1>Exclude Allergens</h1>
-        
-        <div class="input-field col s12 m6 l3">
-            <select multiple id="allergens" name="allergens">
-                <option value="" disabled selected>Click to Select</option>
-                {% for allergen in allergens %}
-                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
-                {% endfor %}
-            </select>
-            <label>Allergens:</label>
-        </div>
-    
-    </div>
-    
-    <div class="col s12 l3 sidebar">
+</div>
+
+<div class="row">
         
         <h1>Special Diets</h1>
         
-        <div>
+        <div class="col s3">
             <h2>Vegetarian</h2>
             <a href="#">
                 <img class="category-image" src="../static/images/spicy-root-lentil.jpg" title="Root and Lentil Casserole" alt="Root and Lentil Casserole"></a>
         </div>
 
-        <div>
+        <div class="col s3">
             <h2>Vegan</h2>
             <a href="#">
-                <img class="category-image" src="../static/images/storecupboard-side.jpg" title="Storecupboard Side" alt="Storecupboard Side"></a>
+                <img class="category-image" src="../static/images/butternut-soup.jpg" title="Butternut Soup" alt="Butternut Soup"></a>
         </div>
 
-        <div>
+        <div class="col s3">
             <h2>Gluten-Free</h2>
             <a href="#">
-                <img class="category-image" src="../static/images/quinoa-feta-salad.jpg" title="Quinoa Salad" alt="Quinoa Salad"></a>
+                <img class="category-image" src="../static/images/tomato-bread.jpg" title="Gluten-Free Tomato Bread" alt="Gluten-Free Tomato "></a>
+        </div>
+        
+        <div class="col s3">
+            <form action="{{ url_for('allergens') }}" method="POST">
+                <h2>Exclude Allergens</h1>
+                <div class="input-field">
+                    <select multiple id="allergens" name="allergens">
+                        <option value="" disabled selected>Click to Select</option>
+                        {% for allergen in allergens %}
+                        <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label>Allergens:</label>
+                </div>
+                
+                <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                    <i class="material-icons right">search</i>
+                </button>
+            </form>
+        </div>
 
     </div>
-            
-</div>
     
 {% endblock %}

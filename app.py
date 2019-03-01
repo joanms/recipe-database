@@ -18,6 +18,8 @@ app.config['MONGO_URI'] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 recipes =  mongo.db.recipes
 
+mongo.db.recipes.create_index([('$**', 'text')])
+
 @app.route('/')
 def index():
     return render_template('index.html', 
@@ -106,9 +108,16 @@ def submit_changes(recipe_id):
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    mongo.db.recipes.create_index([('$**', 'text')])
     keywords = request.form.get('search')
     query = ( { '$text': { '$search': keywords } } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+    
+@app.route('/allergens', methods=['GET', 'POST'])
+def allergens():
+    allergens = request.form.getlist('allergens')
+    query = ( { 'allergens': { '$nin': allergens} } )
     results = mongo.db.recipes.find(query)
     return render_template('list_recipes.html', 
     recipes=results, count=results.count())
