@@ -24,10 +24,5 @@ class FlaskTestCase(unittest.TestCase):
                     response = tester.get('/list_recipes', content_type='html/text')
                     self.assertEqual(response.status_code, 200)
 
-          def test_login(self):
-                    tester = app.test_client(self)
-                    response = tester.get('/login', follow_redirects=True)
-                    self.assertIn(b'Please Enter Your Username', response.data)
-
 if  __name__ == '__main__':
           unittest.main()
