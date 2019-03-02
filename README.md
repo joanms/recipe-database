@@ -19,22 +19,25 @@ such as those for sauces, marinades, icing, etc.
 ### User Stories
 
 As a user, I want to:
-- **Easily add my own recipes.**
+- **Add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
 The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes, as outlined in the database 
 schema explanation above. The HTML templates are set up to format the recipes neatly once they are input.
 
+- **Edit and delete recipes.**
+Each recipe page has an edit and delete button. When the delete button is clicked, a warning displays. This prevents users from deleting recipes 
+accidentally.
+
 - **Search for recipes according to a wide range of criteria.**
-There are links to all the categories on the home page allowing users to see a list of all recipes in whichever category they are looking for. 
-When a user clicks on the Search link in the navbar, they are taken to a search page which allows them to search for recipes according to various 
-criteria such as keywords, categories, country of origin and dietary restrictions. 
+There is a search field in the navbar enabling users to search for recipes by keyword. The home page has links to lists of recipes in each category 
+(bread, starters, mains, sides, sauces and desserts) and to vegetarian, vegan and gluten-free recipes. The home page also has a dropdown menu that 
+enables users to search for recipes with common allergens excluded.
 
 - **Edit and delete recipes.**
 Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
-the user thatthis action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
+the user that this action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
 deleting recipes.
 
-- **See how popular recipes are with other users.**
 
 ### Design
 
@@ -43,7 +46,7 @@ Please [click here](https://github.com/joanms/recipe-database/blob/master/static
 I kept the layout as simple as possible to make it easy for users to find their way around the site. None of the pages are too cluttered - they 
 have all the information that the user needs and no more. The buttons that users need to click to perform various actions are easy to find.
 
-The colour scheme of warm orange-reds and yellows with green accents is intended to be warm and appetising. The background image was selected to 
+The colour scheme of orange-red and yellow with green accents is intended to be warm and appetising. The background image was selected to 
 harmonise with this colour scheme. The heading font is calligraphy style to give the site a classic, graceful look and the body text font is a 
 simple sans-serif to maximise legibility and elegance.
 
@@ -51,9 +54,10 @@ simple sans-serif to maximise legibility and elegance.
 ## Features
 
 ### Existing Features
-- Links to all recipe categories on the home page.
+- Search field in the navbar to search for recipes by keyword.
+- Links to all recipe categories and to vegetarian, vegan and gluten-free recipes on the home page.
+- Dropdown menu on the home page to search for recipes with common allergens excluded.
 - Recipe input form in add_recipe.html enables users to add their own recipes to the database and display them on the site.
-- Search page to search for recipes according to various criteria such as keywords, categories and dietary restrictions.
 - Page listing summary details of either all recipes in the database, or recipes returned from a user's search.
 - Page for each recipe displaying its ingredients, method and information such as suitability for restricted diets.
 - Edit button on the recipe display page, linking to a form that enables users to edit the recipe.
@@ -61,7 +65,7 @@ simple sans-serif to maximise legibility and elegance.
 - A warning that displays when the delete button is clicked, in case the user clicks it accidentally.
 
 ### Features Left to Implement
-- Secure login with a password.
+- Login feature that only allows users to input recipes when logged in, and prevents them from editing or deleting other users' recipes.
 
 
 ## Technologies Used
@@ -113,18 +117,19 @@ I conducted manual tests of the application as follows:
     7. Ensure that all the recipe details have been saved in the database.
 
 4. Searching for Recipes
-    1. 
+    1. Enter various search terms in the search bar.
+    2. Ensure that all recipes with those words, and only recipes with those words, are displayed in the results.
+    3. Click on each image on the home page.
+    4. Ensure that all recipes in that category, and only recipes in that category, are displayed in the results.
+    5. Select allergens in the allergen dropdown menu on the home page and click on Search.
+    6. Ensure that all recipes without those allergens, and only recipes without those allergens, are displayed in the results.
  
 5. Viewing Recipes
     1. Click on the 'View All Recipes' link in the navbar.
     2. Ensure that all recipes in the database are listed on the page that loads.
     3. Click on each recipe in the list in turn
     4. Ensure that all the recipe details are displayed correctly on the page that loads.
-    5. Click on each category link on the homepage.
-    6. Ensure that all recipes in the category are listed correctly on the page that loads.
-    7. Click on each recipe in the list in turn
-    8. Ensure that all the recipe details are displayed correctly on the page that loads.
- 
+
 6. Editing Recipes
     For all recipes:    
     1. Click on the Edit button at the bottom of a page displaying a recipe.
@@ -169,10 +174,10 @@ I deployed the project on Heroku as follows:
 
 ## Credits
 
-### Media and Content
+### Content and Media
 
-- The logo and background image are free stock images from [Pixabay](https://pixabay.com/).
 - The recipes and their illustrations are from [BBC Good Food](https://www.bbcgoodfood.com/recipes).
+- The logo and background image are free stock images from [Pixabay](https://pixabay.com/).
 
 ### Acknowledgements
 
