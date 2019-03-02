@@ -32,6 +32,10 @@ nav {
     font-size: 3.5em !important;
 }
 
+::placeholder {
+    color: white;
+}
+
 
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
 .navbar-fixed { 
@@ -74,6 +78,7 @@ nav {
 
 .material-icons {
     color: white !important;
+    font-size: 2.5em !important;
 }
 
 .illustration {
