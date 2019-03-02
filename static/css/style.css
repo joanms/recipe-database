@@ -184,6 +184,13 @@ label {
 
 /*--------------------------------------------Media Queries*/
 
+@media only screen and (max-width: 1400px) {
+    .category-image {
+        width: 150px;
+        }
+}
+
+
 @media only screen and (max-width: 991px) {
     h1 {
         font-size: 2em;
@@ -200,10 +207,6 @@ label {
     
     .illustration {
         width: 250px;
-        }
-        
-    .category-image {
-        width: 200px;
         }
         
     .brand-logo {
