@@ -19,28 +19,12 @@ mongo = PyMongo(app)
 recipes =  mongo.db.recipes
 
 mongo.db.recipes.create_index([('$**', 'text')])
+mongo.db.users.create_index([('$**', 'text')])
 
 @app.route('/')
 def index():
     return render_template('index.html', 
         allergens=mongo.db.allergens.find())
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        session['user'] = username
-        users =  mongo.db.users
-        users.insert_one(request.form.to_dict())
-        flash('Welcome, {}!'.format(username))
-        return redirect(url_for('index', username=username))
-    return render_template('login.html') 
-    
-@app.route('/logout', methods=['GET', 'POST'])
-def logout():
-    session.clear()
-    return render_template('index.html')
-    
 
 @app.route('/add_recipe')
 def add_recipe():
