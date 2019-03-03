@@ -50,7 +50,7 @@
                 Preparation Time: {{recipe.prep_time}}<br>
             {% endif %}
             
-            <!--Optional text for any extra time-->
+            <!--Optional text for any extra time, e.g. marinading, proving, etc.-->
             {% if recipe.extra_time %}
                 Extra Time: {{recipe.extra_time}}<br>
             {% endif %}
@@ -70,7 +70,7 @@
         <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
             <i class="material-icons right">delete</i>Delete</a>
             
-            <!--If the DELETE RECIPE button is clicked, a warning appears-->
+            <!--If the Delete button is clicked, a warning appears-->
             {% with messages = get_flashed_messages() %} {% if messages %}
             
                 {% for message in messages %}
@@ -99,7 +99,7 @@
             <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
         {% endif %}
                     
-    </div> <!--End of first column-->
+    </div> <!--End of recipe information and illustration section-->
     
     <!--Ingredients-->
     <div class="col s12 m6 l3" id="ingredients">

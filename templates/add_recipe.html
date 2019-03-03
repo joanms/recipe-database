@@ -5,7 +5,7 @@
     
 <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
                     
-    <!--The recipe's title, author and category-->
+    <!--The recipe's title, author, image and category-->
     <div class="row">
             
         <!--The title of the recipe-->
@@ -58,7 +58,7 @@
                 {% endfor %}
             </select>
             <label>Allergens:</label>
-        </div>
+        </div> <!--End of allergen selector-->
                         
         <!--Selector to indicate if the recipe is suitable for vegetarians-->
         <div class="col s12 m4 l2">

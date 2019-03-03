@@ -62,13 +62,13 @@
                 {% endfor %}
             </select>
             <label>Allergens:</label>
-        </div>
+        </div> <!--End of allergen selector-->
                         
         <!--Selector to indicate if the recipe is suitable for vegetarians-->
         <div class="col s12 m4 l2">
             <div class="switch">
                 <label>
-                     <!--If a recipe isn't vegetarian, it isn't vegan either-->
+                    <!--If a recipe isn't vegetarian, it isn't vegan either-->
                     <input id="vegetarian" name="vegetarian" type="checkbox" 
                     onclick="if (!this.checked) document.getElementById('vegan').checked = false;"
                         {% if recipe.vegetarian %} checked {% endif %}>
@@ -121,7 +121,7 @@
             <label for="prep_time">Preparation Time</label>
         </div>
                     
-        <!--Additional time-->
+        <!--Additional time, e.g. for marinading, proving, etc.-->
         <div class="input-field col s12 m6 l3">
             <input id="extra_time" name="extra_time" type="text" value="{{recipe.extra_time}}" class="validate">
             <label for="extra_time">Extra Time</label>

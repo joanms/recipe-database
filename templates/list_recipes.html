@@ -14,11 +14,12 @@
                         
             <h3>Category: {{ recipe.category_name }}</h3>
             
-            <!--Optional text to display if the recipe contains allergens-->
+            <!--Optional text to display if the recipe is gluten-free-->
             {% if recipe.gluten_free %}
                 Gluten-free.
             {% endif %}
                         
+            <!--Optional text to display if the recipe contains allergens-->
             {% if recipe.allergens %}
                 Contains {{recipe.allergens|join(', ')}}.
             {% endif %}
