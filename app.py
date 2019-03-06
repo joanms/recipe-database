@@ -28,7 +28,7 @@ def index():
     """Home page with links to recipe categories"""
     
     return render_template('index.html', 
-        allergens=mongo.db.allergens.find())
+        allergens=mongo.db.allergens.find().sort('allergen_name',1))
 
 
 @app.route('/add_recipe')
@@ -38,7 +38,7 @@ def add_recipe():
     
     return render_template(
         'add_recipe.html', categories=mongo.db.categories.find(), 
-        allergens=mongo.db.allergens.find())
+        allergens=mongo.db.allergens.find().sort('allergen_name',1))
 
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
@@ -76,7 +76,7 @@ def edit_recipe(recipe_id):
     
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
-    allergens=mongo.db.allergens.find()
+    allergens=mongo.db.allergens.find().sort('allergen_name',1)
     return render_template(
         'edit_recipe.html', recipe=the_recipe, categories=all_categories, allergens=allergens)
         
