@@ -183,9 +183,9 @@ label {
 
 /*--------------------------------------------Media Queries*/
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1600px) {
     .category-image {
-        width: 175px;
+        width: 180px;
         }
     .illustration {
         width: 200px;
