@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,600');
 
 
 html {
@@ -97,16 +97,18 @@ h1 {
 }
 
 h2 {
-    font-family: "Fondamento", cursive;
-    font-size: 1.875em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
     text-align: inherit;
     margin-top: 20px;
     margin-bottom: 5px;
 }
 
 h3 {
-    font-family: "Fondamento", cursive;
-    font-size: 1.5em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.25em;
     margin-top: 5px;
     margin-bottom: 5px;
 }
