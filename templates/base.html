@@ -18,43 +18,43 @@
             
         <div class="navbar-fixed"> <!--This ensures that the navbar remains visible when the user scrolls down the page-->
             
-                <nav>
+            <nav>
                     
-                    <!--Logo and title-->
-                    <div class="nav-wrapper deep-orange darken-4" id="main-nav">
-                        <a href="{{url_for('index')}}" class="brand-logo">
-                            <img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42">Reciprocator</a>
+                <!--Logo and title-->
+                <div class="nav-wrapper deep-orange darken-4" id="main-nav">
+                    <a href="{{url_for('index')}}" class="brand-logo">
+                        <img src="../static/images/chefs-hat-white.png" alt="Logo" height="42" width="42">Reciprocator</a>
 
-                        <!--Nav for desktop and laptop devices-->
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="{{url_for('index')}}">Home</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                        </ul>
+                    <!--Nav for desktop and laptop devices-->
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+                    </ul>
                         
-                        <!--Side nav for mobile devices-->
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="{{url_for('index')}}">Home</a></li>
-                            <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
-                        </ul>
+                    <!--Side nav for mobile devices-->
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
+                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+                    </ul>
                         
-                    </div> <!--End of logo, title and nav menus-->
+                </div> <!--End of logo, title and nav menus-->
                     
-                    <!--Search Field-->
-                    <div class="nav-wrapper deep-orange darken-4">
-                      <form action="{{ url_for('search')}}" method="POST">
-                        <div class="input-field">
-                          <input id="search" name="search"  placeholder="Search for recipes by keyword" required>
-                          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        </div>
-                      </form>
-                    </div> <!--End of search field-->
+                <!--Search Field-->
+                <div class="nav-wrapper deep-orange darken-4">
+                  <form action="{{ url_for('search')}}" method="POST">
+                    <div class="input-field">
+                      <input id="search" name="search"  placeholder="Search for recipes by keyword" required>
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    </div>
+                  </form>
+                </div> <!--End of search field-->
 
-                </nav> 
+            </nav> 
             
-            </div> <!--End of navbar-->
+        </div> <!--End of navbar-->
 
     </header>
         
