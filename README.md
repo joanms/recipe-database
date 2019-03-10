@@ -1,4 +1,4 @@
-# Recipe Database
+# [Recipe Database](https://joans-recipe-database.herokuapp.com/)
 
 This is a recipe database that users can search using a range of search terms. They can also add and edit recipes.
 
@@ -107,7 +107,6 @@ I conducted manual tests of the application as follows:
     2. View the app on a desktop, laptop, tablet and smartphone to ensure that it displays correctly.
 
 3. Adding Recipes
-    For all recipes:
     1. Click on the "Add a Recipe" link in the navbar.
     2. Ensure that the form appears correctly.
     3. Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
@@ -131,7 +130,6 @@ I conducted manual tests of the application as follows:
     4. Ensure that all the recipe details are displayed correctly on the page that loads.
 
 6. Editing Recipes
-    For all recipes:    
     1. Click on the Edit button at the bottom of a page displaying a recipe.
     2. Ensure that the form for editing the recipe loads.
     3. Edit the recipe details.
@@ -142,9 +140,9 @@ I conducted manual tests of the application as follows:
     8. Edit the recipe details.
     8. Click the Cancel button.
     9. Ensure that the recipe reloads with none of the cancelled changes saved to the database.
+    10. Repeat for all recipes.
 
 7. Deleting Recipes
-    For all recipes:
     1. Click the Delete button at the bottom of the recipe display page.
     2. Ensure that a warning message appears, along with buttons to cancel or confirm the deletion.
     3. Click Cancel.
@@ -152,6 +150,7 @@ I conducted manual tests of the application as follows:
     5. Click the Delete button again.
     5. Click Confirm.
     6. Ensure that the recipe is deleted from the database.
+    7. Repeat for all recipes.
 
 
 ## Deployment
