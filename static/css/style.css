@@ -118,7 +118,7 @@ a.recipe-title{
 }
 
 a.recipe-title:hover {
-    color: #009688;
+    color: #bf360c;
     text-decoration: underline;
 }
 
@@ -169,7 +169,7 @@ label {
    
 .btn {
     font-family: "Open Sans", sans-serif;
-    background-color: #bf360c;
+    background-color: #009688;
     margin-bottom: 20px;
     margin-right: 20px;
     width: 175px;
@@ -177,7 +177,7 @@ label {
 }
 
 .btn:hover {
-    background-color: #009688;
+    background-color: #bf360c;
 }
 
 
