@@ -1,6 +1,11 @@
 {% extends 'base.html'%} {% block content %}
 
-<h1>{{ count }} Recipes</h1>
+<!--If a search returns only one recipe, "Recipe" should be singular in the heading, otherwise it's plural-->
+{% if count==1 %}
+    <h1> 1 Recipe</h1>
+{% else %}    
+    <h1>{{ count }} Recipes</h1>
+{% endif %}    
 
 <!--Loop through recipes in the database-->
         
