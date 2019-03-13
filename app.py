@@ -25,7 +25,7 @@ mongo.db.users.create_index([('$**', 'text')])
 @app.route('/')
 def index():
     
-    """Home page with links to recipe categories"""
+    """Load the home page with links to recipe categories"""
     
     return render_template('index.html', 
         allergens=mongo.db.allergens.find().sort('allergen_name',1))
@@ -34,7 +34,7 @@ def index():
 @app.route('/add_recipe')
 def add_recipe():
     
-    """Form to add a new recipe to the database"""
+    """Load a form to add a new recipe to the database"""
     
     return render_template(
         'add_recipe.html', categories=mongo.db.categories.find(), 
@@ -44,7 +44,7 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['GET', 'POST'])
 def insert_recipe():
     
-    """Post a new recipe to the database after filling in the form"""
+    """Post a new recipe to the database and display it after filling in the form"""
     
     recipes =  mongo.db.recipes
     new_recipe = {
@@ -72,7 +72,7 @@ def insert_recipe():
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     
-    """Form to edit a recipe"""
+    """Load a form to edit a recipe"""
     
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
@@ -189,7 +189,8 @@ def list_recipes_by_cat(category_name):
 @app.route('/show_recipe/<recipe_id>', methods=['GET', 'POST'])
 def show_recipe(recipe_id):
     
-    """Display a recipe, including ingredients, method and other information 
+    """
+    Display a recipe, including ingredients, method and other information 
     such as suitability for restricted diets
     """
 
@@ -197,10 +198,11 @@ def show_recipe(recipe_id):
     return render_template(
         'show_recipe.html', recipe=the_recipe)
 
+
 @app.route('/warning/<recipe_id>', methods=['GET', 'POST'])
 def warning(recipe_id):
     
-    """A warning dipslays when a user clicks the Delete button"""
+    """Display a warning when a user clicks the Delete button"""
 
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     flash('This will permanently delete the recipe. Are you sure?')
@@ -211,7 +213,7 @@ def warning(recipe_id):
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
     
-    """The recipe is deleted when the user confirms the deletion"""
+    """Delete a recipe when the user clicks the Confirm button"""
 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('list_recipes'))
