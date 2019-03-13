@@ -65,8 +65,8 @@ def insert_recipe():
         'method': request.form.get('method')
     }
     recipes.insert_one(new_recipe)
-    return render_template('list_recipes.html', 
-    recipes=recipes.find().sort('_id',-1)) # The recipe list will load with the new recipe at the top
+    return render_template(
+        'show_recipe.html', recipe=new_recipe)
     
 
 @app.route('/edit_recipe/<recipe_id>')
