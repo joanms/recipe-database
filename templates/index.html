@@ -2,11 +2,52 @@
 
 <!--Images that users can click on to view recipes in each category-->
 
+
+<div class="row">
+            
+    <h1>Browse Recipes by Category</h1>
+        
+    <div class="col s6 xl4 category">
+        <h2>Bread</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Bread")}}">
+            <img class="category-image" src="../static/images/easy-white-bread.jpg" title="Easy white bread" alt="Easy white bread"></a>
+    </div>
+                
+    <div class="col s6 xl4 category">
+        <h2>Starters</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Starters")}}">
+            <img class="category-image" src="../static/images/salmon-prawns.jpg" title="Smoked Salmon and Prawns" alt="Smoked Salmon and Prawns"></a>
+    </div>
+                
+    <div class="col s6 xl4 category">
+        <h2>Mains</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Mains")}}">
+            <img class="category-image" src="../static/images/salmon-asparagus.jpg" title="Salmon with Asparagus" alt="Salmon with Asparagus"></a>
+    </div>
+                
+    <div class="col s6 xl4 category">
+        <h2>Sides</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Sides")}}">
+            <img class="category-image" src="../static/images/quinoa-feta-salad.jpg" title="Quinoa feta salad" alt="Quinoa feta salad"></a>
+    </div>
+                
+    <div class="col s6 xl4 category">
+        <h2>Sauces</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Sauces")}}">
+            <img class="category-image" src="../static/images/pesto.jpg" title="Pesto sauce" alt="Pesto sauce"></a>
+    </div>
+                
+    <div class="col s6 xl4 category">
+        <h2>Desserts</h2>
+        <a href="{{url_for('list_recipes_by_cat', category_name="Desserts")}}">
+            <img class="category-image" src="../static/images/meringue-roulade.jpg" title="Roulade" alt="Roulade"></a>
+    </div>
+        
+</div> <!--End of category images-->
+
 <!--Dietary restrictions-->
 <div class="row">
-        
-    <h1>Recipes for Restricted Diets</h1>
-        
+    
     <!--Users can click on the image to see a list of vegetarian recipes-->
     <div class="col s6 xl3 category">
         <h2>Vegetarian</h2>
@@ -50,48 +91,6 @@
 
 </div> <!--End of dietary restrictions-->
 
-
-<div class="row">
-            
-    <h1>Browse Recipes by Category</h1>
-        
-    <div class="col s6 xl4 category">
-        <h2>Bread</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Bread")}}">
-            <img class="category-image" src="../static/images/easy-white-bread.jpg" title="Easy white bread" alt="Easy white bread"></a>
-    </div>
-                
-    <div class="col s6 xl4 category">
-        <h2>Starters</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Starters")}}">
-            <img class="category-image" src="../static/images/salmon-prawns.jpg" title="Smoked Salmon and Prawns" alt="Smoked Salmon and Prawns"></a>
-    </div>
-                
-    <div class="col s6 xl4 category">
-        <h2>Mains</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Mains")}}">
-            <img class="category-image" src="../static/images/salmon-asparagus.jpg" title="Salmon with Asparagus" alt="Salmon with Asparagus"></a>
-    </div>
-                
-    <div class="col s6 xl4 category">
-        <h2>Sides</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Sides")}}">
-            <img class="category-image" src="../static/images/quinoa-feta-salad.jpg" title="Quinoa feta salad" alt="Quinoa feta salad"></a>
-    </div>
-                
-    <div class="col s6 xl4 category">
-        <h2>Sauces</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Sauces")}}">
-            <img class="category-image" src="../static/images/pesto.jpg" title="Pesto sauce" alt="Pesto sauce"></a>
-    </div>
-                
-    <div class="col s6 xl4 category">
-        <h2>Desserts</h2>
-        <a href="{{url_for('list_recipes_by_cat', category_name="Desserts")}}">
-            <img class="category-image" src="../static/images/meringue-roulade.jpg" title="Roulade" alt="Roulade"></a>
-    </div>
-        
-</div> <!--End of category images-->
 
     
 {% endblock %}
