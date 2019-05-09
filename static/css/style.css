@@ -24,12 +24,12 @@ nav {
 }
 
 #main-nav {
-    height: 100px !important;
+    height: 100px;
 }
 
 .brand-logo {
     font-family: "Fondamento", cursive;
-    font-size: 3.5em !important;
+    font-size: 3.5em !important; /*!important is used to override the Materialize CSS*/
 }
 
 ::placeholder {
@@ -45,7 +45,7 @@ nav {
 
 /*This fixes a bug that causes misalignment of checkboxes and text in the Materialize multiple select menu*/
 .multiple-select-dropdown label {
-  top: -10px !important;
+  top: -10px !important; /*!important is used to override the Materialize CSS*/
 }
 
 /*--------------------------------------------Containers*/
@@ -70,7 +70,7 @@ nav {
 }
 
 .material-icons {
-    color: white !important;
+    color: white !important; /*!important is used to override the Materialize CSS*/
 }
 
 .illustration {
@@ -153,7 +153,7 @@ pre {
 
 .input-field {
      font-family: "Open Sans", sans-serif;
-     color: #000 !important;
+     color: #000 !important; /*!important is used to override the Materialize CSS*/
    }
    
    .input-field label {
@@ -208,7 +208,7 @@ label {
         }
 
     .brand-logo {
-        font-size: 1.5em !important;
+        font-size: 1.5em !important; /*!important is used to override the Materialize CSS*/
         margin-left: 0px; 
         }
 }
