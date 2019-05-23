@@ -41,7 +41,7 @@ deleting recipes.
 
 ### Design
 
-Please [click here](https://github.com/joanms/recipe-database/blob/master/static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
+Please [click here](static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
 
 I kept the layout as simple as possible to make it easy for users to find their way around the site. None of the pages are too cluttered - they 
 have all the information that the user needs and no more. The buttons that users need to click to perform various actions are easy to find.
