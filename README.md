@@ -167,7 +167,13 @@ I deployed the project on Heroku as follows:
 8. Open the app on Heroku and check to ensure that it's working correctly.
 
 ### Running the Code Locally
-1. Clone the GitHub Repo and run it in your code editor.
+Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-repository)
+1. Under the repository name on GitHub, click Clone or download.
+2. In the Clone with HTTPs section, click the icon beside the URL to copy the clone URL for the repository.
+3. Open Git Bash.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL you copied in Step 2.
+6. Press Enter. Your local clone will be created.
 3. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
 2. Set the IP address to 127.0.0.1 and the PORT to 5000.
 
