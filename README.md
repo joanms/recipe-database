@@ -161,14 +161,15 @@ I deployed the project on Heroku as follows:
 3. Ensure that the project included a Procfile and requirements.txt.
 4. Push the project to the Heroku remote.
 6. Start a web process by typing heroku ps:scale web=1 in the Cloud9 terminal.
-5. Set the IP to 0.0.0.0 and the PORT to 5000 in the app settings on Heroku.
+5. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
+6. Set the MONGO_URI environment variable in the Heroku config vars.
 7. Restart all dynos.
 8. Open the app on Heroku and check to ensure that it's working correctly.
 
 ### Running the Code Locally
 1. Clone the GitHub Repo and run it in your code editor.
+3. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
 2. Set the IP address to 127.0.0.1 and the PORT to 5000.
-3. Install the packages in requirements.txt by typing pip install -r requirements.txt in the command line.
 
 
 ## Credits
