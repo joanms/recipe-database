@@ -15,7 +15,7 @@
         </div>
                         
         <!--The author of the recipe-->
-        <div class="input-field col s12 l6 xl2">
+        <div class="input-field col s12 l6 xl4">
             <input id="author" name="author" type="text" class="validate">
             <label for="author">Author</label>
         </div>
@@ -26,8 +26,14 @@
             <label for="image_path">URL of Image</label>
         </div>
                         
+                        
+    </div> <!--End of title, author, image and category row-->
+                    
+    <!--Country of origin and dietary restrictions-->
+    <div class="row"> 
+                        
         <!--The category of the recipe-->
-        <div class="input-field col s12 l6 xl2">
+        <div class="input-field col s12 l6 xl3">
             <select id="category" name="category_name">
                 <!--The following for loop pulls the list of category names from the categories collection in the database-->
                 <option value="" disabled selected>Click to Select</option>
@@ -37,12 +43,7 @@
             </select>
             <label>Category*</label>
         </div>
-                        
-    </div> <!--End of title, author, image and category row-->
-                    
-    <!--Country of origin and dietary restrictions-->
-    <div class="row"> 
-                        
+
         <!--The recipe's country of origin-->
         <div class="input-field col s12 l6 xl3">
             <input id="origin" name="origin" type="text" class="validate">
@@ -60,40 +61,16 @@
             <label>Allergens:</label>
         </div> <!--End of allergen selector-->
                         
-        <!--Selector to indicate if the recipe is suitable for vegetarians-->
-        <div class="col s12 l4 xl2">
-            <div class="switch">
-                <label>
-                    <input id="vegetarian" name="vegetarian" type="checkbox" 
-                    onclick="if (!this.checked) document.getElementById('vegan').checked = false;"> <!--If a recipe isn't vegetarian, it isn't vegan either-->
-                    <span class="lever"></span>
-                    Vegetarian
-                </label>
-            </div> 
-        </div> <!--End of vegetarian selector-->
-                        
-        <!--Selector to indicate if the recipe is suitable for vegans-->
-        <div class="col s12 l4 xl2">
-            <div class="switch">
-                <label>
-                    <input id="vegan" name="vegan" type="checkbox" 
-                    onclick="if (this.checked) document.getElementById('vegetarian').checked = true;"> <!--If a recipe is vegan, it's also vegetarian-->
-                    <span class="lever"></span>
-                    Vegan
-                </label>
-            </div>
-        </div> <!--End of vegan selector-->
-                    
-        <!--Selector to indicate if the recipe is gluten-free-->
-        <div class="col s12 l4 xl2">
-            <div class="switch">
-                <label>
-                    <input id="gluten_free" name="gluten_free" type="checkbox">
-                    <span class="lever"></span>
-                    Gluten&#8209;Free
-                </label>
-            </div>
-        </div> <!--End of gluten-free selector-->
+        <!--Restricted Diets-->
+        <div class="input-field col s12 l6 xl3">
+            <select multiple id="restrictions" name="restrictions">
+                <option value="" disabled selected>Click to Select</option>
+                {% for restriction in restrictions %}
+                <option value="{{restriction.restriction_name}}">{{restriction.restriction_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Dietary Restrictions:</label>
+        </div> <!--End of allergen selector-->
 
     </div> <!--End of country of origin and dietary restrictions-->
      

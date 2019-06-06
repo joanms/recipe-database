@@ -1,4 +1,5 @@
 import os
+import env
 
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
@@ -38,7 +39,8 @@ def add_recipe():
     
     return render_template(
         'add_recipe.html', categories=mongo.db.categories.find(), 
-        allergens=mongo.db.allergens.find().sort('allergen_name',1))
+        allergens=mongo.db.allergens.find().sort('allergen_name',1), 
+        restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
 
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
@@ -58,9 +60,7 @@ def insert_recipe():
         'extra_time': request.form.get('extra_time'),
         'cook_time': request.form.get('cook_time'),
         'allergens': request.form.getlist('allergens'),
-        'vegetarian': request.form.get('vegetarian'),
-        'vegan': request.form.get('vegan'),
-        'gluten_free': request.form.get('gluten_free'),
+        'restrictions': request.form.getlist('restrictions'),
         'ingredients': request.form.get('ingredients'),
         'method': request.form.get('method')
     }
