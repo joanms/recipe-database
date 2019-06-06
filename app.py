@@ -78,8 +78,9 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     allergens=mongo.db.allergens.find().sort('allergen_name',1)
+    restrictions=mongo.db.restrictions.find().sort('restriction_name',1)
     return render_template(
-        'edit_recipe.html', recipe=the_recipe, categories=all_categories, allergens=allergens)
+        'edit_recipe.html', recipe=the_recipe, categories=all_categories, allergens=allergens, restrictions=restrictions)
         
 
 @app.route('/submit_changes/<recipe_id>', methods=['POST'])
@@ -123,39 +124,6 @@ def search():
     recipes=results, count=results.count())
     
 
-@app.route('/vegetarian', methods=['GET', 'POST'])
-def vegetarian():
-    
-    """Search for vegetarian recipes"""
-    
-    query = ( { 'vegetarian': 'on' } )
-    results = mongo.db.recipes.find(query)
-    return render_template('list_recipes.html', 
-    recipes=results, count=results.count())
-    
-
-@app.route('/vegan', methods=['GET', 'POST'])
-def vegan():
-    
-    """Search for vegan recipes"""
-    
-    query = ( { 'vegan': 'on' } )
-    results = mongo.db.recipes.find(query)
-    return render_template('list_recipes.html', 
-    recipes=results, count=results.count())
-
-
-@app.route('/gluten_free', methods=['GET', 'POST'])
-def gluten_free():
-    
-    """Search for gluten-free recipes"""
-
-    query = ( { 'gluten_free': 'on' } )
-    results = mongo.db.recipes.find(query)
-    return render_template('list_recipes.html', 
-    recipes=results, count=results.count())
-
-
 @app.route('/allergens', methods=['GET', 'POST'])
 def allergens():
     
@@ -166,6 +134,7 @@ def allergens():
     results = mongo.db.recipes.find(query)
     return render_template('list_recipes.html', 
     recipes=results, count=results.count())
+
 
 @app.route('/restrictions', methods=['GET', 'POST'])
 def restrictions():
