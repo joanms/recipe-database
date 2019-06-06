@@ -3,6 +3,52 @@
 <!--Images that users can click on to view recipes in each category-->
 
 
+<!--Dietary restrictions-->
+<div class="row">
+    
+    <!--Dropdown menu to search for recipes suitable for restricted diets-->
+    <div class="col s12 xl3 category">
+        <form action="{{ url_for('restrictions') }}" method="POST">
+            <h2>Restricted Diets</h2>
+            <div class="input-field">
+                <select multiple id="restrictions" name="restrictions">
+                    <option value="" disabled selected>Click to Select</option>
+                    {% for restriction in restrictions %}
+                    <option value="{{restriction.restriction_name}}">{{restriction.restriction_name}}</option>
+                    {% endfor %}
+                </select>
+                <label>Restricted Diets:</label>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+    </div> <!--End of allergen selector-->
+        
+    <!--Dropdown menu to search for recipes with allergens excluded-->
+    <div class="col s12 xl3 category">
+        <form action="{{ url_for('allergens') }}" method="POST">
+            <h2>Exclude Allergens</h2>
+            <div class="input-field">
+                <select multiple id="allergens" name="allergens">
+                    <option value="" disabled selected>Click to Select</option>
+                    {% for allergen in allergens %}
+                    <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                    {% endfor %}
+                </select>
+                <label>Allergens:</label>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+    </div> <!--End of allergen selector-->
+
+</div> <!--End of dietary restrictions-->
+
+
 <div class="row">
             
     <h1>Browse Recipes by Category</h1>
@@ -45,53 +91,6 @@
         
 </div> <!--End of category images-->
 
-<!--Dietary restrictions-->
-<div class="row">
-    
-    <h1>Recipes for Restricted Diets</h1>
-    
-    <!--Users can click on the image to see a list of vegetarian recipes-->
-    <div class="col s6 xl3 category">
-        <h2>Vegetarian</h2>
-        <a href="{{ url_for('vegetarian') }}">
-            <img class="category-image" src="../static/images/spicy-root-lentil.jpg" title="Root and Lentil Casserole" alt="Root and Lentil Casserole"></a>
-    </div>
-
-    <!--Users can click on the image to see a list of vegan recipes-->
-    <div class="col s6 xl3 category">
-        <h2>Vegan</h2>
-        <a href="{{ url_for('vegan') }}">
-            <img class="category-image" src="../static/images/butternut-soup.jpg" title="Butternut Soup" alt="Butternut Soup"></a>
-    </div>
-
-    <!--Users can click on the image to see a list of gluten-free recipes-->
-    <div class="col s12 xl3 category">
-        <h2>Gluten-Free</h2>
-        <a href="{{ url_for('gluten_free') }}">
-            <img class="category-image" src="../static/images/tomato-bread.jpg" title="Gluten-Free Tomato Bread" alt="Gluten-Free Tomato "></a>
-    </div>
-        
-    <!--Dropdown menu to search for recipes with allergens excluded-->
-    <div class="col s12 xl3 category">
-        <form action="{{ url_for('allergens') }}" method="POST">
-            <h2>Exclude Allergens</h2>
-            <div class="input-field">
-                <select multiple id="allergens" name="allergens">
-                    <option value="" disabled selected>Click to Select</option>
-                    {% for allergen in allergens %}
-                    <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
-                    {% endfor %}
-                </select>
-                <label>Allergens:</label>
-            </div>
-
-            <button class="btn waves-effect waves-light" type="submit" name="action">Search
-                <i class="material-icons right">search</i>
-            </button>
-        </form>
-    </div> <!--End of allergen selector-->
-
-</div> <!--End of dietary restrictions-->
 
 
     

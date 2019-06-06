@@ -29,7 +29,8 @@ def index():
     """Load the home page with links to recipe categories"""
     
     return render_template('index.html', 
-        allergens=mongo.db.allergens.find().sort('allergen_name',1))
+        allergens=mongo.db.allergens.find().sort('allergen_name',1), 
+        restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
 
 
 @app.route('/add_recipe')
@@ -162,6 +163,17 @@ def allergens():
 
     allergens = request.form.getlist('allergens')
     query = ( { 'allergens': { '$nin': allergens} } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+
+@app.route('/restrictions', methods=['GET', 'POST'])
+def restrictions():
+    
+    """Search for recipes suitable for restricted diets"""
+
+    restrictions = request.form.getlist('restrictions')
+    query = ( { 'restrictions': { '$in': restrictions} } )
     results = mongo.db.recipes.find(query)
     return render_template('list_recipes.html', 
     recipes=results, count=results.count())

@@ -19,9 +19,9 @@
                         
             <h3>Category: {{ recipe.category_name }}</h3>
             
-            <!--Optional text to display if the recipe is gluten-free-->
-            {% if recipe.gluten_free %}
-                Gluten-free.
+            <!--Optional text to display if the recipe is suitable for restricted diets-->
+            {% if recipe.restrictions %}
+                Suitable for {{recipe.restrictions|join(', ')}} diets.
             {% endif %}
                         
             <!--Optional text to display if the recipe contains allergens-->
@@ -29,15 +29,6 @@
                 Contains {{recipe.allergens|join(', ')}}.
             {% endif %}
                                     
-            <!--Optional text to display if the recipe is suitable for vegans and/or vegetarians-->
-            {% if recipe.vegetarian and not recipe.vegan %}
-                Suitable for vegetarians.
-            {% endif %}
-                
-            {% if recipe.vegan %}
-                Suitable for vegans and vegetarians.
-            {% endif %}    
-                
             <!--Number of servings-->
             {% if recipe.servings %}
                 Serves {{recipe.servings}}.

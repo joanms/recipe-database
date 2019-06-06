@@ -20,20 +20,10 @@
                 Contains {{recipe.allergens|join(', ')}}<br>
             {% endif %}
     
-            <!--Optional text to display if the recipe is gluten-free-->
-            {% if recipe.gluten_free %}
-                Gluten-free<br>
+            <!--Optional text to display if the recipe is suitable for restricted diets-->
+            {% if recipe.restrictions %}
+                Suitable for {{recipe.restrictions|join(', ')}} diets<br>
             {% endif %}
-    
-            <!--Optional text to display if the recipe is suitable for vegetarians-->
-            {% if recipe.vegetarian and not recipe.vegan %}
-                Suitable for vegetarians<br>
-            {% endif %}
-                    
-            <!--Optional text to display if the recipe is suitable for vegans-->
-            {% if recipe.vegan %}
-                Suitable for vegans and vegetarians<br> <!--If it's suitable for vegans, it's also suitable for vegetarians-->
-            {% endif %}    
     
             <!--Optional text for the recipe's country of origin-->
             {% if recipe.origin %}
