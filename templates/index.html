@@ -3,52 +3,6 @@
 <!--Images that users can click on to view recipes in each category-->
 
 
-<!--Dietary restrictions-->
-<div class="row">
-    
-    <!--Dropdown menu to search for recipes suitable for restricted diets-->
-    <div class="col s12 xl3 category">
-        <form action="{{ url_for('restrictions') }}" method="POST">
-            <h2>Restricted Diets</h2>
-            <div class="input-field">
-                <select multiple id="restrictions" name="restrictions">
-                    <option value="" disabled selected>Click to Select</option>
-                    {% for restriction in restrictions %}
-                    <option value="{{restriction.restriction_name}}">{{restriction.restriction_name}}</option>
-                    {% endfor %}
-                </select>
-                <label>Restricted Diets:</label>
-            </div>
-
-            <button class="btn waves-effect waves-light" type="submit" name="action">Search
-                <i class="material-icons right">search</i>
-            </button>
-        </form>
-    </div> <!--End of allergen selector-->
-        
-    <!--Dropdown menu to search for recipes with allergens excluded-->
-    <div class="col s12 xl3 category">
-        <form action="{{ url_for('allergens') }}" method="POST">
-            <h2>Exclude Allergens</h2>
-            <div class="input-field">
-                <select multiple id="allergens" name="allergens">
-                    <option value="" disabled selected>Click to Select</option>
-                    {% for allergen in allergens %}
-                    <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
-                    {% endfor %}
-                </select>
-                <label>Allergens:</label>
-            </div>
-
-            <button class="btn waves-effect waves-light" type="submit" name="action">Search
-                <i class="material-icons right">search</i>
-            </button>
-        </form>
-    </div> <!--End of allergen selector-->
-
-</div> <!--End of dietary restrictions-->
-
-
 <div class="row">
             
     <h1>Browse Recipes by Category</h1>
@@ -92,6 +46,50 @@
 </div> <!--End of category images-->
 
 
+<!--Dietary restrictions-->
+<div class="row">
+    
+    <h1>Restricted Diets</h1>
+    
+    <!--Dropdown menu to search for recipes suitable for restricted diets-->
+    <div class="col s12 xl3 offset-xl2 category">
+        <h2>Diet Types</h2>
+        <form action="{{ url_for('restrictions') }}" method="POST">
+            <div class="input-field">
+                <select multiple id="restrictions" name="restrictions">
+                    <option value="" disabled selected>Click to Select</option>
+                    {% for restriction in restrictions %}
+                    <option value="{{restriction.restriction_name}}">{{restriction.restriction_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+    </div> <!--End of allergen selector-->
+        
+    <!--Dropdown menu to search for recipes with allergens excluded-->
+    <div class="col s12 xl3 offset-xl2 category">
+        <h2>Exclude Allergens</h2>
+        <form action="{{ url_for('allergens') }}" method="POST">
+            <div class="input-field">
+                <select multiple id="allergens" name="allergens">
+                    <option value="" disabled selected>Click to Select</option>
+                    {% for allergen in allergens %}
+                    <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+    </div> <!--End of allergen selector-->
+
+</div> <!--End of dietary restrictions-->
 
     
 {% endblock %}
