@@ -52,9 +52,9 @@ simple sans-serif to maximise legibility and elegance.
 
 ### Existing Features
 - Search field in the navbar to search for recipes by keyword.
-- Links to all recipe categories and to vegetarian, vegan and gluten-free recipes on the home page.
-- Dropdown menu on the home page to search for recipes with common allergens excluded.
-- Recipe input form in add_recipe.html enables users to add their own recipes to the database and display them on the site.
+- Links to all recipe categories on the home page.
+- Dropdown menus on the home page to search for recipes for special diets or excluding common allergens.
+- Recipe input form, enabling users to add their own recipes to the database and display them on the site.
 - Page listing summary details of either all recipes in the database, or recipes returned from a user's search.
 - Page for each recipe displaying its ingredients, method and information such as suitability for restricted diets.
 - Edit button on the recipe display page, linking to a form that enables users to edit the recipe.
