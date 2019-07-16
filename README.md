@@ -5,7 +5,7 @@ This is a recipe database that users can search using a range of search terms. T
 
 ## Database Schema
 
-Please [click here](static/plans/recipe-database_schema.pdf) to see the database schema.
+Please [click here](static/plans/recipe_database_schema.pdf) to see the database schema.
 
 The database is set up to make it as easy as possible for users to add and edit their own recipes, with minimal limitations on the type of data 
 that they can input. I considered separate values for the quantities and names of ingredients so that users would input them consistently, but 
