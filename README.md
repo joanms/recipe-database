@@ -25,18 +25,15 @@ The database is structured to allow users maximum flexibility and ease of use wh
 schema explanation above. The HTML templates are set up to format the recipes neatly once they are input.
 
 - **Edit and delete recipes.**
-Each recipe page has an edit and delete button. When the delete button is clicked, a warning displays. This prevents users from deleting recipes 
-accidentally.
-
-- **Search for recipes according to a wide range of criteria.**
-There is a search field in the navbar enabling users to search for recipes by keyword. The home page has links to lists of recipes in each category 
-(bread, starters, mains, sides, sauces and desserts) and to vegetarian, vegan and gluten-free recipes. The home page also has a dropdown menu that 
-enables users to search for recipes with common allergens excluded.
-
-- **Edit and delete recipes.**
 Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
 the user that this action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
 deleting recipes.
+
+- **Search for recipes according to a wide range of criteria.**
+There is a search field in the navbar enabling users to search for recipes by keyword. The home page has links to lists of recipes in each category 
+(bread, starters, mains, sides, sauces and desserts) and dropdown menus enabling users to search for recipes suitable for restricted diets or with 
+common allergens excluded.
+
 
 
 ### Design
