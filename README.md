@@ -67,6 +67,7 @@ simple sans-serif to maximise legibility and elegance.
 
 ## Technologies Used
 
+- **[Git](https://git-scm.com/)** was used for version control.
 - **[MongoDB](https://www.mongodb.com/)** was used as the database program.
 - **[mLab](https://mlab.com/home)** was used to set up the database.
 - **[Pencil](https://pencil.evolus.vn/)** was used to create the wireframes.
