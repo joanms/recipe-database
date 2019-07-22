@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:600');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,600');
 
 
 html {
 
     font-family: "Open Sans", serif;
+    font-weight: 400;
     font-size: 100%;
     background: url("../images/background.jpg") no-repeat center fixed; 
     background-size: cover;
@@ -65,8 +66,8 @@ nav {
 /*Images*/
 
 #logo {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 .material-icons {
