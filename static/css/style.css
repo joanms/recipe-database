@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Fondamento|Open+Sans:600');
 
 
 html {
@@ -29,12 +29,12 @@ nav {
 
 .brand-logo {
     font-family: "Fondamento", cursive;
-    font-size: 3.5em !important; /*!important is used to override the Materialize CSS*/
+    font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
 }
 
 ::placeholder {
     color: white;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 
@@ -48,7 +48,7 @@ nav {
   top: -10px !important; /*!important is used to override the Materialize CSS*/
 }
 
-/*--------------------------------------------Containers*/
+/*Containers*/
 
 .container {
     background-color: rgba(255, 248, 225, .8);
@@ -62,7 +62,7 @@ nav {
 }
 
 
-/*--------------------------------------------Images*/
+/*Images*/
 
 #logo {
     height: 50px;
@@ -86,11 +86,11 @@ nav {
 }
 
 
-/*--------------------------------------------Headings*/
+/*Headings*/
 
 h1 {
     font-family: "Fondamento", cursive;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -99,7 +99,7 @@ h1 {
 h2 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-align: inherit;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -108,7 +108,7 @@ h2 {
 h3 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -123,7 +123,7 @@ a.recipe-title:hover {
 }
 
 
-/*--------------------------------------------Main text*/
+/*Main text*/
 
 #information {
     margin-bottom: 0px;
@@ -149,7 +149,7 @@ pre {
 }
 
 
-/*--------------------------------------------Forms*/
+/*Forms*/
 
 .input-field {
      font-family: "Open Sans", sans-serif;
@@ -181,7 +181,7 @@ label {
 }
 
 
-/*--------------------------------------------Media Queries*/
+/*Media Queries*/
 
 @media only screen and (max-width: 1600px) {
     .category-image {
@@ -195,11 +195,11 @@ label {
 
 @media only screen and (max-width: 991px) {
     h1 {
-        font-size: 2em;
+        font-size: 2rem;
         }
     
     h2 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         }
         
     #logo {
@@ -208,19 +208,19 @@ label {
         }
 
     .brand-logo {
-        font-size: 1.5em !important; /*!important is used to override the Materialize CSS*/
+        font-size: 1.5rem !important; /*!important is used to override the Materialize CSS*/
         margin-left: 0px; 
         }
 }
 
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 1.75em;
+        font-size: 1.75rem;
         margin-bottom: 0px;
         }
     
     h2 {
-        font-size: 1.25em;
+        font-size: 1.25rem;
         margin-top: 20px;
         }
         
