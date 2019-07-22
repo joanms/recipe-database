@@ -24,12 +24,14 @@
                 <!--Logo and title-->
                 <div class="nav-wrapper deep-orange darken-4" id="main-nav">
                     <a href="{{url_for('index')}}" class="brand-logo">
-                        <img src="../static/images/chefs-hat-white.png" id="logo" alt="Logo">Reciprocator</a>
+                        <img src="../static/images/chefs-hat-white.png" id="logo" alt="Logo"> Reciprocator</a>
 
                     <!--Nav for desktop and laptop devices-->
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('login')}}">Log In</a></li>
+                        <li><a href="{{url_for('register')}}">Register</a></li>
                         <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                     </ul>
@@ -37,6 +39,8 @@
                     <!--Side nav for mobile devices-->
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('login')}}">Log In</a></li>
+                        <li><a href="{{url_for('register')}}">Register</a></li>
                         <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                     </ul>
@@ -60,6 +64,10 @@
     </header>
         
     <div class="container">
+        
+        {% if session %}
+            <p>Logged in as {{ username }}</p>
+        {% endif %}
             
         {% block content %} {% endblock %}
             
