@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from pymongo import ASCENDING
 from pymongo import DESCENDING
 from pymongo import TEXT
+import bcrypt
 
 
 app = Flask(__name__)
@@ -41,13 +42,22 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/register')
+@app.route('/register', methods=['POST', 'GET'])
 def register():
-    
-    """Load the registration page"""
-    
-    return render_template('register.html')
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'username' : request.form['username']})
 
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'username' : request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        
+        flash('That username already exists.')
+
+    return render_template('register.html')
+    
 
 @app.route('/add_recipe')
 def add_recipe():
