@@ -66,7 +66,7 @@
     <div class="container">
         
         {% if session %}
-            <p>Logged in as {{ username }}</p>
+            <p>Logged in as {{ session.username }}</p>
         {% endif %}
             
         {% block content %} {% endblock %}
