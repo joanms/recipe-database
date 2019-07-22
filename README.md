@@ -67,18 +67,23 @@ simple sans-serif to maximise legibility and elegance.
 
 ## Technologies Used
 
-- **[Git](https://git-scm.com/)** was used for version control.
-- **[MongoDB](https://www.mongodb.com/)** was used as the database program.
-- **[mLab](https://mlab.com/home)** was used to set up the database.
-- **[Pencil](https://pencil.evolus.vn/)** was used to create the wireframes.
+### Languages
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to set up the templates for the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the site content.
-- **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
 - **[JavaScript](https://www.javascript.com/)** was used to initialise some of the Materialize elements and ensure that they worked correctly.
 - **[Python](https://www.python.org/)** was used to write the app's logic.
+- **[MongoDB](https://www.mongodb.com/)** was used as the database program.
+
+### Frameworks/Libraries
 - **[Flask](http://flask.pocoo.org/)** was used to create routes and render the HTML templates.
-- **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
+- **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
+
+### Tools
+- **[Git](https://git-scm.com/)** was used for version control.
 - **[Heroku](https://www.heroku.com/)** was used to deploy the project.
+- **[mLab](https://mlab.com/home)** was used to set up the database.
+- **[Pencil](https://pencil.evolus.vn/)** was used to create the wireframes.
+- **[unittest](https://docs.python.org/2/library/unittest.html)** was used for automated testing of the Python code.
 
 
 ## Testing
@@ -90,7 +95,9 @@ The W3C Markup Validation Service gives error messages for Flask Jinja code in t
 
 ### Automated Tests
 
-I conducted automated testing of the app routes with unittests, and the tests are in test.py at the root directory. Run the tests by typing "python3 test.py" in the terminal. 
+I conducted automated testing of the app routes with unittests, and the tests are in test.py at the root directory. Run the tests by entering the following in the terminal:
+
+```python3 test.py```  
 
 ### Manual Tests
 
@@ -158,7 +165,7 @@ I deployed the project on Heroku as follows:
 2. Create a Heroku remote.
 3. Ensure that the project included a Procfile and requirements.txt.
 4. Push the project to the Heroku remote.
-6. Start a web process by typing heroku ps:scale web=1 in the Cloud9 terminal.
+6. Start a web process by entering the following in the terminal: ``heroku ps:scale web=1``
 5. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
 6. Set the MONGO_URI environment variable in the Heroku config vars.
 7. Restart all dynos.
@@ -168,12 +175,12 @@ I deployed the project on Heroku as follows:
 Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-repository)
 1. Under the repository name on GitHub, click Clone or download.
 2. In the Clone with HTTPs section, click the icon beside the URL to copy the clone URL for the repository.
-3. Open Git Bash.
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL you copied in Step 2.
 6. Press Enter. Your local clone will be created.
-3. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
-2. Set the IP address to 127.0.0.1 and the PORT to 5000.
+7. Set up a virtual environment.
+8. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
+9. Set the IP address to 127.0.0.1 and the PORT to 5000.
 
 
 ## Credits
@@ -186,5 +193,5 @@ Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-
 ### Acknowledgements
 
 - I received inspiration for this project from [BBC Good Food](https://www.bbcgoodfood.com/recipes).
-- My mentor, Chris Zielinski and my tutors Niel McEwen, Nakita McCool and Haley Schafer provided 
+- Simen Daehlin, Niel McEwen, Nakita McCool, Haley Schafer and Chris Zielinski provided 
 valuable help and advice on the project.
