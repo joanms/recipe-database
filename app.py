@@ -1,4 +1,5 @@
 import os
+import env
 
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
@@ -30,6 +31,22 @@ def index():
     return render_template('index.html', 
         allergens=mongo.db.allergens.find().sort('allergen_name',1), 
         restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
+
+
+@app.route('/login')
+def login():
+    
+    """Load the login page"""
+    
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    
+    """Load the registration page"""
+    
+    return render_template('register.html')
 
 
 @app.route('/add_recipe')

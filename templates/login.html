@@ -1,16 +1,19 @@
 {% extends 'base.html'%} {% block content %}
 
     <h1>Please Log In</h1>
-    <p>If you don't already have an account, you can <a href="{{url_for('register')}}">register here</a>.</p>
+    
     
     <div class="row">
-        <form class="col s12">
+        <form class="col s12 l6 offset-l3">
+            <p>If you don't already have an account, you can <a href="{{url_for('register')}}">register here</a>.</p>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                   <input id="username" type="text" class="validate">
                   <label for="username">Username</label>
                 </div>
-                <div class="input-field col s6">
+            </div>    
+            <div class="row">
+                <div class="input-field col s12">
                   <input id="password" type="text" class="validate">
                   <label for="password">Password</label>
                 </div>
