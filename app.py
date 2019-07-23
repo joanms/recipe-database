@@ -47,10 +47,11 @@ def register():
         if existing_user is None:
             # If there is no existing user with that username, encrypt the new user's password
             pw_hash = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            # Decode the hashed password so it can be stored in MongoDB
+            # Decode the hashed password so it can be stored in the MongoDB database
             db_password = pw_hash.decode("utf-8")
             # Add the username and encrypted password to the database
             users.insert({'username' : request.form['username'], 'password' : db_password})
+            # The newly registered user is logged in
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
@@ -69,12 +70,12 @@ def login():
         login_user = users.find_one({'username' : request.form['username']})
     
         if login_user:
-            # If the username is in the database, compare the password entered in the form with the password for that user in the database
+            # If the username is in the database, hash the password entered in the form and compare it with the hashed password in the database for that user
             if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
     
-        flash('Invalid username/password combination')
+        flash('Invalid username/password combination.')
         
     return render_template('login.html')
 
@@ -119,7 +120,8 @@ def insert_recipe():
         'allergens': request.form.getlist('allergens'),
         'restrictions': request.form.getlist('restrictions'),
         'ingredients': request.form.get('ingredients'),
-        'method': request.form.get('method')
+        'method': request.form.get('method'),
+        'username': session['username']
     }
     recipes.insert_one(new_recipe)
     return render_template(
