@@ -10,6 +10,8 @@
         <!--Information about the recipe-->
         <div id="information">
                         
+            Submitted by {{ recipe.username }}<br>
+            
             <!--Optional text for the recipe's author-->
             {% if recipe.author %}
                 By {{recipe.author}}<br>
@@ -52,6 +54,8 @@
                         
         </div> <!--End of information text-->
         
+        <!--Only the user who submitted the recipe can see the Edit and Delete buttons-->
+        {% if session.username == recipe.username %}
         <!--Button to edit a recipe-->
         <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
             <i class="material-icons right">edit</i>Edit</a>
@@ -59,6 +63,7 @@
         <!--Button to delete a recipe-->
         <a href="{{url_for('warning', recipe_id=recipe._id)}}" class="btn waves-effect waves-light">
             <i class="material-icons right">delete</i>Delete</a>
+        {% endif %}     
             
             <!--If the Delete button is clicked, a warning appears-->
             {% with messages = get_flashed_messages() %} {% if messages %}
@@ -82,6 +87,8 @@
                 {% endfor %}
                     
             {% endif %} {% endwith %} <!--End of loop through flashed messages-->
+            
+           
                 
         <!--Recipe illustration if it exists-->
         <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
