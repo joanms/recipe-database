@@ -12,7 +12,7 @@ html {
 }
 
 
-/*--------------------------------------------Nav*/
+/*Nav*/
 
 nav {
     line-height: 100px;
@@ -125,6 +125,11 @@ a.recipe-title:hover {
 
 
 /*Main text*/
+
+#logged-in {
+    text-align: right;
+    font-weight: 600;
+}
 
 #information {
     margin-bottom: 0px;

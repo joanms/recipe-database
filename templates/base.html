@@ -32,7 +32,7 @@
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         {% if session %}
                             <!--If a user is logged in, they see a link to log out in the navbar-->
-                            <li><a href="#">Log Out</a></li>
+                            <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
                             <!--If the user is not logged in, they see links to log in or register in the navbar-->
                             <li><a href="{{url_for('login')}}">Log In</a></li>
@@ -46,7 +46,7 @@
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         {% if session %}
-                            <li><a href="#">Log Out</a></li>
+                            <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
                             <li><a href="{{url_for('login')}}">Log In</a></li>
                             <li><a href="{{url_for('register')}}">Register</a></li>
@@ -76,7 +76,7 @@
     <div class="container">
         
         {% if session %}
-            <p>Logged in as {{ session.username }}</p>
+            <p id="logged-in">Logged in as {{ session.username }}</p>
         {% endif %}
             
         {% block content %} {% endblock %}
