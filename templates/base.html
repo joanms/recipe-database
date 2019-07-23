@@ -30,7 +30,7 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="{{url_for('index')}}">Home</a></li>
-                        {% if session %}
+                        {% if session.username %}
                             <!--If a user is logged in, they see a link to log out in the navbar-->
                             <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
@@ -45,7 +45,7 @@
                     <!--Side nav for mobile devices-->
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
-                        {% if session %}
+                        {% if session.username %}
                             <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
                             <li><a href="{{url_for('login')}}">Log In</a></li>

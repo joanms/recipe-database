@@ -39,7 +39,7 @@ def index():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     
-    """Load the login page"""
+    """Allow registered user to log in"""
     
     if request.method == 'POST':
         users = mongo.db.users
@@ -50,13 +50,18 @@ def login():
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
     
-        flash('Invalid username/password combination')
+        else:
+            session.clear()
+            flash('Invalid username/password combination')
         
     return render_template('login.html')
 
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    
+    """Allow new users to register"""
+    
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'username' : request.form['username']})
@@ -67,7 +72,8 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
-        flash('That username already exists.')
+        else:
+            flash('That username already exists.')
 
     return render_template('register.html')
 
@@ -81,12 +87,16 @@ def logout():
 @app.route('/add_recipe')
 def add_recipe():
     
-    """Load a form to add a new recipe to the database"""
+    """Load a form for logged-in users to add a new recipe to the database"""
     
-    return render_template(
-        'add_recipe.html', categories=mongo.db.categories.find(), 
-        allergens=mongo.db.allergens.find().sort('allergen_name',1), 
-        restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
+    if session:
+        return render_template(
+            'add_recipe.html', categories=mongo.db.categories.find(), 
+            allergens=mongo.db.allergens.find().sort('allergen_name',1), 
+            restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
+            
+    else:
+        return redirect(url_for('login'))    
 
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
