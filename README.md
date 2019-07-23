@@ -54,15 +54,13 @@ simple sans-serif to maximise legibility and elegance.
 - Search field in the navbar to search for recipes by keyword.
 - Links to all recipe categories on the home page.
 - Dropdown menus on the home page to search for recipes for special diets or excluding common allergens.
+- Login feature that only allows users to input recipes when logged in, and prevents them from editing or deleting other users' recipes.
 - Recipe input form, enabling users to add their own recipes to the database and display them on the site.
 - Page listing summary details of either all recipes in the database, or recipes returned from a user's search.
 - Page for each recipe displaying its ingredients, method and information such as suitability for restricted diets.
 - Edit button on the recipe display page, linking to a form that enables users to edit the recipe.
 - Delete button for deleting recipes.
 - A warning that displays when the delete button is clicked, in case the user clicks it accidentally.
-
-### Features Left to Implement
-- Login feature that only allows users to input recipes when logged in, and prevents them from editing or deleting other users' recipes.
 
 
 ## Technologies Used
