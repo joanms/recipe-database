@@ -33,28 +33,7 @@ def index():
         restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
 
 
-# The login and register routes are based on this code by Pretty Printed: https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
-
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    
-    """Allow registered user to log in"""
-    
-    if request.method == 'POST':
-        users = mongo.db.users
-        login_user = users.find_one({'username' : request.form['username']})
-    
-        if login_user:
-            if request.form['password'] == login_user['password']:
-                session['username'] = request.form['username']
-                return redirect(url_for('index'))
-    
-        else:
-            session.clear()
-            flash('Invalid username/password combination')
-        
-    return render_template('login.html')
-
+# The register and login routes are based on this code by Pretty Printed: https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -66,15 +45,38 @@ def register():
         existing_user = users.find_one({'username' : request.form['username']})
 
         if existing_user is None:
-            password = request.form['password']
-            users.insert({'username' : request.form['username'], 'password' : password})
+            # If there is no existing user with that username, encrypt the new user's password
+            pw_hash = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+            # Decode the hashed password so it can be stored in MongoDB
+            db_password = pw_hash.decode("utf-8")
+            # Add the username and encrypted password to the database
+            users.insert({'username' : request.form['username'], 'password' : db_password})
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
-        else:
-            flash('That username already exists.')
+        flash('That username already exists.')
 
     return render_template('register.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    
+    """Allow registered user to log in"""
+    
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'username' : request.form['username']})
+    
+        if login_user:
+            # If the username is in the database, compare the password entered in the form with the password for that user in the database
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+    
+        flash('Invalid username/password combination')
+        
+    return render_template('login.html')
 
 
 @app.route("/logout")
