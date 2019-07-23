@@ -4,26 +4,43 @@
     
     
     <div class="row">
-        <form class="col s12 l6 offset-l3">
+        
+        <form class="col s12 l6 offset-l3" method=POST action="{{ url_for('login') }}">
+            
             <p>If you don't already have an account, you can <a href="{{url_for('register')}}">register here</a>.</p>
+            
             <div class="row">
                 <div class="input-field col s12">
-                  <input id="username" type="text" class="validate">
+                  <input name="username" type="text" class="validate">
                   <label for="username">Username</label>
                 </div>
-            </div>    
+            </div>
+            
             <div class="row">
                 <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
+                  <input name="password" type="password" class="validate">
                   <label for="password">Password</label>
                 </div>
             </div>
+            
             <div class="row">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Log In
+                <button type="submit" name="action" class="btn waves-effect waves-light">Log In
                     <i class="material-icons right">exit_to_app</i>
                 </button>
             </div>
+            
+            <div class="row">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                    {% for message in messages %}
+                        <p id="flash">{{ message }}</p>
+                    {% endfor %}
+                {% endif %} {% endwith %}
+            </div>
+            
         </form>
+        
     </div>
+    
+    
 
 {% endblock %}

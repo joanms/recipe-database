@@ -3,27 +3,41 @@
     <h1>Please Register</h1>
     
     <div class="row">
+        
         <form class="col s12 l6 offset-l3" method=POST action="{{ url_for('register') }}">
+            
              <p>If you already have an account, you can <a href="{{url_for('login')}}">log in here</a>.</p>
+             
             <div class="row">
                 <div class="input-field col s12">
                   <input name="username" type="text" class="validate">
                   <label for="username">Username</label>
                 </div>
-            </div>    
+            </div>  
+            
             <div class="row">
                 <div class="input-field col s12">
                   <input name="password" type="password" class="validate">
                   <label for="password">Password</label>
                 </div>
             </div>
+            
             <div class="row">
                 <button type="submit" name="action" class="btn waves-effect waves-light">Register
                     <i class="material-icons right">person_add</i>
                 </button>
             </div>
+            
+            <div class="row">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                    {% for message in messages %}
+                        <p id="flash">{{ message }}</p>
+                    {% endfor %}
+                {% endif %} {% endwith %}
+            </div>
+
         </form>
+        
     </div>
-
-
+    
 {% endblock %}

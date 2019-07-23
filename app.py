@@ -34,11 +34,24 @@ def index():
         restrictions=mongo.db.restrictions.find().sort('restriction_name',1))
 
 
-@app.route('/login')
+# The login and register routes are based on this code by Pretty Printed: https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     
     """Load the login page"""
     
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'username' : request.form['username']})
+    
+        if login_user:
+            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+    
+        flash('Invalid username/password combination')
+        
     return render_template('login.html')
 
 
