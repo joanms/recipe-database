@@ -2,7 +2,6 @@
 
 
 html {
-
     font-family: "Open Sans", serif;
     font-weight: 400;
     font-size: 100%;
@@ -129,12 +128,6 @@ a.recipe-title:hover {
 #logged-in {
     text-align: right;
     font-weight: 600;
-}
-
-#information {
-    margin-bottom: 0px;
-    margin-top: 25px;
-    line-height: inherit;
 }
 
 #flash {
