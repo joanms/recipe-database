@@ -207,9 +207,10 @@ label {
 
 
 @media only screen and (min-width: 730px) {
-        .brand-logo {
+    .brand-logo {
         font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
         }    
+
     #logo {
         height: 40px;
         width: 40px;
