@@ -1,4 +1,5 @@
 import os
+import env
 
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
@@ -79,6 +80,18 @@ def login():
         
     return render_template('login.html')
 
+
+@app.route('/user_recipes')
+def user_recipes():
+
+    """A page listing the logged-in user's own recipes"""
+    
+    user = session['username']
+    query = ( { 'username': user } )
+    results = mongo.db.recipes.find(query)
+    return render_template('list_recipes.html', 
+    recipes=results, count=results.count())
+    
 
 @app.route("/logout")
 def logout():
