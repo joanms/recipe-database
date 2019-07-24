@@ -76,7 +76,7 @@ nav {
 .illustration {
     width: 200px;
     border:1px solid black;
-    margin-bottom: 20px;
+    
 }
 
 .category-image {
@@ -92,8 +92,6 @@ h1 {
     font-family: "Fondamento", cursive;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
 }
 
 h2 {
@@ -101,16 +99,14 @@ h2 {
     font-weight: 600;
     font-size: 1.25rem;
     text-align: inherit;
-    margin-top: 20px;
-    margin-bottom: 5px;
 }
 
 h3 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: .5rem;
+    margin-bottom: 0rem;
 }
 
 a.recipe-title{
@@ -135,7 +131,6 @@ a.recipe-title:hover {
 }
 
 #information {
-    line-height: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -190,26 +185,34 @@ label {
 @media only screen and (min-width: 500px) {
     .category-image {
         width: 180px;
-        } 
-}
-
-
-@media only screen and (min-width: 730px) {
+        }
+        
     h1 {
         font-size: 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         }
     
     h2 {
         font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0rem;
         }
         
+    .illustration {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        }
+}
+
+
+@media only screen and (min-width: 730px) {
+        .brand-logo {
+        font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
+        }    
     #logo {
         height: 40px;
         width: 40px;
-        }
-
-    .brand-logo {
-        font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
         }
 }
 

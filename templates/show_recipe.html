@@ -7,6 +7,12 @@
     <!--Illustration and information about the recipe-->
     <div class="col s12 m6 l4">
         
+        <!--Recipe illustration if it exists-->
+        <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
+        {% if recipe.image_path %}
+            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+        {% endif %}
+        
         <!--Information about the recipe-->
         <div id="information">
                         
@@ -92,13 +98,6 @@
             {% endif %} {% endwith %} <!--End of loop through flashed messages-->
             
            
-                
-        <!--Recipe illustration if it exists-->
-        <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
-        {% if recipe.image_path %}
-            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
-        {% endif %}
-                    
     </div> <!--End of recipe information and illustration section-->
     
     <!--Ingredients-->
