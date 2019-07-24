@@ -12,47 +12,47 @@
                         
             
             {% if recipe.username %}
-                <p>Submitted by {{recipe.username}}</p>
+                Submitted by {{recipe.username}}<br>
             {% endif %}
             
             <!--Optional text for the recipe's author-->
             {% if recipe.author %}
-                <p>Recipe by {{recipe.author}}</p>
+                Recipe by {{recipe.author}}<br>
             {% endif %}
             
             <!--Optional text to display if the recipe contains allergens-->
             {% if recipe.allergens %}
-                <p>Contains {{recipe.allergens|join(', ')}}</p>
+                Contains {{recipe.allergens|join(', ')}}<br>
             {% endif %}
     
             <!--Optional text to display if the recipe is suitable for restricted diets-->
             {% if recipe.restrictions %}
-                <p>Suitable for {{recipe.restrictions|join(', ')}} diets</p>
+                Suitable for {{recipe.restrictions|join(', ')}} diets<br>
             {% endif %}
     
             <!--Optional text for the recipe's country of origin-->
             {% if recipe.origin %}
-                <p>Country of Origin: {{recipe.origin}}</p>
+                Country of Origin: {{recipe.origin}}<br>
             {% endif %}
                             
             <!--Optional text for number of servings-->
             {% if recipe.servings %}
-                <p>Serves {{recipe.servings}}</p>
+                Serves {{recipe.servings}}<br>
             {% endif %}
                             
             <!--Optional text for ingredient preparation time-->
             {% if recipe.prep_time %}
-                <p>Preparation Time: {{recipe.prep_time}}</p>
+                Preparation Time: {{recipe.prep_time}}<br>
             {% endif %}
             
             <!--Optional text for any extra time, e.g. marinading, proving, etc.-->
             {% if recipe.extra_time %}
-                <p>Extra Time: {{recipe.extra_time}}</p>
+                Extra Time: {{recipe.extra_time}}<br>
             {% endif %}
                         
             <!--Optional text for time needed to cook the recipe-->
             {% if recipe.cook_time %}
-                <p>Cook Time: {{recipe.cook_time}} </p>
+                Cook Time: {{recipe.cook_time}} <br>
             {% endif %}
                         
         </div> <!--End of information text-->

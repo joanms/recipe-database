@@ -29,7 +29,7 @@ nav {
 
 .brand-logo {
     font-family: "Fondamento", cursive;
-    font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
+    font-size: 1.5rem !important; /*!important is used to override the Materialize CSS*/
 }
 
 ::placeholder {
@@ -65,8 +65,8 @@ nav {
 /*Images*/
 
 #logo {
-    height: 40px;
-    width: 40px;
+    height: 18px;
+    width: 18px;
 }
 
 .material-icons {
@@ -74,13 +74,13 @@ nav {
 }
 
 .illustration {
-    width: 320px;
+    width: 200px;
     border:1px solid black;
     margin-bottom: 20px;
 }
 
 .category-image {
-    width: 250px;
+    width: 100px;
     border:1px solid black;
     margin-bottom: 20px;
 }
@@ -90,7 +90,7 @@ nav {
 
 h1 {
     font-family: "Fondamento", cursive;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -99,7 +99,7 @@ h1 {
 h2 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: inherit;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -132,6 +132,11 @@ a.recipe-title:hover {
 
 #flash {
     font-weight: 700;
+}
+
+#information {
+    line-height: 2rem;
+    margin-bottom: 1rem;
 }
 
 /*The pre tag ensures that linebreaks are preserved in text pulled from MongoDB. This style ensures that the font matches the rest of the body text and the text wraps automatically*/
@@ -182,69 +187,39 @@ label {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (min-width: 500px) {
     .category-image {
         width: 180px;
+        } 
+}
+
+
+@media only screen and (min-width: 730px) {
+    h1 {
+        font-size: 2.5rem;
         }
+    
+    h2 {
+        font-size: 1.5rem;
+        }
+        
+    #logo {
+        height: 40px;
+        width: 40px;
+        }
+
+    .brand-logo {
+        font-size: 3.5rem !important; /*!important is used to override the Materialize CSS*/
+        }
+}
+
+
+@media only screen and (min-width: 1500px) {
     .illustration {
-        width: 200px;
-    }    
-}
-
-
-@media only screen and (max-width: 730px) {
-    h1 {
-        font-size: 2rem;
-        }
-    
-    h2 {
-        font-size: 1.5rem;
-        }
-        
-    #logo {
-        height: 20px;
-        width: 20px;
+        width: 320px;
         }
 
-    .brand-logo {
-        font-size: 2rem !important; /*!important is used to override the Materialize CSS*/
-        margin-left: 0px; 
-        }
-}
-
-@media only screen and (max-width: 420px) {
-    h1 {
-        font-size: 1.5rem;
-        }
-    
-    h2 {
-        font-size: 1.25rem;
-        }
-        
-    #logo {
-        height: 18px;
-        width: 18px;
-        }
-
-    .brand-logo {
-        font-size: 1.75rem !important; /*!important is used to override the Materialize CSS*/
-        margin-left: 0px; 
-        }
-}
-
-
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 0px;
-        }
-    
-    h2 {
-        font-size: 1.25rem;
-        margin-top: 20px;
-        }
-        
     .category-image {
-        width: 100px;
-        }
+        width: 250px;
+        } 
 }
