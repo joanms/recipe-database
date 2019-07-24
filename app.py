@@ -88,7 +88,7 @@ def user_recipes():
     
     user = session['username']
     query = ( { 'username': user } )
-    results = mongo.db.recipes.find(query)
+    results = mongo.db.recipes.find(query).sort('recipe_title',1)
     return render_template('list_recipes.html', 
     recipes=results, count=results.count())
     

@@ -192,7 +192,7 @@ label {
 }
 
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 730px) {
     h1 {
         font-size: 2rem;
         }
@@ -207,14 +207,35 @@ label {
         }
 
     .brand-logo {
-        font-size: 1.5rem !important; /*!important is used to override the Materialize CSS*/
+        font-size: 2rem !important; /*!important is used to override the Materialize CSS*/
         margin-left: 0px; 
         }
 }
 
+@media only screen and (max-width: 420px) {
+    h1 {
+        font-size: 1.5rem;
+        }
+    
+    h2 {
+        font-size: 1.25rem;
+        }
+        
+    #logo {
+        height: 18px;
+        width: 18px;
+        }
+
+    .brand-logo {
+        font-size: 1.75rem !important; /*!important is used to override the Materialize CSS*/
+        margin-left: 0px; 
+        }
+}
+
+
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
         margin-bottom: 0px;
         }
     
