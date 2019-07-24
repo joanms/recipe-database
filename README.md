@@ -109,7 +109,30 @@ I conducted manual tests of the application as follows:
     1. View the app in responsive mode with Chrome Developer Tools to ensure that the size and position of elements adjusts correctly.
     2. View the app on a desktop, laptop, tablet and smartphone to ensure that it displays correctly.
 
-3. Adding Recipes
+3. Registration
+    1. Navigate to the registration page.
+    2. Enter a username and password.
+    3. Ensure that I see text at the top of the page saying that am logged in under that username.
+    4. Ensure that I can add recipes and edit and delete recipes submitted under that username, and that I can't edit or delete other users' recipes.
+    5. Ensure that, when I click on the "My Recipes" link in the navbar, I see the list of that user's recipes and no others.
+    6. Click on the Logout link in the navbar and ensure that I'm logged out.
+    7. Enter a username that's already in the database.
+    8. Ensure that a message appears saying that the username already exists.
+     
+4. Login
+    1. Navigate to the login page.
+    2. Enter a correct username and password.
+    3. Ensure that I see text at the top of the page saying that am logged in under that username.
+    4. Ensure that I can add recipes and edit and delete recipes submitted under that username, and that I can't edit or delete other users' recipes.
+    5. Ensure that, when I click on the "My Recipes" link in the navbar, I see the list of that user's recipes and no others.
+    6. Click on the Logout link in the navbar and ensure that I'm logged out.
+    7. Enter a username that's not in the database and a password.
+    8. Ensure that I see a message saying that I've entered an incorrect username/password combination.
+    9. Enter a username that's in the database and an incorrect password.
+    10. Ensure that I see a message saying that I've entered an incorrect username/password combination.
+
+
+5. Adding Recipes
     1. Click on the "Add a Recipe" link in the navbar.
     2. Ensure that the form appears correctly.
     3. Attempt to submit the form with required fields blank and ensure that I'm prompted to fill them.
@@ -118,7 +141,7 @@ I conducted manual tests of the application as follows:
     6. Ensure that the page showing that recipe loads correctly, with all entered details appearing.
     7. Ensure that all the recipe details have been saved in the database.
 
-4. Searching for Recipes
+6. Searching for Recipes
     1. Enter various search terms in the search bar.
     2. Ensure that all recipes with those words, and only recipes with those words, are displayed in the results.
     3. Click on each image on the home page.
@@ -126,13 +149,13 @@ I conducted manual tests of the application as follows:
     5. Select allergens in the allergen dropdown menu on the home page and click on Search.
     6. Ensure that all recipes without those allergens, and only recipes without those allergens, are displayed in the results.
  
-5. Viewing Recipes
+7. Viewing Recipes
     1. Click on the 'View All Recipes' link in the navbar.
     2. Ensure that all recipes in the database are listed on the page that loads.
     3. Click on each recipe in the list in turn
     4. Ensure that all the recipe details are displayed correctly on the page that loads.
 
-6. Editing Recipes
+8. Editing Recipes
     1. Click on the Edit button at the bottom of a page displaying a recipe.
     2. Ensure that the form for editing the recipe loads.
     3. Edit the recipe details.
@@ -145,7 +168,7 @@ I conducted manual tests of the application as follows:
     9. Ensure that the recipe reloads with none of the cancelled changes saved to the database.
     10. Repeat for all recipes.
 
-7. Deleting Recipes
+9. Deleting Recipes
     1. Click the Delete button at the bottom of the recipe display page.
     2. Ensure that a warning message appears, along with buttons to cancel or confirm the deletion.
     3. Click Cancel.
