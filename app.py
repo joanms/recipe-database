@@ -1,5 +1,4 @@
 import os
-import env
 
 from flask import Flask, render_template, redirect, request, session, url_for, flash
 from flask_pymongo import PyMongo
