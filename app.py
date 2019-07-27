@@ -47,7 +47,7 @@ def register():
         if existing_user is None:
             # If there is no existing user with that username, encrypt the new user's password
             pw_hash = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            # Decode the hashed password so it can be stored in the MongoDB database
+            # Decode the hashed password while keeping it encrypted so it can be stored in the MongoDB database
             db_password = pw_hash.decode("utf-8")
             # Add the username and encrypted password to the database
             users.insert({'username' : request.form['username'], 'password' : db_password})
@@ -55,7 +55,8 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
-        flash('That username already exists.')
+        # The user sees this message if their chosen password is already in the database
+        flash('That username is taken. Please try a different one.')
 
     return render_template('register.html')
 
@@ -75,6 +76,7 @@ def login():
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
     
+        # The user sees this message if the username and/or password are invalid
         flash('Invalid username/password combination.')
         
     return render_template('login.html')

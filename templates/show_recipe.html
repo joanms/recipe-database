@@ -12,15 +12,14 @@
         {% if recipe.image_path %}
             <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
         {% endif %}
+  
         
         <!--Information about the recipe-->
         <div id="information">
                         
-            
-            {% if recipe.username %}
-                Submitted by {{recipe.username}}<br>
-            {% endif %}
-            
+            <!--The username of the person who added the recipe to the database-->
+            Submitted by {{recipe.username}}<br>
+
             <!--Optional text for the recipe's author-->
             {% if recipe.author %}
                 Recipe by {{recipe.author}}<br>
@@ -64,6 +63,7 @@
         </div> <!--End of information text-->
            
     </div> <!--End of recipe information and illustration section-->
+
     
     <!--Ingredients-->
     <div class="col s12 m6 xl3" id="ingredients">
@@ -78,6 +78,7 @@
     </div> <!--End of preparation instructions-->
                 
 </div> <!--End of recipe-->
+
 
 <div class="row">
     
