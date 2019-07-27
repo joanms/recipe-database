@@ -132,7 +132,6 @@ a.recipe-title:hover {
 }
 
 #information {
-    margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -209,6 +208,9 @@ label {
         text-align: right;
     }
     
+    #information {
+        margin-top: 1.5rem;
+    }    
 }
 
 
@@ -231,5 +233,9 @@ label {
 
     .category-image {
         width: 250px;
-        } 
+        }
+    
+    #information {
+        margin-top: 1.5rem;
+    }    
 }
