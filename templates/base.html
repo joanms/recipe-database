@@ -31,9 +31,9 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                         {% if session.username %}
-                            <!--If the user is logged in, they see links to their own recipes and to log out in the navbar-->
+                            <!--If the user is logged in, they see links to add recipes, view their own recipes and log out in the navbar-->
+                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                             <li><a href="{{url_for('user_recipes')}}">Your Recipes</a></li>
                             <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
@@ -47,8 +47,8 @@
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
-                        <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                         {% if session.username %}
+                            <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                             <li><a href="{{url_for('user_recipes')}}">Your Recipes</a></li>
                             <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    

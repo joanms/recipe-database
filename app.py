@@ -105,6 +105,7 @@ def add_recipe():
     
     """Load a form for logged-in users to add a new recipe to the database"""
     
+    # The if-else prevents users from submitting recipes when not logged in
     if session:
         return render_template(
             'add_recipe.html', categories=mongo.db.categories.find(), 
