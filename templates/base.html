@@ -33,7 +33,7 @@
                         <li><a href="{{url_for('list_recipes')}}">View All Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
                         {% if session.username %}
-                            <!--If a user is logged in, they see a link to log out in the navbar-->
+                            <!--If the user is logged in, they see links to their own recipes and to log out in the navbar-->
                             <li><a href="{{url_for('user_recipes')}}">Your Recipes</a></li>
                             <li><a href="{{url_for('logout')}}">Log Out</a></li>
                         {% else %}    
@@ -58,6 +58,7 @@
                     </ul>
                         
                 </div> <!--End of logo, title and nav menus-->
+
                     
                 <!--Search Field-->
                 <div class="nav-wrapper deep-orange darken-4">
@@ -74,9 +75,11 @@
         </div> <!--End of navbar-->
 
     </header>
+
         
     <div class="container">
         
+        <!--If the user is logged in, they see their username at the top of each page-->
         {% if session.username %}
             <p id="logged-in">Logged in as {{ session.username }}</p>
         {% endif %}

@@ -35,7 +35,6 @@ There is a search field in the navbar enabling users to search for recipes by ke
 common allergens excluded.
 
 
-
 ### Design
 
 Please [click here](static/plans/recipe_database_wireframes.pdf) to view the wireframes. 
@@ -50,7 +49,6 @@ simple sans-serif to maximise legibility and elegance.
 
 ## Features
 
-### Existing Features
 - Search field in the navbar to search for recipes by keyword.
 - Links to all recipe categories on the home page.
 - Dropdown menus on the home page to search for recipes for special diets or excluding common allergens.
@@ -131,7 +129,6 @@ I conducted manual tests of the application as follows:
     9. Enter a username that's in the database and an incorrect password.
     10. Ensure that I see a message saying that I've entered an incorrect username/password combination.
 
-
 5. Adding Recipes
     1. Click on the "Add a Recipe" link in the navbar.
     2. Ensure that the form appears correctly.
@@ -186,22 +183,22 @@ I deployed the project on Heroku as follows:
 2. Create a Heroku remote.
 3. Ensure that the project included a Procfile and requirements.txt.
 4. Push the project to the Heroku remote.
-6. Start a web process by entering the following in the terminal: ``heroku ps:scale web=1``
-5. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
-6. Set the MONGO_URI environment variable in the Heroku config vars.
-7. Restart all dynos.
-8. Open the app on Heroku and check to ensure that it's working correctly.
+5. Start a web process by entering the following in the terminal: ``heroku ps:scale web=1``
+6. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
+7. Set the MONGO_URI environment variable in the Heroku config vars.
+8. Restart all dynos.
+9. Open the app on Heroku and check to ensure that it's working correctly.
 
 ### Running the Code Locally
 Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-repository)
 1. Under the repository name on GitHub, click Clone or download.
 2. In the Clone with HTTPs section, click the icon beside the URL to copy the clone URL for the repository.
-4. Change the current working directory to the location where you want the cloned directory to be made.
-5. Type git clone, and then paste the URL you copied in Step 2.
-6. Press Enter. Your local clone will be created.
-7. Set up a virtual environment.
-8. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
-9. Set the IP address to 127.0.0.1 and the PORT to 5000.
+3. Change the current working directory to the location where you want the cloned directory to be made.
+4. Type git clone, and then paste the URL you copied in Step 2.
+5. Press Enter. Your local clone will be created.
+6. Set up a virtual environment.
+7. Install the packages in requirements.txt by typing pip install -r requirements.txt in the CLI.
+8. Set the IP address to 127.0.0.1 and the PORT to 5000.
 
 
 ## Credits

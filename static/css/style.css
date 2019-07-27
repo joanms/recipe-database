@@ -37,7 +37,6 @@ nav {
     font-size: 0.8rem;
 }
 
-
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
 .navbar-fixed { 
     z-index: 9999; 
@@ -47,6 +46,7 @@ nav {
 .multiple-select-dropdown label {
   top: -10px !important; /*!important is used to override the Materialize CSS*/
 }
+
 
 /*Containers*/
 

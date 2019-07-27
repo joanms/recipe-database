@@ -1,5 +1,5 @@
-// This initialises the side-nav for small screens
 $(document).ready(function() {
+// This initialises the side-nav for small screens
     $('.collapsible').collapsible();
     $('select').material_select();
     $(".button-collapse").sideNav();
