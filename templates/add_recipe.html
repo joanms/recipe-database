@@ -20,14 +20,14 @@
             <label for="author">Author</label>
         </div>
                         
-        <!--The location of the recipe's illustration-->
+        <!--The path to the recipe's illustration-->
         <div class="input-field col s12 l6 xl4">
             <input id="image_path" name="image_path" type="text" class="validate">
             <label for="image_path">URL of Image</label>
         </div>
                         
-                        
     </div> <!--End of title, author, image and category row-->
+
                     
     <!--Country of origin and dietary restrictions-->
     <div class="row"> 
@@ -35,13 +35,13 @@
         <!--The category of the recipe-->
         <div class="input-field col s12 l6 xl3">
             <select id="category" name="category_name">
-                <!--The following for loop pulls the list of category names from the categories collection in the database-->
                 <option value="" disabled selected>Click to Select</option>
+                <!--The following for loop pulls the list of category names from the categories collection in the database-->
                 {% for cat in categories %}
-                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
                 {% endfor %}
             </select>
-            <label>Category*</label>
+            <label>Category</label>
         </div>
 
         <!--The recipe's country of origin-->
@@ -54,6 +54,7 @@
         <div class="input-field col s12 l6 xl3">
             <select multiple id="allergens" name="allergens">
                 <option value="" disabled selected>Click to Select</option>
+                <!--The following for loop pulls the list of allergen names from the allergens collection in the database-->
                 {% for allergen in allergens %}
                 <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
                 {% endfor %}
@@ -73,6 +74,7 @@
         </div> <!--End of allergen selector-->
 
     </div> <!--End of country of origin and dietary restrictions-->
+
      
     <!--Recipe statistics-->
     <div class="row"> 
@@ -102,6 +104,7 @@
         </div>
                         
     </div> <!--End of recipe statistics-->
+
                     
     <!--Input field for the ingredients-->
     <div class="row">
@@ -118,6 +121,7 @@
             <label for="method">Method*</label>
         </div>
     </div> <!--End of method-->
+
             
     <!--Button to submit the recipe-->
     <div class="row">
