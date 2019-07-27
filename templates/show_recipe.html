@@ -10,7 +10,7 @@
         <!--Recipe illustration if it exists-->
         <!--The image paths are stored in the database, and this code pulls the correct image for the recipe into the template-->
         {% if recipe.image_path %}
-            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}"></a>
+            <img class="illustration" src="{{recipe.image_path}}" title="{{recipe.recipe_title}}" alt="{{recipe.recipe_title}}">
         {% endif %}
   
         

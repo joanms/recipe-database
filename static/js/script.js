@@ -1,3 +1,5 @@
+// The code in this file is from the Materialize documentation
+
 $(document).ready(function() {
 // This initialises the side-nav for small screens
     $('.collapsible').collapsible();
