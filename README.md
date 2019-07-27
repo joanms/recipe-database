@@ -24,10 +24,10 @@ The site has a recipe input form which is intuitive and easy to use. Users can t
 The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes, as outlined in the database 
 schema explanation above. The HTML templates are set up to format the recipes neatly once they are input.
 
-- **Edit and delete recipes.**
+- **Edit and delete my recipes.**
 Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
 the user that this action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
-deleting recipes.
+deleting recipes. Users can only edit or delete recipes that they submitted.
 
 - **Search for recipes according to a wide range of criteria.**
 There is a search field in the navbar enabling users to search for recipes by keyword. The home page has links to lists of recipes in each category 
@@ -52,7 +52,7 @@ simple sans-serif to maximise legibility and elegance.
 - Search field in the navbar to search for recipes by keyword.
 - Links to all recipe categories on the home page.
 - Dropdown menus on the home page to search for recipes for special diets or excluding common allergens.
-- Login feature that only allows users to input recipes when logged in, and prevents them from editing or deleting other users' recipes.
+- Registration and login feature that only allows users to input recipes when logged in, and prevents them from editing or deleting other users' recipes.
 - Recipe input form, enabling users to add their own recipes to the database and display them on the site.
 - Page listing summary details of either all recipes in the database, or recipes returned from a user's search.
 - Page for each recipe displaying its ingredients, method and information such as suitability for restricted diets.
@@ -64,17 +64,22 @@ simple sans-serif to maximise legibility and elegance.
 ## Technologies Used
 
 ### Languages
+
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to set up the templates for the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the site content.
 - **[JavaScript](https://www.javascript.com/)** was used to initialise some of the Materialize elements and ensure that they worked correctly.
 - **[Python](https://www.python.org/)** was used to write the app's logic.
 - **[MongoDB](https://www.mongodb.com/)** was used as the database program.
 
+
 ### Frameworks/Libraries
+
 - **[Flask](http://flask.pocoo.org/)** was used to create routes and render the HTML templates.
 - **[Materialize](https://materializecss.com//)** was used as the basis for the site's design and responsiveness.
 
+
 ### Tools
+
 - **[Git](https://git-scm.com/)** was used for version control.
 - **[Heroku](https://www.heroku.com/)** was used to deploy the project.
 - **[mLab](https://mlab.com/home)** was used to set up the database.
@@ -89,12 +94,12 @@ simple sans-serif to maximise legibility and elegance.
 I used the [W3C Markup Validation Service](https://validator.w3.org/) to check the HTML and the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS. 
 The W3C Markup Validation Service gives error messages for Flask Jinja code in the HTML files. I disregarded those error messages and checked the code visually.
 
+
 ### Automated Tests
 
-I conducted automated testing of the app routes with unittests, and the tests are in test.py at the root directory. Run the tests by entering the following in the terminal:
+I conducted automated testing of the app routes with unittests, and the tests are in test.py at the root directory. Run the tests by entering ```python3 test.py``` in the terminal.
 
-```python3 test.py```  
-
+  
 ### Manual Tests
 
 I conducted manual tests of the application as follows:
@@ -189,7 +194,9 @@ I deployed the project on Heroku as follows:
 8. Restart all dynos.
 9. Open the app on Heroku and check to ensure that it's working correctly.
 
+
 ### Running the Code Locally
+
 Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-repository)
 1. Under the repository name on GitHub, click Clone or download.
 2. In the Clone with HTTPs section, click the icon beside the URL to copy the clone URL for the repository.
@@ -207,6 +214,7 @@ Steps 1-6 were copied from [here](https://help.github.com/en/articles/cloning-a-
 
 - The recipes and their illustrations are from [BBC Good Food](https://www.bbcgoodfood.com/recipes).
 - The logo and background image are free stock images from [Pixabay](https://pixabay.com/).
+
 
 ### Acknowledgements
 
