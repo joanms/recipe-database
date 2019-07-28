@@ -19,8 +19,6 @@ nav {
 
 .nav-wrapper {
     font-family: "Open Sans", sans-serif;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 #main-nav {
@@ -31,12 +29,17 @@ nav {
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 1.5rem !important; /*!important is used to override the Materialize CSS*/
+    margin-left: 1rem;
 }
 
 ::placeholder {
     font-size: 1rem;
     color: white;
-    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.label-icon {
+    margin-left: 10px;
 }
 
 #search {
