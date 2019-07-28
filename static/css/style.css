@@ -27,14 +27,20 @@ nav {
     height: 100px;
 }
 
+
 .brand-logo {
     font-family: "Fondamento", cursive;
     font-size: 1.5rem !important; /*!important is used to override the Materialize CSS*/
 }
 
 ::placeholder {
+    font-size: 100%;
     color: white;
-    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+#search {
+    vertical-align: middle;
 }
 
 /*This code from https://github.com/Dogfalo/materialize/issues/4046 prevents the navbar-fixed class from disabling the side nav*/
@@ -123,7 +129,7 @@ a.recipe-title:hover {
 
 /*Main text*/
 
-#logged-in {
+#login-text {
     text-align: center;
     font-weight: 600;
 }
@@ -205,7 +211,7 @@ label {
         margin-top: 2rem;
         }
         
-    #logged-in {
+    #login-text {
         text-align: right;
     }
     
