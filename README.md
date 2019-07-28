@@ -18,7 +18,6 @@ such as those for sauces, marinades, icing, etc.
 
 ### User Stories
 
-As a user, I want to:
 - **Add my own recipes.**
 The site has a recipe input form which is intuitive and easy to use. Users can type recipes into it, or copy and paste them from elsewhere. 
 The database is structured to allow users maximum flexibility and ease of use when inputting and updating recipes, as outlined in the database 
@@ -26,13 +25,17 @@ schema explanation above. The HTML templates are set up to format the recipes ne
 
 - **Edit and delete my recipes.**
 Each recipe page has buttons that users can click if they wish to edit or delete recipes. When the delete button is clicked, a warning appears telling 
-the user that this action is permanent. The button to cancel deletion appears above the button to confirm it. This reduces the risk of accidentally 
-deleting recipes. Users can only edit or delete recipes that they submitted.
+the user that this action is permanent. The user can then click one of two buttons to confirm or cancel the deletion. This reduces the risk of accidentally 
+deleting recipes. When a user is logged in, there is a link in the navbar to that user's recipes, so they can find them easily.
+
+- **Protect my own recipes.**
+Users can only edit or delete recipes that they submitted. The edit and delete buttons are hidden for users who are not logged in, or who didn't 
+submit the recipe they are viewing.
 
 - **Search for recipes according to a wide range of criteria.**
-There is a search field in the navbar enabling users to search for recipes by keyword. The home page has links to lists of recipes in each category 
-(bread, starters, mains, sides, sauces and desserts) and dropdown menus enabling users to search for recipes suitable for restricted diets or with 
-common allergens excluded.
+There is a search field in the navbar, with placeholder text explaining its purpose, enabling users to search for recipes by keyword. The home page 
+has links to lists of recipes in each category (bread, starters, mains, sides, sauces and desserts) and dropdown menus enabling users to search for 
+recipes suitable for restricted diets or with common allergens excluded.
 
 
 ### Design
