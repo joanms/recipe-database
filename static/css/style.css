@@ -214,10 +214,6 @@ label {
         margin-top: 2rem;
         }
         
-    #login-text {
-        text-align: right;
-    }
-    
     #information {
         margin-top: 1.5rem;
     }    
@@ -233,7 +229,7 @@ label {
         height: 40px;
         width: 40px;
         }
-}
+        }
 
 
 @media only screen and (min-width: 1500px) {
@@ -247,5 +243,9 @@ label {
     
     #information {
         margin-top: 1.5rem;
-    }    
+    }
+    
+    #login-text {
+        text-align: right;
+    }
 }
