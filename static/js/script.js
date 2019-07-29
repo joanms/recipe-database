@@ -9,6 +9,6 @@ $(document).ready(function() {
 // This initialises the dropdown menus in the forms
     $('select').material_select();
 
-// This ensures that the text ares in the form resize automatically when they have dynamically generated content
+// This ensures that the text areas in the form resize automatically when they have dynamically generated content
     $('.materialize-textarea').trigger('autoresize');
 });
